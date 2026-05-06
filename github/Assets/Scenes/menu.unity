@@ -1473,8 +1473,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1506168374}
   - component: {fileID: 1506168373}
+  - component: {fileID: 1506168378}
   m_Layer: 0
-  m_Name: scene (5)_0
+  m_Name: gato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,7 +1527,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1008965696875658674, guid: e8fc6054f829d0f4cb44798a347b75b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1553,6 +1554,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506168378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506168372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7d3b4074f821648a8273341acb3d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::clicksong
+  audioSource: {fileID: 0}
 --- !u!1 &1507149211
 GameObject:
   m_ObjectHideFlags: 0

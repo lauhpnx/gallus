@@ -1,10 +1,16 @@
 using UnityEngine;
 
-public class DogObject : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
-    void OnMouseDown()
+    public float velocidade = 10f;
+    public float tempoDeVida = 3f; // Destrï¿½i apï¿½s 3 segundos
+
+    void Start()
     {
-        // Aqui você pode adicionar som, animação, pontuação etc.
-        Destroy(gameObject);
+        // Faz o ovo se mover para a frente (direita) assim que nasce
+        GetComponent<Rigidbody2D>().linearVelocity = transform.right * velocidade;
+
+        // Destrï¿½i o objeto automaticamente para limpar a memï¿½ria
+        Destroy(gameObject, tempoDeVida);
     }
 }

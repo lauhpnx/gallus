@@ -2,16 +2,10 @@ using UnityEngine;
 
 public class RotateObj : MonoBehaviour
 {
-    public float velocidade = 50f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    public float velocidade = 200f;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * velocidade * Time.deltaTime);
+        transform.Rotate(0, 0, velocidade * Time.deltaTime);
     }
 }

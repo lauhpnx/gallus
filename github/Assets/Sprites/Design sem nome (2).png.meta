@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db01c72ff4126d8428494a907957d159
+guid: 31c7d29c67934de4bb3ed1674a539700
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -142,10 +142,10 @@ TextureImporter:
       name: Design sem nome (2)_0
       rect:
         serializedVersion: 2
-        x: 656
-        y: 254
-        width: 607
-        height: 573
+        x: 782
+        y: 298
+        width: 334
+        height: 437
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

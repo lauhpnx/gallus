@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5218979272759261719}
   - component: {fileID: 2182835470124391219}
   - component: {fileID: 8252481737804736788}
-  - component: {fileID: -3627559902788402541}
+  - component: {fileID: 4037153841543742905}
   m_Layer: 0
   m_Name: 50x (3)_0
   m_TagString: Ovo
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Destroy
   velocidade: 10
   tempoDeVida: 3
---- !u!61 &-3627559902788402541
-BoxCollider2D:
+--- !u!58 &4037153841543742905
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,14 +169,4 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.22, y: 1.35}
-    newSize: {x: 1.22, y: 1.35}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.22, y: 1.35}
-  m_EdgeRadius: 0
+  m_Radius: 0.55

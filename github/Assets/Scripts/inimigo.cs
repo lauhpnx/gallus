@@ -10,17 +10,23 @@ public class inimigo : MonoBehaviour
     public float Amplitude = 3f;
 
     private float Yinicial;
+    [Header("Limites de Tela (Barreira Invisível)")]
+    // Valores padrão que costumam travar bem na tela
+    public float limiteTeto = 4.5f;
+    public float limiteChao = -4.5f;
+
+    private float yinicial;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      Yinicial = transform.position.y;
+      yinicial = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-      float novaY = Yinicial + Mathf.Sin(Time.time * VelocidadeOndulação) * Amplitude;
+      float novaY = yinicial + Mathf.Sin(Time.time * VelocidadeOndulação) * Amplitude;
         transform.position = new Vector3(xFixo, novaY, 0f);
     }
     private void OnTriggerEnter2D(Collider2D collision)

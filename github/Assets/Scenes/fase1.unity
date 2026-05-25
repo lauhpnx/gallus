@@ -679,9 +679,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
   inimigoPrefab: {fileID: 3333042347070831399, guid: 510ba7ee1f6e3ca46bdc5f708632168a, type: 3}
   limiteInimigos: 2
-  posicaoXSpawn: 10
+  colunasX:
+  - 3
+  - 5
+  - 7
   alturaMinima: -4
   alturaMaxima: 4
+  maxdeInimigos: 15
+  velocidadeMinima: 2
+  velocidadeMaxima: 6
 --- !u!1 &1383859110
 GameObject:
   m_ObjectHideFlags: 0

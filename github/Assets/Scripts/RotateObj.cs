@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RotateObj : MonoBehaviour
 {
-    public float velocidade = 200f;
+    public int velocidade = 50;
 
     void Update()
     {

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2182835470124391219}
   - component: {fileID: 8252481737804736788}
   - component: {fileID: 4037153841543742905}
+  - component: {fileID: 8743852648323719213}
   m_Layer: 0
-  m_Name: 50x (3)_0
+  m_Name: Ovo
   m_TagString: Ovo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9099f4aa78e518240b9e9b06a82a7b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destroy
-  velocidade: 10
+  velocidade: 15
   tempoDeVida: 3
 --- !u!58 &4037153841543742905
 CircleCollider2D:
@@ -170,3 +171,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.55
+--- !u!114 &8743852648323719213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294717467854912593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fec3f9b404bf204ea36bf5c0c079d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateObj
+  velocidade: 350

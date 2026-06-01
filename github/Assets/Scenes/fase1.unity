@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 913787872}
   - component: {fileID: 913787871}
   m_Layer: 0
-  m_Name: 50x_0
+  m_Name: IMG_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 1370077360}
   - component: {fileID: 1370077361}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpawnController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 2050663102}
   - component: {fileID: 2050663105}
   m_Layer: 0
-  m_Name: Galinha
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

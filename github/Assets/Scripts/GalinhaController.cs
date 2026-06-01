@@ -27,6 +27,7 @@ public class GalinhaController : MonoBehaviour
     {
         MoverGalinha();
         ControlarTiro();
+
     }
 
     void MoverGalinha()

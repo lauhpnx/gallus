@@ -7,15 +7,16 @@ public class inimigo : MonoBehaviour
 
     [Header("configurações de movimento")]
     public float VelocidadeOndulação = 3f;
-    public float Amplitude = 3f;
+    public float Amplitude = 1.5f;
 
-    private float Yinicial;
     [Header("Limites de Tela (Barreira Invisível)")]
     // Valores padrão que costumam travar bem na tela
-    public float limiteTeto = 4.5f;
-    public float limiteChao = -4.5f;
+    public float limiteTeto = 17f;
+    public float limiteChao = -17f;
 
     private float yinicial;
+
+    private AudioSource morteDaBizerra;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,9 +27,13 @@ public class inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      float novaY = yinicial + Mathf.Sin(Time.time * VelocidadeOndulação) * Amplitude;
+        float novaY = yinicial + Mathf.Sin(Time.time * VelocidadeOndulação) * Amplitude;
+
+        novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
+
         transform.position = new Vector3(xFixo, novaY, 0f);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // O Unity guarda quem bateu no inimigo dentro dessa variável 'collision'
@@ -37,7 +42,7 @@ public class inimigo : MonoBehaviour
         {
             // Se for o ovo, o inimigo se destrói!
             Destroy(gameObject);
-
+            morteDaBizerra = GetComponent<AudioSource>();
             // E também destrói o ovo que bateu nele para o tiro não atravessar direto
             Destroy(collision.gameObject);
         }

@@ -44,28 +44,48 @@ public class GeradorInimigos : MonoBehaviour
 
     void SpawnarGalo()
     {
-        float Yaleatoria;
+        float Yaleatoria; // Removi o = 0f daqui para ficar igual ao seu original
+        float XAleatorio; // Criada aqui fora para o Unity não dar erro de escopo
         bool posicaoValida;
+        int tentativas = 0; // Evita travar o Unity se a tela estiver cheia
 
         do
         {
             posicaoValida = true;
+
+            // 1. Sorteia a coluna (X) primeiro
+            int indiceAleatorio = Random.Range(0, colunasX.Length);
+            XAleatorio = colunasX[indiceAleatorio]; // Sem o "float" na frente!
+
+            // 2. Sorteia a altura (Y)
             Yaleatoria = Random.Range(alturaMinima, alturaMaxima);
 
+            // 3. Varre os inimigos na tela
             foreach (Transform filho in transform)
             {
-                if (Mathf.Abs(filho.position.y - Yaleatoria) < distanciaMinimaY)
+                // Checa se o inimigo já existente está na mesma coluna X que sorteamos
+                if (Mathf.Abs(filho.position.x - XAleatorio) < 0.2f)
                 {
-                    posicaoValida = false;
-                    break;
+                    // Se sim, checa se a distância vertical (Y) é muito curta
+                    if (Mathf.Abs(filho.position.y - Yaleatoria) < distanciaMinimaY)
+                    {
+                        posicaoValida = false;
+                        break; // Sai do foreach para sortear de novo no do-while
+                    }
                 }
+            }
+
+            // Segurança para não travar o PC
+            tentativas++;
+            if (tentativas > 50)
+            {
+                Debug.LogWarning("Muitos inimigos na tela! Parando sorteio para não travar o jogo.");
+                break;
             }
 
         } while (!posicaoValida);
 
-        int indiceAleatorio = Random.Range(0, colunasX.Length);
-        float XAleatorio = colunasX[indiceAleatorio];
-
+        // Daqui para baixo está iguaizinho ao seu código original original!
         Vector3 posicaoSpawn = new Vector3(XAleatorio, Yaleatoria, 0f);
 
         GameObject novoGalo = Instantiate(
@@ -77,8 +97,7 @@ public class GeradorInimigos : MonoBehaviour
 
         inimigosSpawnados++;
 
-        float velocidadeAleatoria =
-            Random.Range(velocidadeMinima, velocidadeMaxima);
+        float velocidadeAleatoria = Random.Range(velocidadeMinima, velocidadeMaxima);
 
         inimigo scriptInimigo = novoGalo.GetComponent<inimigo>();
 

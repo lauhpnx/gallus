@@ -1,9 +1,26 @@
 using UnityEngine;
 
-public class Destroy : MonoBehaviour
+public class ovo : MonoBehaviour
 {
     public float velocidade = 10f;
     public float tempoDeVida = 3f; // Destr�i ap�s 3 segundos
+
+    public GameObject explosaoPrefab;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (explosaoPrefab.CompareTag("Galo"))
+        {
+            Instantiate(
+
+                explosaoPrefab,
+                transform.position,
+                Quaternion.identity
+
+                );
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {

@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105654442}
   - component: {fileID: 2105654441}
+  - component: {fileID: 2105654443}
   m_Layer: 0
   m_Name: galinha
   m_TagString: Untagged
@@ -481,6 +482,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105654443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105654440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb91dcc56b585264c829dd858df3dc16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
+  velocidadeMovimento: 8
+  ylimitmin: -4.5
+  ylimitemax: 4.5
+  ovoPrefab: {fileID: 0}
+  pontoDeDisparo: {fileID: 0}
+  intervaloTiro: 0.2
+  ovosRestantes: 30
+  textoHUD: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

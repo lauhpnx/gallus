@@ -1,11 +1,13 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class StartGame : MonoBehaviour
+public class BotaoComSom : MonoBehaviour
 {
     public AudioSource audioSource;
+    public string nomeDaCena;
     public float tempoEspera = 0.5f;
+
     public void ClicarBotao()
     {
         audioSource.Play();
@@ -15,6 +17,6 @@ public class StartGame : MonoBehaviour
     IEnumerator TrocarCena()
     {
         yield return new WaitForSeconds(tempoEspera);
-        SceneManager.LoadScene("historia");
+        SceneManager.LoadScene(nomeDaCena);
     }
 }

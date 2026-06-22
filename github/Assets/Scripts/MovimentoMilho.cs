@@ -16,4 +16,13 @@ public class MovimentoMilho : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Se o milho colidir com o Galo, ele se destrói
+        if (collision.CompareTag("Ovo"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
 }

@@ -76,8 +76,8 @@ public class GalinhaController : MonoBehaviour
         cronometroTiro = 0f;
 
         AtualizarInterface();
+    
     }
-
     void AtualizarInterface()
     {
         if (textoHUD != null)
@@ -85,4 +85,5 @@ public class GalinhaController : MonoBehaviour
             textoHUD.text = "Ovos: " + ovosRestantes;
         }
     }
+  
 }

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: cb45fd80f1f8d284e86ec935692e142f
+guid: b4c5386bbe3aaa34e80518e05b8d6741
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9098455674203960405
-    second: gallus (1)_0
-  - first:
-      213: 5273059826409022115
-    second: gallus (1)_1
-  - first:
-      213: -1853709490741259793
-    second: gallus (1)_2
-  - first:
-      213: -4957334020762191149
-    second: gallus (1)_3
+      213: -226991864731560217
+    second: gallus (3)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,79 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gallus (1)_0
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 981
-        width: 36
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bab8f6e15cacbb180800000000000000
-      internalID: -9098455674203960405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gallus (1)_1
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 981
-        width: 37
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a22e7869fbad2940800000000000000
-      internalID: 5273059826409022115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gallus (1)_2
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 982
-        width: 43
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe1d89f1a0d4646e0800000000000000
-      internalID: -1853709490741259793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gallus (1)_3
+      name: gallus (3)_0
       rect:
         serializedVersion: 2
         x: 661
-        y: 966
-        width: 695
-        height: 91
+        y: 990
+        width: 58
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3dab28329f2043bb0800000000000000
-      internalID: -4957334020762191149
+      spriteID: 7e695c70a1099dcf0800000000000000
+      internalID: -226991864731560217
       vertices: []
       indices: 
       edges: []
@@ -249,10 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gallus (1)_0: -9098455674203960405
-      gallus (1)_1: 5273059826409022115
-      gallus (1)_2: -1853709490741259793
-      gallus (1)_3: -4957334020762191149
+      gallus (3)_0: -226991864731560217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

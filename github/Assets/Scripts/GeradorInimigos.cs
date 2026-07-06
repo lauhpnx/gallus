@@ -12,9 +12,10 @@ public class GeradorInimigos : MonoBehaviour
     [Header("Limite De Altura (Eixo Y)")]
     public float alturaMinima = -17f;
     public float alturaMaxima = 17f;
+    public float alturaSpawn = 8f;
 
     [Header("Configurações de Fim da Fase")]
-    public int maxdeInimigos = 15;
+    public int maxdeInimigos = 25;
     private int inimigosSpawnados = 0;
 
     [Header("Configurações de Velocidade Aleatória")]
@@ -26,7 +27,7 @@ public class GeradorInimigos : MonoBehaviour
     private float proximoSpawn = 0f;
 
     [Header("Distância Mínima Entre Galos")]
-    public float distanciaMinimaY = 1.5f;
+    public float distanciaMinimaY = 3f;
 
     void Update()
     {
@@ -44,7 +45,7 @@ public class GeradorInimigos : MonoBehaviour
 
     void SpawnarGalo()
     {
-        float Yaleatoria; // Removi o = 0f daqui para ficar igual ao seu original
+        float Yaleatoria = alturaSpawn; // Removi o = 0f daqui para ficar igual ao seu original
         float XAleatorio; // Criada aqui fora para o Unity não dar erro de escopo
         bool posicaoValida;
         int tentativas = 0; // Evita travar o Unity se a tela estiver cheia

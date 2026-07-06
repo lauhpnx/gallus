@@ -42,6 +42,7 @@ public class inimigo : MonoBehaviour
         {
             // Se for o ovo, o inimigo se destrói!
             Destroy(gameObject);
+            MoneyManager.Instance.AdicionarDinheiro(5);
             morteDaBizerra = GetComponent<AudioSource>();
             // E também destrói o ovo que bateu nele para o tiro não atravessar direto
             Destroy(collision.gameObject);

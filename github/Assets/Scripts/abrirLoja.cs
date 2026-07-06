@@ -8,16 +8,14 @@ public class abrirLoja : MonoBehaviour
 
     void Update()
     {
-        // Verifica se Ctrl e Shift estão pressionados E se a tecla F acabou de ser clicada
-        if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) &&
-            (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) &&
-            Input.GetKeyDown(KeyCode.F))
+        // essa linha abaixo verifica se a tecla L foi clicada
+        if (Input.GetKeyDown(KeyCode.L))
         {
             CarregarCena();
         }
     }
 
-    void CarregarCena()
+    public void CarregarCena()
     {
         SceneManager.LoadScene(loja);
     }

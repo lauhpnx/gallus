@@ -7,12 +7,14 @@ public class inimigo : MonoBehaviour
 
     [Header("configurações de movimento")]
     public float VelocidadeOndulação = 3f;
-    public float Amplitude = 1.5f;
+    public float Amplitude = 1.5f; 
+    public float velocidadeDescida = 3f;
+
 
     [Header("Limites de Tela (Barreira Invisível)")]
     // Valores padrão que costumam travar bem na tela
-    public float limiteTeto = 17f;
-    public float limiteChao = -17f;
+    public float limiteTeto = 25f;
+    public float limiteChao = -25f;
 
     private float yinicial;
 
@@ -21,7 +23,9 @@ public class inimigo : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      yinicial = transform.position.y;
+        yinicial = transform.position.y;
+       
+
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class inimigo : MonoBehaviour
     {
         float novaY = yinicial + Mathf.Sin(Time.time * VelocidadeOndulação) * Amplitude;
 
-        novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
+        //novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
 
         transform.position = new Vector3(xFixo, novaY, 0f);
     }

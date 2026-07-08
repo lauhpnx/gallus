@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GalinhaController : MonoBehaviour
 {
+    [Header("Configurações de Vida")]
+    public int life;
+    public int _lifemax;
+    public float _speed = 5f;
+    [Header("ui do player(Barra de Vida)")]
+    public Image healthBarImage;
     [Header("Movimentação e Limites")]
     public float velocidadeMovimento = 8f;
     public float ylimitmin = -4.5f;
@@ -85,5 +92,22 @@ public class GalinhaController : MonoBehaviour
             textoHUD.text = "Ovos: " + ovosRestantes;
         }
     }
-  
+  public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0)
+        {
+            life = 0;
+            // Aqui você pode adicionar lógica para quando a galinha morrer, como reiniciar o jogo ou mostrar uma tela de game over.
+            Debug.Log("A galinha morreu!");
+        }
+        AtualizarHealthBar();
+    }
+    void AtualizarHealthBar()
+    {
+        if (healthBarImage != null)
+        {
+            healthBarImage.fillAmount = (float)life / _lifemax;
+        }
+    }
 }

@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46232937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46232938}
+  m_Layer: 0
+  m_Name: right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &46232938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46232937}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.03, y: -4.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1370077360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100423179
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +760,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &351549917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351549918}
+  m_Layer: 0
+  m_Name: left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351549918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351549917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.04, y: 4.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1370077360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &401868548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,10 +1559,12 @@ Transform:
   m_GameObject: {fileID: 1370077359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 351549918}
+  - {fileID: 46232938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1370077361
@@ -1515,20 +1579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6c1ad7e1548ca449607becdd2f20ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
-  inimigoPrefab: {fileID: 3333042347070831399, guid: 510ba7ee1f6e3ca46bdc5f708632168a, type: 3}
-  limiteInimigos: 2
-  colunasX:
-  - 3
-  - 4
-  - 5
-  alturaMinima: -4
-  alturaMaxima: 4
-  alturaSpawn: 8
-  maxdeInimigos: 25
-  velocidadeMinima: 2
-  velocidadeMaxima: 6
-  tempoEntreSpawns: 2
-  distanciaMinimaY: 3
+  prefab: {fileID: 3333042347070831399, guid: 510ba7ee1f6e3ca46bdc5f708632168a, type: 3}
+  SpawnFrequency: 2
+  left: {fileID: 351549918}
+  right: {fileID: 46232938}
 --- !u!1 &1381157352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2271,7 @@ GameObject:
   - component: {fileID: 2050663106}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2234,6 +2288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb91dcc56b585264c829dd858df3dc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
+  life: 10
+  _lifemax: 10
+  _speed: 5
+  healthBarImage: {fileID: 2093812688}
   velocidadeMovimento: 8
   ylimitmin: -4.5
   ylimitemax: 4
@@ -2575,10 +2633,10 @@ SceneRoots:
   - {fileID: 1383859114}
   - {fileID: 861410092}
   - {fileID: 213869817}
-  - {fileID: 1370077360}
   - {fileID: 1805283956}
   - {fileID: 1900808607}
   - {fileID: 804757437}
   - {fileID: 297669604}
   - {fileID: 401868550}
   - {fileID: 189428157}
+  - {fileID: 1370077360}

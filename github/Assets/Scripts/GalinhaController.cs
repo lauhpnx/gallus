@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // ⚠️ Adicionado para carregar a cena de GameOver
 
 public class GalinhaController : MonoBehaviour
 {
     [Header("Configurações de Vida")]
-    public int life;
-    public int _lifemax;
+    public int life = 10;
+    public int _lifemax = 10;
     public float _speed = 5f;
-    [Header("ui do player(Barra de Vida)")]
+
+    [Header("UI do Player (Barra de Vida)")]
     public Image healthBarImage;
+
     [Header("Movimentação e Limites")]
     public float velocidadeMovimento = 8f;
     public float ylimitmin = -4.5f;
@@ -37,6 +40,7 @@ public class GalinhaController : MonoBehaviour
         }
 
         AtualizarInterface();
+        AtualizarHealthBar();
     }
 
     void Update()
@@ -83,8 +87,8 @@ public class GalinhaController : MonoBehaviour
         cronometroTiro = 0f;
 
         AtualizarInterface();
-    
     }
+
     void AtualizarInterface()
     {
         if (textoHUD != null)
@@ -92,21 +96,42 @@ public class GalinhaController : MonoBehaviour
             textoHUD.text = "Ovos: " + ovosRestantes;
         }
     }
-  public void TakeDamage(int damage)
+
+    public void TakeDamage(int damage)
     {
         life -= damage;
+
         if (life <= 0)
         {
             life = 0;
-            // Aqui você pode adicionar lógica para quando a galinha morrer, como reiniciar o jogo ou mostrar uma tela de game over.
-            Debug.Log("A galinha morreu!");
+            Morrer();
         }
+
         AtualizarHealthBar();
     }
+
+    void Morrer()
+    {
+        Debug.Log("A galinha morreu!");
+
+        // 1. Esconde a galinha da tela
+        gameObject.SetActive(false);
+
+        // 2. Carrega a cena de GameOver 
+        // (Certifique-se de que a cena se chama "GameOver" ou mude o texto abaixo)
+        SceneManager.LoadScene("GameOver");
+    }
+
     void AtualizarHealthBar()
     {
         if (healthBarImage != null)
         {
+            // Proteção para evitar o erro de divisão por zero caso fique zerado no Inspector
+            if (_lifemax <= 0)
+            {
+                _lifemax = 10;
+            }
+
             healthBarImage.fillAmount = (float)life / _lifemax;
         }
     }

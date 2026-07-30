@@ -14,28 +14,31 @@ public class inimigo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // O Unity guarda quem bateu no inimigo dentro dessa variável 'collision'
-        // Nós checamos: "A etiqueta de quem bateu em mim é 'Ovo'?"
+        // Esta linha VAI IMPRIMIR qualquer coisa que encostar no inimigo
+        Debug.Log("Inimigo colidiu com: " + collision.gameObject.name + " | Tag: " + collision.tag);
+
         if (collision.CompareTag("Ovo"))
         {
-            // Se for o ovo, o inimigo se destrói!
             Destroy(gameObject);
-            MoneyManager.Instance.AdicionarDinheiro(5);
-            morteDaBizerra = GetComponent<AudioSource>();
-            // E também destrói o ovo que bateu nele para o tiro não atravessar direto
+            if (MoneyManager.Instance != null) MoneyManager.Instance.AdicionarDinheiro(5);
             Destroy(collision.gameObject);
-            // Dá o dano na galinha
-            collision.GetComponent<GalinhaController>().TakeDamage(damage);
         }
+
         if (collision.CompareTag("Player"))
         {
-            // Se for o ovo, o inimigo se destrói!
+            GalinhaController galinha = collision.GetComponent<GalinhaController>();
+
+            if (galinha != null)
+            {
+                galinha.TakeDamage(damage);
+                Debug.Log("DANO ENVIADO COM SUCESSO!");
+            }
+            else
+            {
+                Debug.LogError("Bateu no Player, mas NÃO achou o GalinhaController!");
+            }
+
             Destroy(gameObject);
-            MoneyManager.Instance.AdicionarDinheiro(5);
-            morteDaBizerra = GetComponent<AudioSource>();
-            // E também destrói o ovo que bateu nele para o tiro não atravessar direto
-            // Dá o dano na galinha
-            collision.GetComponent<GalinhaController>().TakeDamage(damage);
         }
     }
     private void OnBecameInvisible()

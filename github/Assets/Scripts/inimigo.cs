@@ -17,6 +17,14 @@ public class inimigo : MonoBehaviour
         // Esta linha VAI IMPRIMIR qualquer coisa que encostar no inimigo
         Debug.Log("Inimigo colidiu com: " + collision.gameObject.name + " | Tag: " + collision.tag);
 
+       
+        GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
+        if (gerenciador != null)
+        {
+            gerenciador.RegistrarMorteInimigo();
+        }
+
+        Destroy(gameObject); // Destrói o inimigo
         if (collision.CompareTag("Ovo"))
         {
             Destroy(gameObject);

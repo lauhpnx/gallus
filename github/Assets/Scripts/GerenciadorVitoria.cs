@@ -47,4 +47,9 @@ public class GerenciadorVitoria : MonoBehaviour
         Time.timeScale = 1f; 
         SceneManager.LoadScene(nomeProximaFase);
     }
+    public void CarregarProximaFase3()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("Fase3");
+    }
 }

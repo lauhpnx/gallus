@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // ⚠️ Adicionado para carregar a cena de GameOver
-
+using UnityEngine.SceneManagement; 
 public class GalinhaController : MonoBehaviour
 {
     [Header("Configurações de Vida")]
@@ -75,7 +74,7 @@ public class GalinhaController : MonoBehaviour
 
     void Atirar()
     {
-        // 🔥 ANIMAÇÃO CORRETA (TRIGGER)
+        
         if (meuAnimator != null)
         {
             meuAnimator.SetTrigger("Atirar");

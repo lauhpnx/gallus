@@ -1306,6 +1306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744114398}
   - component: {fileID: 744114397}
+  - component: {fileID: 744114399}
   m_Layer: 0
   m_Name: fundo
   m_TagString: Untagged
@@ -1359,13 +1360,13 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -8193823428115370481, guid: 949d5497174a4964b83c4c413bbc25fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_DrawMode: 2
+  m_Size: {x: 5000, y: 10.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1386,6 +1387,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744114399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744114396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a7f36b565acaf4b8a7689cabe60cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::fundo
+  velocidade: 5
 --- !u!1 &832177767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,7 +2865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.06}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.200012, y: -36.399994}
+  m_AnchoredPosition: {x: 37.399994, y: -32.699997}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695467620

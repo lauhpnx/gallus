@@ -1,22 +1,55 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class abrirLoja : MonoBehaviour
 {
-    // Nome ou número da cena que você quer carregar (mude no Inspetor da Unity)
-    public string loja = "loja";
+    [Header("UI de Vitória")]
+    public GameObject Loja;
+    [Header("UI de Vitória")]
+    public GameObject painelCreditos;
 
-    void Update()
+    void Start()
     {
-        // essa linha abaixo verifica se a tecla L foi clicada
         if (Input.GetKeyDown(KeyCode.L))
         {
-            CarregarCena();
+            if (Loja != null)
+            {
+                Loja.SetActive(false);
+            }
+            if (painelCreditos != null)
+            {
+                painelCreditos.SetActive(false);
+            }
         }
     }
-
-    public void CarregarCena()
+    void Update()
     {
-        SceneManager.LoadScene(loja);
+       
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (painelCreditos != null)
+            {
+                painelCreditos.SetActive(false);
+            }
+            if (Loja != null)
+            {
+                Loja.SetActive(false);
+            }
+        }
+    }
+    public void AbrirLoja()
+    {
+        if (Loja != null)
+        {
+            Loja.SetActive(true);
+        }
+        Time.timeScale = 0f;
+    }
+    public void fecharLoja()
+    {
+        if (Loja != null)
+        {
+            Loja.SetActive(false);
+        }
+        Time.timeScale = 1f;
     }
 }

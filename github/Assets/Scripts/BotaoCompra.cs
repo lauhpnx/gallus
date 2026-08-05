@@ -1,18 +1,29 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BotaoCompra : MonoBehaviour
 {
-    public int preco = 95;
+    public int idSkin = 1;
 
+    // Esta função força a troca para testar
     public void Comprar()
     {
-        if (MoneyManager.Instance.GastarDinheiro(preco))
+        Debug.Log("🔘 O Botão de Compra FOI CLICADO!");
+
+        // Salva a skin na memória
+        PlayerPrefs.SetInt("SkinEquipada", idSkin);
+        PlayerPrefs.Save();
+
+        // Procura a galinha
+        SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
+
+        if (galinha != null)
         {
-            Debug.Log("Item comprado!");
+            Debug.Log("🐔 Galinha encontrada na cena! Tentando mudar o sprite...");
+            galinha.AplicarSkinAtual();
         }
         else
         {
-            Debug.Log("Moedas insuficientes!");
+            Debug.LogError("❌ ERRO: Nenhuma Galinha com o script 'SkinPlayer' foi encontrada na hierarquia!");
         }
     }
 }

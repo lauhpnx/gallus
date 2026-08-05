@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb373235469256644b52f2682568903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::inimigo
-  speed: 8
+  speed: 10
   damage: 1
 --- !u!58 &-569344560433322021
 CircleCollider2D:

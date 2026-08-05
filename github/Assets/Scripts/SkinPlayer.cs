@@ -1,21 +1,34 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SkinPlayer : MonoBehaviour
 {
     public Sprite spriteNormal;
     public Sprite spriteSkin;
 
+    private SpriteRenderer sr;
+
     void Start()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
+        AplicarSkinAtual();
+    }
 
-        if (PlayerPrefs.GetInt("SkinEquipada", 0) == 1)
+    public void AplicarSkinAtual()
+    {
+        if (sr == null) sr = GetComponent<SpriteRenderer>();
+
+        // Pega o valor salvo. O segundo parâmetro (0) significa: se não existir nada salvo, use 0 (Normal)
+        int skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
+
+        if (skinEquipada == 1)
         {
             sr.sprite = spriteSkin;
+            Debug.Log("🎨 Galinha usando: SKIN ESPECIAL");
         }
         else
         {
             sr.sprite = spriteNormal;
+            Debug.Log("🐔 Galinha usando: SKIN NORMAL");
         }
     }
 }

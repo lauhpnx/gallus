@@ -1,41 +1,51 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 
 public class inimigo : MonoBehaviour
 {
-     [Header("Enemy Settings")]
+    [Header("Enemy Settings")]
     public float speed = 5f;
     public int damage = 1;
     private AudioSource morteDaBizerra;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool foiDerrotado = false; // Evita que d锚 dano duplo se sumir e colidir ao mesmo tempo
+
     void Start()
     {
         GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-speed, 0);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Esta linha VAI IMPRIMIR qualquer coisa que encostar no inimigo
         Debug.Log("Inimigo colidiu com: " + collision.gameObject.name + " | Tag: " + collision.tag);
 
-       
-        GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
-        if (gerenciador != null)
-        {
-            gerenciador.RegistrarMorteInimigo();
-        }
-
-        Destroy(gameObject); // Destr骾 o inimigo
+        // 馃 Se colidiu com o OVO (Jogador acertou o tiro)
         if (collision.CompareTag("Ovo"))
         {
-            Destroy(gameObject);
-            if (MoneyManager.Instance != null) MoneyManager.Instance.AdicionarDinheiro(5);
-            Destroy(collision.gameObject);
+            foiDerrotado = true; // Marca que foi morto pelo jogador
+
+            // Conta vit贸ria
+            GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
+            if (gerenciador != null)
+            {
+                gerenciador.RegistrarMorteInimigo();
+            }
+
+            // D谩 dinheiro
+            if (MoneyManager.Instance != null)
+            {
+                MoneyManager.Instance.AdicionarDinheiro(5);
+            }
+
+            Destroy(collision.gameObject); // Destr贸i o ovo
+            Destroy(gameObject); // Destr贸i o inimigo
         }
 
+        // 馃悢 Se colidiu com o PLAYER (Bateu na galinha)
         if (collision.CompareTag("Player"))
         {
-            GalinhaController galinha = collision.GetComponent<GalinhaController>();
+            foiDerrotado = true; // Marca que j谩 causou impacto
 
+            GalinhaController galinha = collision.GetComponent<GalinhaController>();
             if (galinha != null)
             {
                 galinha.TakeDamage(damage);
@@ -43,14 +53,29 @@ public class inimigo : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Bateu no Player, mas N肙 achou o GalinhaController!");
+                Debug.LogError("Bateu no Player, mas N脙O achou o GalinhaController!");
+            }
+
+            Destroy(gameObject); // Destr贸i o inimigo
+        }
+    }
+
+    // 馃毆 Chamado quando o inimigo sai completamente da tela sem ser atingido
+    private void OnBecameInvisible()
+    {
+        // S贸 d谩 dano se ele saiu da tela VIVO (sem ter colidido com o Ovo/Player)
+        if (!foiDerrotado)
+        {
+            foiDerrotado = true;
+
+            GalinhaController galinha = FindFirstObjectByType<GalinhaController>();
+            if (galinha != null)
+            {
+                galinha.TakeDamage(damage);
+                Debug.Log("鈿狅笍 Inimigo escapou da tela e causou dano 脿 Galinha!");
             }
 
             Destroy(gameObject);
         }
-    }
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 }

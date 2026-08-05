@@ -34,7 +34,9 @@ public class BossHealth : MonoBehaviour
 
     [Header("Invocação: Spawnar Galos Minions")]
     public GameObject galoMinionPrefab;
-    public Transform pontoSpawnMinion;
+    public Transform left;
+    public Transform right;
+
     public float tempoSpawn = 5f;
     private float cronometroSpawn;
 
@@ -60,12 +62,12 @@ public class BossHealth : MonoBehaviour
         float novaY = yinicial + Mathf.Sin(Time.time * velocidadeAtual) * Amplitude;
         novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
         transform.position = new Vector3(xFixo, novaY, 0f);
+        SpawnarGalosMinions();
 
-       
         if (emFuria)
         {
             AtirarPenasPerseguidoras();
-            SpawnarGalosMinions();
+           
         }
     }
 
@@ -120,12 +122,14 @@ public class BossHealth : MonoBehaviour
 
     void SpawnarGalosMinions()
     {
-        if (galoMinionPrefab == null || pontoSpawnMinion == null) return;
+        if (galoMinionPrefab == null || left == null || right == null) return;
 
         cronometroSpawn += Time.deltaTime;
         if (cronometroSpawn >= tempoSpawn)
         {
-            Instantiate(galoMinionPrefab, pontoSpawnMinion.position, Quaternion.identity);
+            float newY = Random.Range(left.position.y, right.position.y);
+            Vector3 spawnPosition = new Vector3(left.position.x, newY, left.position.z);
+            Instantiate(galoMinionPrefab, spawnPosition, Quaternion.identity);
             cronometroSpawn = 0f;
         }
     }

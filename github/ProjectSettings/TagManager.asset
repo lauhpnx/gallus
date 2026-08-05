@@ -7,6 +7,7 @@ TagManager:
   - Ovo
   - Galo
   - planta
+  - Inimigo
   layers:
   - Default
   - TransparentFX

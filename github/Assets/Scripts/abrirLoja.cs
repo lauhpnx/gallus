@@ -1,55 +1,27 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class abrirLoja : MonoBehaviour
 {
-    [Header("UI de Vitória")]
-    public GameObject Loja;
-    [Header("UI de Vitória")]
-    public GameObject painelCreditos;
+   
+    public GameObject painelLoja;
 
     void Start()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (Loja != null)
-            {
-                Loja.SetActive(false);
-            }
-            if (painelCreditos != null)
-            {
-                painelCreditos.SetActive(false);
-            }
-        }
-    }
-    void Update()
-    {
        
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (painelCreditos != null)
-            {
-                painelCreditos.SetActive(false);
-            }
-            if (Loja != null)
-            {
-                Loja.SetActive(false);
-            }
-        }
+            painelLoja.SetActive(false);
+        Time.timeScale = 1f;
+      
     }
-    public void AbrirLoja()
+    public void PainelLojaAberto()
     {
-        if (Loja != null)
-        {
-            Loja.SetActive(true);
-        }
+        painelLoja.SetActive(true);
         Time.timeScale = 0f;
     }
-    public void fecharLoja()
+
+    public void PainelLojaFechado()
     {
-        if (Loja != null)
-        {
-            Loja.SetActive(false);
-        }
+        painelLoja.SetActive(false);
         Time.timeScale = 1f;
     }
 }

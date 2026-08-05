@@ -1,55 +1,56 @@
-using UnityEngine;
-using UnityEngine.SceneManagement; 
+ï»¿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GerenciadorVitoria : MonoBehaviour
 {
-    [Header("UI de Vitória")]
-    public GameObject painelVitoria; 
-    public string nomeProximaFase = "fase2"; 
+    [Header("UI de VitÃ³ria")]
+    public GameObject painelVitoria;
+    public string nomeProximaFase = "fase2";
 
-    [Header("Condição: Matar Inimigos")]
-    public int totalInimigosNaFase;
+    [Header("CondiÃ§Ã£o: Matar Inimigos")]
+    public int totalInimigosNaFase = 10; 
     private int inimigosDerrotados;
 
     void Start()
     {
-       
         if (painelVitoria != null)
         {
             painelVitoria.SetActive(false);
         }
-        totalInimigosNaFase = GameObject.FindGameObjectsWithTag("Inimigo").Length;
+
+        // Removida a linha que contava na cena, pois zerava com Spawner
     }
+
     public void RegistrarMorteInimigo()
     {
         inimigosDerrotados++;
-        if (inimigosDerrotados >= totalInimigosNaFase)
+
+        // Garante que sÃ³ ganha se a meta for maior que 0 e atingida
+        if (totalInimigosNaFase > 0 && inimigosDerrotados >= totalInimigosNaFase)
         {
             GanhouAFase();
         }
     }
 
-   
     public void GanhouAFase()
     {
-        Debug.Log("Vitória! Fase concluída!");
-
         if (painelVitoria != null)
         {
             painelVitoria.SetActive(true);
         }
 
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
     }
-   
+
     public void CarregarProximaFase()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(nomeProximaFase);
     }
+
     public void CarregarProximaFase3()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Fase3");
     }
 }

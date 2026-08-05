@@ -10,15 +10,15 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-        // 1. Evita duplicar o MoneyManager quando voltar para esta cena
+       
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Impede de ser destruído ao trocar de cena
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Se já existir um MoneyManager vindo da cena anterior, destrói o novo
+            Destroy(gameObject); 
             return;
         }
     }

@@ -4,7 +4,6 @@ public class SkinPlayer : MonoBehaviour
 {
     public Sprite spriteNormal;
     public Sprite spriteSkin;
-
     private SpriteRenderer sr;
 
     void Start()
@@ -12,12 +11,9 @@ public class SkinPlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         AplicarSkinAtual();
     }
-
     public void AplicarSkinAtual()
     {
         if (sr == null) sr = GetComponent<SpriteRenderer>();
-
-        // Pega o valor salvo. O segundo parâmetro (0) significa: se não existir nada salvo, use 0 (Normal)
         int skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
 
         if (skinEquipada == 1)

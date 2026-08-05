@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::inimigo
   speed: 10
-  damage: 1
+  damage: 2
 --- !u!58 &-569344560433322021
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -2,28 +2,49 @@
 
 public class BotaoCompra : MonoBehaviour
 {
-    public int idSkin = 1;
+    [Header("Configurações do Item")]
+    public int preco = 95; 
+    public int idSkin = 1; 
 
-    // Esta função força a troca para testar
     public void Comprar()
     {
-        Debug.Log("🔘 O Botão de Compra FOI CLICADO!");
-
-        // Salva a skin na memória
-        PlayerPrefs.SetInt("SkinEquipada", idSkin);
-        PlayerPrefs.Save();
-
-        // Procura a galinha
-        SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
-
-        if (galinha != null)
+        Debug.Log("🔘 Botão de compra clicado!");
+        if (idSkin == 0)
         {
-            Debug.Log("🐔 Galinha encontrada na cena! Tentando mudar o sprite...");
-            galinha.AplicarSkinAtual();
+            Equipar();
+            return;
+        }
+        if (PlayerPrefs.GetInt("SkinComprada_" + idSkin, 0) == 1)
+        {
+            Equipar();
+            return;
+        }
+        if (MoneyManager.Instance != null && MoneyManager.Instance.GastarDinheiro(preco))
+        {
+            PlayerPrefs.SetInt("SkinComprada_" + idSkin, 1); 
+            Equipar();
+            Debug.Log("✅ Skin comprada e equipada!");
         }
         else
         {
-            Debug.LogError("❌ ERRO: Nenhuma Galinha com o script 'SkinPlayer' foi encontrada na hierarquia!");
+            Debug.Log("❌ Dinheiro insuficiente ou MoneyManager não encontrado!");
+        }
+    }
+
+    void Equipar()
+    {
+        PlayerPrefs.SetInt("SkinEquipada", idSkin);
+        PlayerPrefs.Save();
+
+        SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
+        if (galinha != null)
+        {
+            galinha.AplicarSkinAtual();
+            Debug.Log("🎨 Skin alterada com sucesso na tela!");
+        }
+        else
+        {
+            Debug.LogWarning("⚠️ Nenhuma galinha encontrada com o script SkinPlayer!");
         }
     }
 }

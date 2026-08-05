@@ -4,6 +4,7 @@ public class SkinPlayer : MonoBehaviour
 {
     public Sprite spriteNormal;
     public Sprite spriteSkin;
+    public Sprite sprite3;
     private SpriteRenderer sr;
 
     void Start()

@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1149256358}
   nomeProximaFase: fase2
-  totalInimigosNaFase: 20
+  totalInimigosNaFase: 2
 --- !u!4 &1233568248
 Transform:
   m_ObjectHideFlags: 0
@@ -2512,7 +2512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1339009674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
   prefab: {fileID: 3333042347070831399, guid: 510ba7ee1f6e3ca46bdc5f708632168a, type: 3}
-  SpawnFrequency: 2
+  SpawnFrequency: 1
   left: {fileID: 351549918}
   right: {fileID: 46232938}
 --- !u!1 &1381157352
@@ -3239,7 +3239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1773423534
 RectTransform:
   m_ObjectHideFlags: 0

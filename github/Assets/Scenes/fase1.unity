@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1149256358}
   nomeProximaFase: fase2
-  totalInimigosNaFase: 2
+  totalInimigosNaFase: 20
 --- !u!4 &1233568248
 Transform:
   m_ObjectHideFlags: 0
@@ -4279,6 +4279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkinPlayer
   spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
+  sprite3: {fileID: 0}
 --- !u!1 &2093812685
 GameObject:
   m_ObjectHideFlags: 0

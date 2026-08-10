@@ -527,8 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4091445ee718614985496f48fac61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
-  preco: 95
-  idSkin: 1
+  preco: 0
+  idSkin: 2
 --- !u!114 &221639740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 292046026}
   - component: {fileID: 292046027}
   - component: {fileID: 292046028}
+  - component: {fileID: 292046029}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -747,8 +748,10 @@ MonoBehaviour:
   _speed: 5
   healthBarImage: {fileID: 1587046588}
   velocidadeMovimento: 8
-  ylimitmin: -4.5
-  ylimitemax: 4.5
+  usarPosicaoXManual: 1
+  posicaoX_Manual: -7
+  ylimitmin: -4.2
+  ylimitemax: 4.2
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   pontoDeDisparo: {fileID: 1130353465}
   intervaloTiro: 0.4
@@ -822,6 +825,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &292046029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292046023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33a210224c43d143904ae9085a963f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinPlayer
+  spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
+  spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
+  sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
 --- !u!1 &312049786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,7 +2593,7 @@ Transform:
   m_GameObject: {fileID: 1214471782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.16}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4122,8 +4140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4091445ee718614985496f48fac61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
-  preco: 95
-  idSkin: 1
+  preco: 0
+  idSkin: 2
 --- !u!1 &2023155827
 GameObject:
   m_ObjectHideFlags: 0

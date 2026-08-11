@@ -8,7 +8,6 @@ public class GalinhaController : MonoBehaviour
     [Header("Configurações de Vida")]
     public int life = 10;
     public int _lifemax = 10;
-    public float _speed = 5f;
 
     [Header("UI do Player (Barra de Vida)")]
     public Image healthBarImage;
@@ -17,21 +16,21 @@ public class GalinhaController : MonoBehaviour
     public float velocidadeMovimento = 8f;
 
     [Header("Posicionamento no Eixo X (Horizontal)")]
-    [Tooltip("Marque TRUE para usar a Posição X manual. Marque FALSE para calcular automático.")]
     public bool usarPosicaoXManual = true;
-
-    [Tooltip("Posição X exata onde a galinha vai ficar na fase (ex: -7.0)")]
     public float posicaoX_Manual = -7f;
 
     [Header("Limites de Cima e Baixo (Eixo Y)")]
-    public float ylimitmin = -4.2f; // Limite do chão
-    public float ylimitemax = 4.2f;  // Limite do teto
+    public float ylimitmin = -4.2f;
+    public float ylimitemax = 4.2f;
 
     private float posicaoX_Final;
 
-    [Header("Sistema de Tiro")]
-    public GameObject ovoPrefab;
+    [Header("Pontos de Saída do Tiro")]
+    [Tooltip("Ponto de tiro na frente (Bico)")]
     public Transform pontoDeDisparo;
+
+    [Header("Configurações de Tiro")]
+    public GameObject ovoPrefab;
     public float intervaloTiro = 0.2f;
     private float cronometroTiro;
 
@@ -41,6 +40,7 @@ public class GalinhaController : MonoBehaviour
 
     private Animator meuAnimator;
     private SpriteRenderer sr;
+    private int skinEquipada = 0;
 
     void Start()
     {
@@ -52,6 +52,12 @@ public class GalinhaController : MonoBehaviour
             Debug.LogError("Animator não encontrado!");
         }
 
+        // Lê a skin equipada do mesmo PlayerPrefs do seu SkinPlayer
+        skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
+
+        // Aplica os status especiais de cada galinha
+        ConfigurarStatusGalinha();
+
         AjustarPosicaoInicialX();
         AtualizarInterface();
         AtualizarHealthBar();
@@ -61,6 +67,31 @@ public class GalinhaController : MonoBehaviour
     {
         MoverGalinha();
         ControlarTiro();
+    }
+
+    void ConfigurarStatusGalinha()
+    {
+        if (skinEquipada == 2)
+        {
+            // Galinha 3: Tiro Triplo em Leque
+            ovosRestantes = 70;
+            intervaloTiro = 0.15f;
+            velocidadeMovimento = 9f;
+        }
+        else if (skinEquipada == 1)
+        {
+            // Galinha Especial: 1 Tiro Reto + 1 Tiro Diagonal (45°)
+            ovosRestantes = 50;
+            intervaloTiro = 0.18f;
+            velocidadeMovimento = 8.5f;
+        }
+        else
+        {
+            // Galinha Normal
+            ovosRestantes = 30;
+            intervaloTiro = 0.25f;
+            velocidadeMovimento = 8f;
+        }
     }
 
     void AjustarPosicaoInicialX()
@@ -86,21 +117,16 @@ public class GalinhaController : MonoBehaviour
             }
         }
 
-        // Aplica a posição X no objeto
         transform.position = new Vector3(posicaoX_Final, transform.position.y, transform.position.z);
     }
 
     void MoverGalinha()
     {
-        float inputVertical = Input.GetAxis("Vertical"); // W / S ou Setas Cima / Baixo
+        float inputVertical = Input.GetAxis("Vertical");
 
-        // Move a galinha no eixo Y
         float novaPosicaoY = transform.position.y + (inputVertical * velocidadeMovimento * Time.deltaTime);
-
-        // Trava o Y estritamente entre o mínimo (chão) e o máximo (teto)
         float ytravado = Mathf.Clamp(novaPosicaoY, ylimitmin, ylimitemax);
 
-        // Mantém a posição X travada na borda certa e aplica o Y limitado
         transform.position = new Vector3(posicaoX_Final, ytravado, transform.position.z);
     }
 
@@ -121,11 +147,34 @@ public class GalinhaController : MonoBehaviour
             meuAnimator.SetTrigger("Atirar");
         }
 
-        Instantiate(ovoPrefab, pontoDeDisparo.position, pontoDeDisparo.rotation);
+        // LÓGICA DE TIRO POR GALINHA
+        if (skinEquipada == 2)
+        {
+            // GALINHA 3: Tiro Triplo (Reto, Diagonal Cima e Diagonal Baixo)
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f));  // Diagonal Cima
+           
 
-        ovosRestantes--;
+            ovosRestantes -= 3;
+        }
+        else if (skinEquipada == 1)
+        {
+            // GALINHA ESPECIAL: 2 Tiros (1 Reto e 1 na Diagonal Cima)
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));     // Reto
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 35f));   // Diagonal (45 graus)
+
+            ovosRestantes -= 2;
+        }
+        else
+        {
+            // GALINHA NORMAL: Tiro Simples Reto
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+            ovosRestantes--;
+        }
+
+        if (ovosRestantes < 0) ovosRestantes = 0;
+
         cronometroTiro = 0f;
-
         AtualizarInterface();
     }
 

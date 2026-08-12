@@ -4,9 +4,34 @@ public class ovo : MonoBehaviour
 {
     public float velocidade = 10f;
     public float tempoDeVida = 3f;
+    private Rigidbody2D rb;
 
     public GameObject explosaoPrefab;
-    private Rigidbody2D rb;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Corrigido: Agora checa se o objeto que tomou o tiro (collision) é o Galo
+        if (collision.CompareTag("Galo"))
+        {
+            Instantiate(
+
+                explosaoPrefab,
+                transform.position,
+                Quaternion.identity
+
+             );
+
+            // Destrói apenas o ovo. O script de vida do Galo cuida do resto!
+            Destroy(gameObject);
+        }
+
+        if (explosaoPrefab != null)
+        {
+            Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+
+    }
 
     void Start()
     {
@@ -14,28 +39,13 @@ public class ovo : MonoBehaviour
 
         if (rb != null)
         {
-            
+
             rb.linearVelocity = transform.right * velocidade;
-            
+
         }
 
-            // Destr�i apenas o ovo. O script de vida do Galo cuida do resto!
-            Destroy(gameObject);
-        }
+
+        Destroy(gameObject, tempoDeVida);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.CompareTag("Galo"))
-        {
-            if (explosaoPrefab != null)
-            {
-                Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
-            }
-
-            
-            Destroy(gameObject);
-        }
-    }
 }

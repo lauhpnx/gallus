@@ -23,6 +23,7 @@ public class ovo : MonoBehaviour
             // Destrói apenas o ovo. O script de vida do Galo cuida do resto!
             Destroy(gameObject);
         }
+       
     }
 
     void Start()

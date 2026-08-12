@@ -24,7 +24,7 @@ public class SkinPlayer : MonoBehaviour
         if (skinEquipada == 2)
         {
             sr.sprite = sprite3;
-            Debug.Log("🎨 Galinha usando: SKIN 3 (TIPO 3)");
+            Debug.Log("🎨 Galinha usando: SKIN CHEFE (TIPO 3)");
         }
         else if (skinEquipada == 1)
         {

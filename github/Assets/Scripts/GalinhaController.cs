@@ -47,11 +47,6 @@ public class GalinhaController : MonoBehaviour
         meuAnimator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        if (meuAnimator == null)
-        {
-            Debug.LogError("Animator não encontrado!");
-        }
-
         AjustarPosicaoInicialX();
         AtualizarInterface();
         AtualizarHealthBar();

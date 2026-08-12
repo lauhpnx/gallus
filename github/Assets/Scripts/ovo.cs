@@ -3,35 +3,39 @@ using UnityEngine;
 public class ovo : MonoBehaviour
 {
     public float velocidade = 10f;
-    public float tempoDeVida = 3f; // Destr贸i ap贸s 3 segundos
+    public float tempoDeVida = 3f;
 
     public GameObject explosaoPrefab;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Corrigido: Agora checa se o objeto que tomou o tiro (collision) 茅 o Galo
-        if (collision.CompareTag("Galo"))
-        {
-            Instantiate(
-
-                explosaoPrefab,
-                transform.position,
-                Quaternion.identity
-
-                );
-
-            // Destr贸i apenas o ovo. O script de vida do Galo cuida do resto!
-            Destroy(gameObject);
-        }
-       
-    }
+    private Rigidbody2D rb;
 
     void Start()
     {
-        // Faz o ovo se mover para a frente (direita) assim que nasce
-        GetComponent<Rigidbody2D>().linearVelocity = transform.right * velocidade;
+        rb = GetComponent<Rigidbody2D>();
 
-        // Destr贸i o objeto automaticamente para limpar a mem贸ria
-        Destroy(gameObject, tempoDeVida);
+        if (rb != null)
+        {
+            
+            rb.linearVelocity = transform.right * velocidade;
+            
+        }
+
+            // Destr骾 apenas o ovo. O script de vida do Galo cuida do resto!
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.CompareTag("Galo"))
+        {
+            if (explosaoPrefab != null)
+            {
+                Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+            }
+
+            
+            Destroy(gameObject);
+        }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5174799632844875728}
   m_Layer: 0
   m_Name: galo3
-  m_TagString: Untagged
+  m_TagString: Galo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

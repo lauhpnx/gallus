@@ -52,10 +52,10 @@ public class GalinhaController : MonoBehaviour
             Debug.LogError("Animator não encontrado!");
         }
 
-        // Lê a skin equipada do mesmo PlayerPrefs do seu SkinPlayer
+      
         skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
 
-        // Aplica os status especiais de cada galinha
+       
         ConfigurarStatusGalinha();
 
         AjustarPosicaoInicialX();
@@ -73,22 +73,22 @@ public class GalinhaController : MonoBehaviour
     {
         if (skinEquipada == 2)
         {
-            // Galinha 3: Tiro Triplo em Leque
-            ovosRestantes = 70;
+         
+            ovosRestantes = 90;
             intervaloTiro = 0.15f;
             velocidadeMovimento = 9f;
         }
         else if (skinEquipada == 1)
         {
-            // Galinha Especial: 1 Tiro Reto + 1 Tiro Diagonal (45°)
-            ovosRestantes = 50;
+         
+            ovosRestantes = 60;
             intervaloTiro = 0.18f;
             velocidadeMovimento = 8.5f;
         }
         else
         {
-            // Galinha Normal
-            ovosRestantes = 30;
+            
+            ovosRestantes = 40;
             intervaloTiro = 0.25f;
             velocidadeMovimento = 8f;
         }
@@ -147,10 +147,10 @@ public class GalinhaController : MonoBehaviour
             meuAnimator.SetTrigger("Atirar");
         }
 
-        // LÓGICA DE TIRO POR GALINHA
+       
         if (skinEquipada == 2)
         {
-            // GALINHA 3: Tiro Triplo (Reto, Diagonal Cima e Diagonal Baixo)
+            
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f));  // Diagonal Cima
            
@@ -160,14 +160,14 @@ public class GalinhaController : MonoBehaviour
         else if (skinEquipada == 1)
         {
             // GALINHA ESPECIAL: 2 Tiros (1 Reto e 1 na Diagonal Cima)
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));     // Reto
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 35f));   // Diagonal (45 graus)
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));     
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 35f));  
 
             ovosRestantes -= 2;
         }
         else
         {
-            // GALINHA NORMAL: Tiro Simples Reto
+            
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
             ovosRestantes--;
         }

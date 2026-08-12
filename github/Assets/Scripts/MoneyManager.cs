@@ -28,12 +28,12 @@ public class MoneyManager : MonoBehaviour
         AtualizarTexto();
     }
 
-    // 2. Procura o texto da nova cena caso o 'textoDinheiro' fique vazio ao trocar de fase
+   
     void Update()
     {
         if (textoDinheiro == null)
         {
-            // Procura um objeto com o componente TMP_Text na nova cena
+          
             textoDinheiro = FindFirstObjectByType<TMP_Text>();
             if (textoDinheiro != null)
             {

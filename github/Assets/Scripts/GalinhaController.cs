@@ -155,7 +155,6 @@ public class GalinhaController : MonoBehaviour
         }
         else
         {
-            
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
             ovosRestantes--;
         }

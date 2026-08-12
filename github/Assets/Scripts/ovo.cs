@@ -13,6 +13,8 @@ public class ovo : MonoBehaviour
         // Corrigido: Agora checa se o objeto que tomou o tiro (collision) é o Galo
         if (collision.CompareTag("Galo"))
         {
+            Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
             Instantiate(
 
                 explosaoPrefab,
@@ -24,12 +26,6 @@ public class ovo : MonoBehaviour
             // Destrói apenas o ovo. O script de vida do Galo cuida do resto!
             Destroy(gameObject);
         }
-
-        if (explosaoPrefab != null)
-        {
-            Instantiate(explosaoPrefab, transform.position, Quaternion.identity);
-        }
-        Destroy(gameObject);
 
     }
 

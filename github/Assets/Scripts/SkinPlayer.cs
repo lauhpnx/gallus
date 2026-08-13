@@ -6,19 +6,29 @@ public class SkinPlayer : MonoBehaviour
     public Sprite spriteNormal; // ID 0
     public Sprite spriteSkin;   // ID 1
     public Sprite sprite3;      // ID 2
-
+    private int skinEquipada = 0;
     private SpriteRenderer sr;
 
     void Start()
     {
         AplicarSkinAtual();
+        SkinPlayer skinPlayer = GetComponent<SkinPlayer>();
+        if (skinPlayer != null)
+        {
+            skinPlayer.AplicarSkinAtual();
+        }
+        else
+        {
+            Debug.LogError("⚠️ O script 'SkinPlayer' NÃO está anexado neste GameObject da Galinha!");
+        }
+
     }
 
     public void AplicarSkinAtual()
     {
         if (sr == null) sr = GetComponent<SpriteRenderer>();
 
-        // Busca qual skin foi salva na loja (se não houver nenhuma, usa a 0)
+       
         int skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
 
         if (skinEquipada == 2)

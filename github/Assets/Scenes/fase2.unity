@@ -754,7 +754,7 @@ MonoBehaviour:
   pontoDeDisparo: {fileID: 1130353465}
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
-  anguloDiagonalGalinha1: 25
+  anguloDiagonalSkin1: 20
   ovosRestantes: 30
   textoHUD: {fileID: 1547373227}
 --- !u!61 &292046027
@@ -957,7 +957,7 @@ SpriteRenderer:
   m_SortingLayerID: 426208871
   m_SortingLayer: 1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a7d64683dc5fc2c469ba32de243514f3, type: 3}
+  m_Sprite: {fileID: 7958373640042276521, guid: cb9e9689487c4ad499719ee0202153c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

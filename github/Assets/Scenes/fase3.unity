@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 268188805}
   - component: {fileID: 268188807}
   - component: {fileID: 268188808}
+  - component: {fileID: 268188809}
   m_Layer: 0
   m_Name: inimigoi
   m_TagString: Untagged
@@ -755,6 +756,28 @@ MonoBehaviour:
   right: {fileID: 756444680}
   tempoSpawn: 3
   emFuria: 0
+--- !u!95 &268188809
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268188803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ab057de275fc3243979fc5dc533a42c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &431187395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3378,7 @@ GameObject:
   - component: {fileID: 2105654443}
   - component: {fileID: 2105654444}
   - component: {fileID: 2105654445}
+  - component: {fileID: 2105654446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3513,6 +3537,28 @@ MonoBehaviour:
   spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
   sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
+--- !u!95 &2105654446
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105654440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aebbe342810e6464190b923f61cb07ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2144435002
 GameObject:
   m_ObjectHideFlags: 0

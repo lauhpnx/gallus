@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1adb326da612654ba9ff9119598f148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaPerseguidora
-  velocidade: 40
+  velocidade: 67
   dano: 1
 --- !u!50 &-1557034164722379430
 Rigidbody2D:

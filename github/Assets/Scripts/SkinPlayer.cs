@@ -3,15 +3,14 @@
 public class SkinPlayer : MonoBehaviour
 {
     [Header("Sprites das Galinhas")]
-    public Sprite spriteNormal; // 0
-    public Sprite spriteSkin;   // 1
-    public Sprite sprite3;      // 2
+    public Sprite spriteNormal; // ID 0
+    public Sprite spriteSkin;   // ID 1
+    public Sprite sprite3;      // ID 2
 
     private SpriteRenderer sr;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         AplicarSkinAtual();
     }
 
@@ -19,21 +18,22 @@ public class SkinPlayer : MonoBehaviour
     {
         if (sr == null) sr = GetComponent<SpriteRenderer>();
 
+        // Busca qual skin foi salva na loja (se não houver nenhuma, usa a 0)
         int skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
 
         if (skinEquipada == 2)
         {
-            sr.sprite = sprite3;
-            Debug.Log("🎨 Galinha usando: SKIN CHEFE (TIPO 3)");
+            if (sprite3 != null) sr.sprite = sprite3;
+            Debug.Log("🎨 Galinha usando: SKIN CHEFE (TIPO 2)");
         }
         else if (skinEquipada == 1)
         {
-            sr.sprite = spriteSkin;
+            if (spriteSkin != null) sr.sprite = spriteSkin;
             Debug.Log("🎨 Galinha usando: SKIN ESPECIAL (TIPO 1)");
         }
         else
         {
-            sr.sprite = spriteNormal;
+            if (spriteNormal != null) sr.sprite = spriteNormal;
             Debug.Log("🐔 Galinha usando: SKIN NORMAL (TIPO 0)");
         }
     }

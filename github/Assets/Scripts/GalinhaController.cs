@@ -34,6 +34,10 @@ public class GalinhaController : MonoBehaviour
     public float intervaloTiro = 0.2f;
     private float cronometroTiro;
 
+    [Header("Ajuste de Inclinação (Skin 1)")]
+    [Range(5f, 80f)]
+    public float anguloDiagonalSkin1 = 20f; // Ajuste o ângulo aqui no Inspector!
+
     [Header("Munição e Interface")]
     public int ovosRestantes = 30;
     public TextMeshProUGUI textoHUD;
@@ -46,6 +50,25 @@ public class GalinhaController : MonoBehaviour
     {
         meuAnimator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
+        // 1. Lê a skin que está salva no computador
+        skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
+        Debug.Log("🎮 Iniciando Fase com a Skin ID: " + skinEquipada);
+
+        // 2. FORÇA O SPRITE DA GALINHA A MUDAR DE ACORDO COM O REGISTRO
+        SkinPlayer skinPlayer = GetComponent<SkinPlayer>();
+        if (skinPlayer != null)
+        {
+            skinPlayer.AplicarSkinAtual();
+        }
+        else
+        {
+            Debug.LogError("⚠️ O script 'SkinPlayer' NÃO está anexado neste GameObject da Galinha!");
+        }
+
+        // 3. Aplica velocidade, ovos e tiro correto da skin
+        ConfigurarStatusGalinha();
+
         AjustarPosicaoInicialX();
         AtualizarInterface();
         AtualizarHealthBar();
@@ -61,21 +84,21 @@ public class GalinhaController : MonoBehaviour
     {
         if (skinEquipada == 2)
         {
-         
+            // Galinha 3: Tiro Triplo
             ovosRestantes = 90;
             intervaloTiro = 0.15f;
             velocidadeMovimento = 9f;
         }
         else if (skinEquipada == 1)
         {
-         
+            // Galinha 2: Tiro Duplo
             ovosRestantes = 60;
             intervaloTiro = 0.18f;
             velocidadeMovimento = 8.5f;
         }
         else
         {
-            
+            // Galinha 1: Normal
             ovosRestantes = 40;
             intervaloTiro = 0.25f;
             velocidadeMovimento = 8f;
@@ -130,31 +153,36 @@ public class GalinhaController : MonoBehaviour
 
     void Atirar()
     {
+        if (pontoDeDisparo == null || ovoPrefab == null)
+        {
+            Debug.LogError("⚠️ Erro: 'ovoPrefab' ou 'pontoDeDisparo' não foram arrastados no Inspector!");
+            return;
+        }
+
         if (meuAnimator != null)
         {
             meuAnimator.SetTrigger("Atirar");
         }
 
-       
+        // LÓGICA DE TIRO CORRIGIDA
         if (skinEquipada == 2)
         {
-            
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f));  // Diagonal Cima
-           
+            // GALINHA 3: Tiro Triplo (Reto, Cima, Baixo)
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));       
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f));     
 
             ovosRestantes -= 3;
         }
         else if (skinEquipada == 1)
         {
-            // GALINHA ESPECIAL: 2 Tiros (1 Reto e 1 na Diagonal Cima)
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));     
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 35f));  
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));                        
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, anguloDiagonalSkin1));    
 
             ovosRestantes -= 2;
         }
         else
         {
+            // GALINHA NORMAL: Tiro Simples Reto
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
             ovosRestantes--;
         }

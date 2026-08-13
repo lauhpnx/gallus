@@ -745,16 +745,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
   life: 10
   _lifemax: 10
-  _speed: 5
   healthBarImage: {fileID: 1587046588}
   velocidadeMovimento: 8
   usarPosicaoXManual: 1
   posicaoX_Manual: -7
   ylimitmin: -4.2
   ylimitemax: 4.2
-  ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   pontoDeDisparo: {fileID: 1130353465}
+  ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
+  anguloDiagonalGalinha1: 25
   ovosRestantes: 30
   textoHUD: {fileID: 1547373227}
 --- !u!61 &292046027

@@ -41,8 +41,7 @@ public class BotaoCompra : MonoBehaviour
     {
         // 1. Grava a skin equipada na memória permanente
         PlayerPrefs.SetInt("SkinEquipada", idSkin);
-        PlayerPrefs.Save(); // Força o salvamento imediato no arquivo de dados!
-
+       
         Debug.Log("💾 Skin ID " + idSkin + " salva no PlayerPrefs!");
 
         // 2. Se a galinha existir na cena atual (ex: na loja), atualiza a imagem

@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class GalinhaController : MonoBehaviour
 {
@@ -34,9 +35,9 @@ public class GalinhaController : MonoBehaviour
     public float intervaloTiro = 0.2f;
     private float cronometroTiro;
 
-    [Header("Ajuste de Inclinação (Skin 1)")]
+    [Header("Tiro Duplo")]
     [Range(5f, 80f)]
-    public float anguloDiagonalSkin1 = 20f; // Ajuste o ângulo aqui no Inspector!
+    public float anguloSegundoOvo = 20f;
 
     [Header("Munição e Interface")]
     public int ovosRestantes = 120;
@@ -44,30 +45,24 @@ public class GalinhaController : MonoBehaviour
 
     private Animator meuAnimator;
     private SpriteRenderer sr;
-    private int skinEquipada = 0;
 
     void Start()
     {
         meuAnimator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        // 1. Lê a skin que está salva no computador
-        skinEquipada = PlayerPrefs.GetInt("SkinEquipada", 0);
-        Debug.Log("🎮 Iniciando Fase com a Skin ID: " + skinEquipada);
+        // IMPORTANTE:
+        // Esta cena NÃO usa PlayerPrefs.
+        // O Sprite que já está colocado nesta cena permanece.
+        //
+        // A quantidade de ovos também é definida aqui pelo script.
+        ovosRestantes = 80;
 
-        // 2. FORÇA O SPRITE DA GALINHA A MUDAR DE ACORDO COM O REGISTRO
-        SkinPlayer skinPlayer = GetComponent<SkinPlayer>();
-        if (skinPlayer != null)
-        {
-            skinPlayer.AplicarSkinAtual();
-        }
-        else
-        {
-            Debug.LogError("⚠️ O script 'SkinPlayer' NÃO está anexado neste GameObject da Galinha!");
-        }
+        intervaloTiro = 0.18f;
+        velocidadeMovimento = 8.5f;
 
-        // 3. Aplica velocidade, ovos e tiro correto da skin
-        ConfigurarStatusGalinha();
+        Debug.Log("🐔 Cena usando a galinha que já está na cena.");
+        Debug.Log("🥚 Ovos iniciais: " + ovosRestantes);
 
         AjustarPosicaoInicialX();
         AtualizarInterface();
@@ -80,31 +75,6 @@ public class GalinhaController : MonoBehaviour
         ControlarTiro();
     }
 
-    void ConfigurarStatusGalinha()
-    {
-        if (skinEquipada == 2)
-        {
-            // Galinha 3: Tiro Triplo
-            ovosRestantes = 90;
-            intervaloTiro = 0.15f;
-            velocidadeMovimento = 9f;
-        }
-        else if (skinEquipada == 1)
-        {
-            // Galinha 2: Tiro Duplo
-            ovosRestantes = 60;
-            intervaloTiro = 0.18f;
-            velocidadeMovimento = 8.5f;
-        }
-        else
-        {
-            // Galinha 1: Normal
-            ovosRestantes = 40;
-            intervaloTiro = 0.25f;
-            velocidadeMovimento = 8f;
-        }
-    }
-
     void AjustarPosicaoInicialX()
     {
         if (usarPosicaoXManual)
@@ -114,13 +84,21 @@ public class GalinhaController : MonoBehaviour
         else
         {
             Camera cam = Camera.main;
+
             if (cam != null)
             {
                 float alturaCam = cam.orthographicSize;
                 float larguraCam = alturaCam * cam.aspect;
-                float metadeLarguraSprite = (sr != null && sr.sprite != null) ? sr.bounds.extents.x : 0.5f;
 
-                posicaoX_Final = (cam.transform.position.x - larguraCam) + metadeLarguraSprite + 0.3f;
+                float metadeLarguraSprite =
+                    (sr != null && sr.sprite != null)
+                    ? sr.bounds.extents.x
+                    : 0.5f;
+
+                posicaoX_Final =
+                    (cam.transform.position.x - larguraCam)
+                    + metadeLarguraSprite
+                    + 0.3f;
             }
             else
             {
@@ -128,24 +106,43 @@ public class GalinhaController : MonoBehaviour
             }
         }
 
-        transform.position = new Vector3(posicaoX_Final, transform.position.y, transform.position.z);
+        transform.position = new Vector3(
+            posicaoX_Final,
+            transform.position.y,
+            transform.position.z
+        );
     }
 
     void MoverGalinha()
     {
         float inputVertical = Input.GetAxis("Vertical");
 
-        float novaPosicaoY = transform.position.y + (inputVertical * velocidadeMovimento * Time.deltaTime);
-        float ytravado = Mathf.Clamp(novaPosicaoY, ylimitmin, ylimitemax);
+        float novaPosicaoY =
+            transform.position.y
+            + (inputVertical * velocidadeMovimento * Time.deltaTime);
 
-        transform.position = new Vector3(posicaoX_Final, ytravado, transform.position.z);
+        float ytravado = Mathf.Clamp(
+            novaPosicaoY,
+            ylimitmin,
+            ylimitemax
+        );
+
+        transform.position = new Vector3(
+            posicaoX_Final,
+            ytravado,
+            transform.position.z
+        );
     }
 
     void ControlarTiro()
     {
         cronometroTiro += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes > 0)
+        if (
+            Input.GetKeyDown(KeyCode.Space)
+            && cronometroTiro >= intervaloTiro
+            && ovosRestantes >= 2
+        )
         {
             Atirar();
         }
@@ -155,43 +152,42 @@ public class GalinhaController : MonoBehaviour
     {
         if (pontoDeDisparo == null || ovoPrefab == null)
         {
-            Debug.LogError("⚠️ Erro: 'ovoPrefab' ou 'pontoDeDisparo' não foram arrastados no Inspector!");
+            Debug.LogError(
+                "⚠️ 'ovoPrefab' ou 'pontoDeDisparo' não foram configurados!"
+            );
+
             return;
         }
 
-        if (meuAnimator != null)
-        {
-            meuAnimator.SetTrigger("Atirar");
-        }
+        // Primeiro ovo: reto
+        Instantiate(
+            ovoPrefab,
+            pontoDeDisparo.position,
+            Quaternion.Euler(0, 0, 0)
+        );
 
-        float variacaoAleatoria1 = Random.Range(-30f, 30f);
-        float variacaoAleatoria2 = Random.Range(-30f, 30f);
-        // LÓGICA DE TIRO CORRIGIDA
-        if (skinEquipada == 2)
-        {
-            // GALINHA 3: Tiro Triplo (Reto, Cima, Baixo)
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));       
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f + variacaoAleatoria2));     
+        // Segundo ovo: diagonal
+        float variacao = Random.Range(-10f, 10f);
 
-            ovosRestantes -= 3;
-        }
-        else if (skinEquipada == 1)
-        {
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));                        
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, anguloDiagonalSkin1 + variacaoAleatoria2 ));    
+        float anguloFinal =
+            anguloSegundoOvo + variacao;
 
-            ovosRestantes -= 2;
-        }
-        else
-        {
-            // GALINHA NORMAL: Tiro Simples Reto
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
-            ovosRestantes--;
-        }
+        Instantiate(
+            ovoPrefab,
+            pontoDeDisparo.position,
+            Quaternion.Euler(0, 0, anguloFinal)
+        );
 
-        if (ovosRestantes < 0) ovosRestantes = 0;
+        // Cada disparo consome 2 ovos
+        ovosRestantes -= 2;
+
+        if (ovosRestantes < 0)
+        {
+            ovosRestantes = 0;
+        }
 
         cronometroTiro = 0f;
+
         AtualizarInterface();
     }
 
@@ -219,7 +215,9 @@ public class GalinhaController : MonoBehaviour
     void Morrer()
     {
         Debug.Log("A galinha morreu!");
+
         gameObject.SetActive(false);
+
         SceneManager.LoadScene("GameOver");
     }
 
@@ -227,8 +225,13 @@ public class GalinhaController : MonoBehaviour
     {
         if (healthBarImage != null)
         {
-            if (_lifemax <= 0) _lifemax = 10;
-            healthBarImage.fillAmount = (float)life / _lifemax;
+            if (_lifemax <= 0)
+            {
+                _lifemax = 10;
+            }
+
+            healthBarImage.fillAmount =
+                (float)life / _lifemax;
         }
     }
 }

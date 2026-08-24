@@ -39,7 +39,7 @@ public class GalinhaController : MonoBehaviour
     public float anguloDiagonalSkin1 = 20f; // Ajuste o ângulo aqui no Inspector!
 
     [Header("Munição e Interface")]
-    public int ovosRestantes = 30;
+    public int ovosRestantes = 120;
     public TextMeshProUGUI textoHUD;
 
     private Animator meuAnimator;

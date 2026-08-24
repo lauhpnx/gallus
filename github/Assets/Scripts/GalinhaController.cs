@@ -200,6 +200,11 @@ public class GalinhaController : MonoBehaviour
             textoHUD.text = "Ovos: " + ovosRestantes;
         }
     }
+    public void AdicionarOvos(int quantidade)
+    {
+        ovosRestantes += quantidade;
+        AtualizarInterface();
+    }
 
     public void TakeDamage(int damage)
     {

@@ -19,12 +19,22 @@ public class ovo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Corrigido: Agora checa se o objeto que tomou o tiro (collision) é o Galo
         if (collision.CompareTag("Galo"))
         {
             morrer();
         }
 
+        if (collision.CompareTag("Milho"))
+        {
+            GalinhaController galinha = FindFirstObjectByType<GalinhaController>();
+
+            if (galinha != null)
+            {
+                galinha.AdicionarOvos(2);
+            }
+
+            morrer();
+        }
     }
 
     void Start()

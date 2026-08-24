@@ -8,6 +8,7 @@ TagManager:
   - Galo
   - planta
   - Inimigo
+  - Milho
   layers:
   - Default
   - TransparentFX

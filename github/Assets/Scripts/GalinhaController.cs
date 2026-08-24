@@ -164,19 +164,21 @@ public class GalinhaController : MonoBehaviour
             meuAnimator.SetTrigger("Atirar");
         }
 
+        float variacaoAleatoria1 = Random.Range(-30f, 30f);
+        float variacaoAleatoria2 = Random.Range(-30f, 30f);
         // LÓGICA DE TIRO CORRIGIDA
         if (skinEquipada == 2)
         {
             // GALINHA 3: Tiro Triplo (Reto, Cima, Baixo)
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));       
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f));     
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 25f + variacaoAleatoria2));     
 
             ovosRestantes -= 3;
         }
         else if (skinEquipada == 1)
         {
             Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));                        
-            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, anguloDiagonalSkin1));    
+            Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, anguloDiagonalSkin1 + variacaoAleatoria2 ));    
 
             ovosRestantes -= 2;
         }

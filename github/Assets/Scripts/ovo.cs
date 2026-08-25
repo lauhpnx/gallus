@@ -1,19 +1,37 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ovo : MonoBehaviour
 {
     public float velocidade = 10f;
     public float tempoDeVida = 3f;
+
     private Rigidbody2D rb;
 
     public GameObject explosaoPrefab;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            rb.linearVelocity = transform.right * velocidade;
+        }
+
+        Destroy(gameObject, tempoDeVida);
+    }
 
     void morrer()
     {
         if (explosaoPrefab != null)
         {
-            Instantiate(explosaoPrefab, transform.position, transform.rotation);
+            Instantiate(
+                explosaoPrefab,
+                transform.position,
+                transform.rotation
+            );
         }
+
         Destroy(gameObject);
     }
 
@@ -36,20 +54,4 @@ public class ovo : MonoBehaviour
             morrer();
         }
     }
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-
-        if (rb != null)
-        {
-
-            rb.linearVelocity = transform.right * velocidade;
-
-        }
-
-
-        Destroy(gameObject, tempoDeVida);
-    }
-
 }

@@ -51,11 +51,7 @@ public class GalinhaController : MonoBehaviour
         meuAnimator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        // IMPORTANTE:
-        // Esta cena NÃO usa PlayerPrefs.
-        // O Sprite que já está colocado nesta cena permanece.
-        //
-        // A quantidade de ovos também é definida aqui pelo script.
+        
         ovosRestantes = 80;
 
         intervaloTiro = 0.18f;
@@ -166,7 +162,7 @@ public class GalinhaController : MonoBehaviour
             Quaternion.Euler(0, 0, 0)
         );
 
-        // Segundo ovo: diagonal
+     
         float variacao = Random.Range(-10f, 10f);
 
         float anguloFinal =

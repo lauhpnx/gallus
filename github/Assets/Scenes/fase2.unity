@@ -625,6 +625,7 @@ MonoBehaviour:
   spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
   sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
+  skinEquipada: 0
 --- !u!1 &312049786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1225216866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2606,12 +2607,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1020785447}
   - {fileID: 1547373226}
   - {fileID: 1331844002}
   - {fileID: 1587046586}
   - {fileID: 1823374671}
   - {fileID: 1225216866}
-  - {fileID: 1020785447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

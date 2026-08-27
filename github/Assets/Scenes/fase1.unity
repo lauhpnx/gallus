@@ -4154,8 +4154,9 @@ MonoBehaviour:
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
   anguloSegundoOvo: 20
-  ovosRestantes: 50
+  ovosRestantes: 40
   textoHUD: {fileID: 810829896}
+  ovosportiro: 1
 --- !u!212 &2050663103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4314,6 +4315,7 @@ MonoBehaviour:
   spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
   sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
+  skinEquipada: 0
 --- !u!1 &2093812685
 GameObject:
   m_ObjectHideFlags: 0

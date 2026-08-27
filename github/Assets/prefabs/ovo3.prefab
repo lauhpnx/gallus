@@ -308,4 +308,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ovo
   velocidade: 10
   tempoDeVida: 3
+  dano: 10
   explosaoPrefab: {fileID: 6173220678656044316, guid: 6a963c0f6452c6c4d987ea0767650f9e, type: 3}

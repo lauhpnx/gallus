@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55, y: -138}
+  m_AnchoredPosition: {x: -55, y: -159}
   m_SizeDelta: {x: 218.49, y: 77.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276940808
@@ -538,8 +538,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Melhorar Josefa\npre\xE7o: 50."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -563,8 +563,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -641,8 +641,8 @@ Transform:
   m_GameObject: {fileID: 302517391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.02, y: 84.7, z: -3658.5002}
-  m_LocalScale: {x: 86.44193, y: 75.729744, z: 108.4012}
+  m_LocalPosition: {x: 11.02, y: 192, z: -3658.5002}
+  m_LocalScale: {x: 130, y: 130, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1515766712}
@@ -1079,7 +1079,7 @@ RectTransform:
   m_GameObject: {fileID: 804480131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1751132, y: 1.1751132, z: 1.1751132}
+  m_LocalScale: {x: 1.5570251, y: 1.5570251, z: 1.1751132}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1200322595}
@@ -1087,7 +1087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.98, y: -63.507}
+  m_AnchoredPosition: {x: 30.256, y: -49.819}
   m_SizeDelta: {x: 318.63, y: 71.825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804480133
@@ -1718,7 +1718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1149256359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2417,14 +2417,14 @@ RectTransform:
   m_GameObject: {fileID: 1339009673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6276, y: 1.6276, z: 1.6276}
+  m_LocalScale: {x: 3.1117613, y: 3.1117613, z: 3.1117613}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149256359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: 137}
+  m_AnchoredPosition: {x: -452, y: 277}
   m_SizeDelta: {x: 150.3, y: 63.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339009675
@@ -3144,7 +3144,7 @@ RectTransform:
   m_GameObject: {fileID: 1773423533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0253, y: 2.0253, z: 2.0253}
+  m_LocalScale: {x: 3.259366, y: 3.3001082, z: 3.259366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149256359}

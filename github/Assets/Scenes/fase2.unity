@@ -540,8 +540,9 @@ MonoBehaviour:
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
   anguloSegundoOvo: 20
-  ovosRestantes: 30
+  ovosRestantes: 60
   textoHUD: {fileID: 1547373227}
+  ovosportiro: 2
 --- !u!61 &292046027
 BoxCollider2D:
   m_ObjectHideFlags: 0

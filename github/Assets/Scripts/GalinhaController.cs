@@ -42,6 +42,7 @@ public class GalinhaController : MonoBehaviour
     [Header("Munição e Interface")]
     public int ovosRestantes = 120;
     public TextMeshProUGUI textoHUD;
+    public int ovosportiro = 2;
 
     private Animator meuAnimator;
     private SpriteRenderer sr;
@@ -52,7 +53,7 @@ public class GalinhaController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         
-        ovosRestantes = 80;
+         ovosRestantes = ovosRestantes;
 
         intervaloTiro = 0.18f;
         velocidadeMovimento = 8.5f;
@@ -137,7 +138,7 @@ public class GalinhaController : MonoBehaviour
         if (
             Input.GetKeyDown(KeyCode.Space)
             && cronometroTiro >= intervaloTiro
-            && ovosRestantes >= 2
+            && ovosRestantes >= ovosportiro
         )
         {
             Atirar();
@@ -148,43 +149,40 @@ public class GalinhaController : MonoBehaviour
     {
         if (pontoDeDisparo == null || ovoPrefab == null)
         {
-            Debug.LogError(
-                "⚠️ 'ovoPrefab' ou 'pontoDeDisparo' não foram configurados!"
-            );
-
+            Debug.LogError("⚠️ 'ovoPrefab' ou 'pontoDeDisparo' não foram configurados!");
             return;
         }
 
-        // Primeiro ovo: reto
-        Instantiate(
-            ovoPrefab,
-            pontoDeDisparo.position,
-            Quaternion.Euler(0, 0, 0)
-        );
-
-     
-        float variacao = Random.Range(-10f, 10f);
-
-        float anguloFinal =
-            anguloSegundoOvo + variacao;
-
-        Instantiate(
-            ovoPrefab,
-            pontoDeDisparo.position,
-            Quaternion.Euler(0, 0, anguloFinal)
-        );
-
-        // Cada disparo consome 2 ovos
-        ovosRestantes -= 2;
-
-        if (ovosRestantes < 0)
+        switch (ovosportiro)
         {
-            ovosRestantes = 0;
+            case 1:
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                break;
+
+            case 2:
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                DispararDiagonal(anguloSegundoOvo);
+                break;
+
+            case 3:
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                DispararDiagonal(anguloSegundoOvo);
+                DispararDiagonal(-anguloSegundoOvo);
+                break;
         }
 
-        cronometroTiro = 0f;
+        ovosRestantes -= ovosportiro;
+        if (ovosRestantes < 0) ovosRestantes = 0;
 
+        cronometroTiro = 0f;
         AtualizarInterface();
+    }
+
+    void DispararDiagonal(float anguloBase)
+    {
+        float variacao = Random.Range(-10f, 10f);
+        float anguloFinal = anguloBase + variacao;
+        Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, anguloFinal));
     }
 
     void AtualizarInterface()

@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 205458598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: -1.79, z: 0}
+  m_LocalPosition: {x: 4.94, y: -1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 649242184}
   - component: {fileID: 649242183}
   m_Layer: 0
-  m_Name: voltar
+  m_Name: script voltar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 1034931443}
   - component: {fileID: 1034931442}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,14 +433,14 @@ RectTransform:
   m_GameObject: {fileID: 1034931440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3549668, y: 1.3549668, z: 1.3549668}
+  m_LocalScale: {x: 0.58238053, y: 0.62120587, z: 0.62120587}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2004577390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -745, y: 5}
+  m_AnchoredPosition: {x: -314, y: 14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1034931442
@@ -490,8 +490,8 @@ MonoBehaviour:
     conseguiu escapar, e ele nunca mais voltou para casa. Agora, Josefa vive sozinha
     com seus filhos e sente falta dos bons momentos que teve com seu marido. "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -390.54626, w: 0}
+  m_margin: {x: 0, y: 0, z: -462.48785, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1702921161}
   - component: {fileID: 1702921164}
   m_Layer: 5
-  m_Name: Button
+  m_Name: "bot\xE3o voltar"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,14 +767,14 @@ RectTransform:
   m_GameObject: {fileID: 1702921159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27125296, y: 0.27125296, z: 0.27125296}
+  m_LocalScale: {x: 0.12124925, y: 0.13185856, z: 0.12124925}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2004577390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 522, y: 285}
+  m_AnchoredPosition: {x: 251, y: 171}
   m_SizeDelta: {x: 1632, y: 438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702921161
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3465286685962602723, guid: 9b3ba4bf0b4f51a4c9bf636da9a23a00, type: 3}
+  m_Sprite: {fileID: -4178046375966092550, guid: 4f0945df6ab3a11428d08426bd512a12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

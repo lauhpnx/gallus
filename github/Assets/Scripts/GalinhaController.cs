@@ -2,10 +2,12 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using JetBrains.Annotations;
 
 public class GalinhaController : MonoBehaviour
 {
+    // Referência única da galinha, pra outros scripts (como o "ovo") acessarem sem precisar procurar na cena
+    public static GalinhaController Instance;
+
     [Header("Configurações de Vida")]
     public int life = 10;
     public int _lifemax = 10;
@@ -44,22 +46,16 @@ public class GalinhaController : MonoBehaviour
     public TextMeshProUGUI textoHUD;
     public int ovosportiro = 2;
 
-    private Animator meuAnimator;
     private SpriteRenderer sr;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
-        meuAnimator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-
-        
-         ovosRestantes = ovosRestantes;
-
-        intervaloTiro = 0.18f;
-        velocidadeMovimento = 8.5f;
-
-        Debug.Log("🐔 Cena usando a galinha que já está na cena.");
-        Debug.Log("🥚 Ovos iniciais: " + ovosRestantes);
 
         AjustarPosicaoInicialX();
         AtualizarInterface();
@@ -72,6 +68,7 @@ public class GalinhaController : MonoBehaviour
         ControlarTiro();
     }
 
+    // Define a posição X inicial da galinha: fixa (valor manual) ou calculada com base na câmera
     void AjustarPosicaoInicialX()
     {
         if (usarPosicaoXManual)
@@ -103,77 +100,59 @@ public class GalinhaController : MonoBehaviour
             }
         }
 
-        transform.position = new Vector3(
-            posicaoX_Final,
-            transform.position.y,
-            transform.position.z
-        );
+        transform.position = new Vector3(posicaoX_Final, transform.position.y, transform.position.z);
     }
 
+    // Move a galinha para cima/baixo com o input vertical, travando dentro dos limites de tela
     void MoverGalinha()
     {
         float inputVertical = Input.GetAxis("Vertical");
 
-        float novaPosicaoY =
-            transform.position.y
-            + (inputVertical * velocidadeMovimento * Time.deltaTime);
+        float novaPosicaoY = transform.position.y + (inputVertical * velocidadeMovimento * Time.deltaTime);
+        float ytravado = Mathf.Clamp(novaPosicaoY, ylimitmin, ylimitemax);
 
-        float ytravado = Mathf.Clamp(
-            novaPosicaoY,
-            ylimitmin,
-            ylimitemax
-        );
-
-        transform.position = new Vector3(
-            posicaoX_Final,
-            ytravado,
-            transform.position.z
-        );
+        transform.position = new Vector3(posicaoX_Final, ytravado, transform.position.z);
     }
 
+    // Verifica se pode atirar (tempo do intervalo passou e tem munição suficiente)
     void ControlarTiro()
     {
         cronometroTiro += Time.deltaTime;
 
-        if (
-            Input.GetKeyDown(KeyCode.Space)
-            && cronometroTiro >= intervaloTiro
-            && ovosRestantes >= ovosportiro
-        )
+        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
         {
             Atirar();
         }
     }
 
+    // Dispara 1, 2 ou 3 ovos dependendo de "ovosportiro"
     void Atirar()
     {
         if (pontoDeDisparo == null || ovoPrefab == null)
         {
-            Debug.LogError("⚠️ 'ovoPrefab' ou 'pontoDeDisparo' não foram configurados!");
+            Debug.LogError("'ovoPrefab' ou 'pontoDeDisparo' não foram configurados!");
             return;
         }
 
         switch (ovosportiro)
         {
             case 1:
-                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.identity);
                 break;
 
             case 2:
-                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.identity);
                 DispararDiagonal(anguloSegundoOvo);
                 break;
 
             case 3:
-                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.Euler(0, 0, 0));
+                Instantiate(ovoPrefab, pontoDeDisparo.position, Quaternion.identity);
                 DispararDiagonal(anguloSegundoOvo);
                 DispararDiagonal(-anguloSegundoOvo);
                 break;
         }
 
-        ovosRestantes -= ovosportiro;
-        if (ovosRestantes < 0) ovosRestantes = 0;
-
+        ovosRestantes = Mathf.Max(0, ovosRestantes - ovosportiro);
         cronometroTiro = 0f;
         AtualizarInterface();
     }
@@ -192,6 +171,7 @@ public class GalinhaController : MonoBehaviour
             textoHUD.text = "Ovos: " + ovosRestantes;
         }
     }
+
     public void AdicionarOvos(int quantidade)
     {
         ovosRestantes += quantidade;
@@ -213,24 +193,19 @@ public class GalinhaController : MonoBehaviour
 
     void Morrer()
     {
-        Debug.Log("A galinha morreu!");
-
         gameObject.SetActive(false);
-
         SceneManager.LoadScene("GameOver");
     }
 
     void AtualizarHealthBar()
     {
-        if (healthBarImage != null)
-        {
-            if (_lifemax <= 0)
-            {
-                _lifemax = 10;
-            }
+        if (healthBarImage == null) return;
 
-            healthBarImage.fillAmount =
-                (float)life / _lifemax;
+        if (_lifemax <= 0)
+        {
+            _lifemax = 10;
         }
+
+        healthBarImage.fillAmount = (float)life / _lifemax;
     }
 }

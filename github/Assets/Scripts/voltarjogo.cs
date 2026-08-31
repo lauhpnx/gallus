@@ -4,13 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class voltarjogo : MonoBehaviour
 {
-    public void OnApplicationQuit()
-    { 
-        Debug.Log ("saiu do jogo");
+    private void OnApplicationQuit()
+    {
+        Debug.Log("saiu do jogo");
     }
-
     public void BackGame()
     {
         SceneManager.LoadScene("vitoria");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -25,6 +25,8 @@ public class GalinhaController : MonoBehaviour
     [Header("Limites de Cima e Baixo (Eixo Y)")]
     public float ylimitmin = -4.2f;
     public float ylimitemax = 4.2f;
+    public float xlimitmin = -8.2f;
+    public float xlimitmax = 8.2f;
 
     private float posicaoX_Final;
 
@@ -107,11 +109,12 @@ public class GalinhaController : MonoBehaviour
     void MoverGalinha()
     {
         float inputVertical = Input.GetAxis("Vertical");
+        float inputHorizontal = Input.GetAxis("Horizontal");
 
         float novaPosicaoY = transform.position.y + (inputVertical * velocidadeMovimento * Time.deltaTime);
         float ytravado = Mathf.Clamp(novaPosicaoY, ylimitmin, ylimitemax);
-
-        transform.position = new Vector3(posicaoX_Final, ytravado, transform.position.z);
+        float xtravado = Mathf.Clamp(transform.position.x + (inputHorizontal * velocidadeMovimento * Time.deltaTime), xlimitmin, xlimitmax);
+        transform.position = new Vector3(xtravado, ytravado, transform.position.z);
     }
 
     // Verifica se pode atirar (tempo do intervalo passou e tem munição suficiente)

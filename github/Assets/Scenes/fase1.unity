@@ -538,8 +538,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Melhorar Josefa\npre\xE7o: 50."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1969,7 +1969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 68, y: 42.101}
+  m_AnchoredPosition: {x: 68, y: 42.101013}
   m_SizeDelta: {x: 28.56, y: 30.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164515509
@@ -2129,8 +2129,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: COMPRAR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3898,7 +3898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -108, y: -98.95}
+  m_AnchoredPosition: {x: -108, y: -98.95001}
   m_SizeDelta: {x: 289.99, y: 245.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989758698

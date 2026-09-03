@@ -211,4 +211,9 @@ public class GalinhaController : MonoBehaviour
 
         healthBarImage.fillAmount = (float)life / _lifemax;
     }
+    public void DefinirTipoDeTiro(int tipo)
+    {
+     ovosportiro = tipo;
+
+    }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SkinPlayer : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class SkinPlayer : MonoBehaviour
     public Sprite spriteNormal;
     public Sprite spriteSkin;
     public Sprite sprite3;
+    public GalinhaController galinhaController;
 
     public int skinEquipada = 0; // sempre começa do zero ao carregar a cena
 
@@ -15,6 +17,7 @@ public class SkinPlayer : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         AplicarSkinAtual();
+        galinhaController = GetComponent<GalinhaController>();
     }
 
     public void EquiparSkin(int idSkin)
@@ -28,7 +31,9 @@ public class SkinPlayer : MonoBehaviour
         switch (skinEquipada)
         {
             case 2: if (sprite3 != null) sr.sprite = sprite3; break;
-            case 1: if (spriteSkin != null) sr.sprite = spriteSkin; break;
+            case 1: if (spriteSkin != null) sr.sprite = spriteSkin;
+                galinhaController.DefinirTipoDeTiro(2);
+                break;
             default: if (spriteNormal != null) sr.sprite = spriteNormal; break;
         }
     }

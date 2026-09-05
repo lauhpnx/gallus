@@ -536,6 +536,8 @@ MonoBehaviour:
   posicaoX_Manual: -7
   ylimitmin: -4.2
   ylimitemax: 4.2
+  xlimitmin: -8.2
+  xlimitmax: 8.2
   pontoDeDisparo: {fileID: 1130353465}
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
@@ -626,6 +628,7 @@ MonoBehaviour:
   spriteNormal: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
   sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
+  galinhaController: {fileID: 0}
   skinEquipada: 0
 --- !u!1 &312049786
 GameObject:
@@ -974,7 +977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1225216865}
   nomeProximaFase: Fase3
-  totalInimigosNaFase: 15
+  totalInimigosNaFase: 20
 --- !u!4 &627518463
 Transform:
   m_ObjectHideFlags: 0
@@ -2441,7 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
   prefab: {fileID: 3684113530397400025, guid: 31bede3a26d3ff144864891fb58cdfda, type: 3}
-  SpawnFrequency: 2
+  SpawnFrequency: 4
   left: {fileID: 1025844751}
   right: {fileID: 1254130958}
 --- !u!4 &1640871577

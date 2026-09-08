@@ -7,6 +7,7 @@ public class MoneyManager : MonoBehaviour
 
     public int dinheiro = 0;
     public TMP_Text textoDinheiro;
+    public GameObject Moeda;
 
     private void Awake()
     {
@@ -14,7 +15,6 @@ public class MoneyManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {

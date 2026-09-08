@@ -29,13 +29,18 @@ public class BossHealth : MonoBehaviour
     [Header("Ataque 2: Penas Perseguidoras")]
     public GameObject penaPrefab;
     public Transform pontoDeTiro;
-    public float tempoTiroFuria = 2.5f;
+    public GameObject PontoDeTiro2;
+    public float tempoTiroFuria;
     private float cronometroTiro;
+    public float TempoTiroFuria2;
+    private bool PrimeiraPenaAtirada;
+    private bool SegundaPenaAtirada;
 
     [Header("Invocação: Spawnar Galos Minions")]
     public GameObject galoMinionPrefab;
     public Transform left;
     public Transform right;
+    public Transform center;
 
     public float tempoSpawn = 5f;
     private float cronometroSpawn;
@@ -113,11 +118,20 @@ public class BossHealth : MonoBehaviour
         if (penaPrefab == null || pontoDeTiro == null) return;
 
         cronometroTiro += Time.deltaTime;
-        if (cronometroTiro >= tempoTiroFuria)
+        if (!PrimeiraPenaAtirada && cronometroTiro >= tempoTiroFuria)
         {
+            PrimeiraPenaAtirada = true;
             Instantiate(penaPrefab, pontoDeTiro.position, Quaternion.identity);
-            cronometroTiro = 0f;
         }
+            if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
+            {
+                Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
+                SegundaPenaAtirada = true;
+                cronometroTiro = 0f;
+                PrimeiraPenaAtirada = false;
+                SegundaPenaAtirada = false;
+            }
+        
     }
 
     void SpawnarGalosMinions()

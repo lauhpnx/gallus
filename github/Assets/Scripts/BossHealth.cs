@@ -49,7 +49,9 @@ public class BossHealth : MonoBehaviour
     [Header("Estado do Boss")]
     public bool emFuria = false;
     public GameObject efeitoMortePrefab;
-    public float tempoDeEspera = 2.0f;
+    public float tempoDeEspera = 2.0f;     
+  
+    private FadeVictory fadeVictory;
 
 
     void Start()
@@ -129,7 +131,6 @@ public class BossHealth : MonoBehaviour
         }
         if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
         {
-            Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
             SegundaPenaAtirada = true;
             cronometroTiro = 0f;
             PrimeiraPenaAtirada = false;
@@ -155,31 +156,39 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("O Galo foi derrotado!");
 
-
         GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
         if (gerenciador != null)
         {
             gerenciador.GanhouAFase();
         }
 
-
         if (healthBarImage != null && healthBarImage.transform.parent != null)
         {
             Destroy(healthBarImage.transform.parent.gameObject);
         }
+
         if (efeitoMortePrefab != null)
         {
             Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
         }
-        StartCoroutine(EsperarTrocarDeCena());
 
-        Destroy(gameObject);
+        DesativarBoss(); // esconde o boss, mas mantém o objeto vivo pra coroutine funcionar
+        StartCoroutine(EsperarTrocarDeCena());
     }
 
     private IEnumerator EsperarTrocarDeCena()
     {
-        yield return new WaitForSeconds(tempoDeEspera); 
-        SceneManager.LoadScene("vitoria");
+        yield return new WaitForSeconds(tempoDeEspera);
+
+        FadeVictory fade = FindFirstObjectByType<FadeVictory>();
+        if (fade != null)
+        {
+            fade.IrParaVitoria();
+        }
+        else
+        {
+            Debug.LogWarning("FadeVictory não foi encontrado na cena!");
+        }
     }
     private void DesativarBoss()
     {

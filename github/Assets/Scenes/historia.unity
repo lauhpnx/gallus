@@ -769,15 +769,15 @@ RectTransform:
   m_GameObject: {fileID: 1830338437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5662175, y: 0.5662175, z: 0.5662175}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 179876351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 283.7407, y: -358.21268}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 250, y: -380}
+  m_SizeDelta: {x: 295, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830338439
 MonoBehaviour:
@@ -800,18 +800,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Em um s\xE1bado de manh\xE3, a galinha Josefa preparava o caf\xE9 para
-    a sua fam\xEDlia. No dia anterior (domingo), parecia que tinha algo de errado
-    com a galinha. E, com d\xFAvidas sobre o comportamento da pr\xF3pria mulher,
-    Josefo (seu esposo Galo) a questionou sobre seu comportamento durante a manh\xE3
-    de s\xE1bado. Josefa, tranquila, falou que n\xE3o havia acontecido nada, mas
-    Josefo n\xE3o quis acreditar. Ele questionou por mais umas quinze vezes, e foi
-    a\xED que Josefa saiu do s\xE9rio. Seu marido - assustado pelo surto dela -,
-    come\xE7ou a fugir voando pelos c\xE9us. E, agora, seu objetivo \xE9 se vingar
-    de seu marido estressante. Voc\xEA ajudar\xE1 Josefa a recuperar sua sanidade
-    mental que seu marido acabou esgotando? Embarque nessa jornada super diferente,
-    que mistura mec\xE2nicas dos jogos : Galaxy Attack, Asteroids e Subway Surfers
-    (pelo fato de ter que fugir do guarda que, no nosso caso, \xE9 a Josefa).\n\nTenha
-    uma boa jogatina!"
+    a sua fam\xEDlia. No dia anterior, parecia que tinha algo de errado com a galinha.
+    E, com d\xFAvidas sobre o comportamento da pr\xF3pria mulher, Josefo (seu esposo
+    Galo) a questionou sobre seu comportamento durante a manh\xE3 de s\xE1bado. Josefa,
+    tranquila, falou que n\xE3o havia acontecido nada, mas Josefo n\xE3o quis acreditar.
+    Ele questionou por mais umas quinze vezes, e foi a\xED que Josefa saiu do s\xE9rio.
+    Seu marido - assustado pelo surto dela -, come\xE7ou a fugir voando pelos c\xE9us.
+    E, agora, seu objetivo \xE9 se vingar de seu marido estressante. Voc\xEA ajudar\xE1
+    Josefa a recuperar sua sanidade mental que seu marido acabou esgotando? Embarque
+    nessa jornada super diferente, que mistura mec\xE2nicas dos jogos : Galaxy Attack,
+    Asteroids e Subway Surfers (persegui\xE7\xE3o).\n\nTenha uma boa jogatina!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -838,10 +836,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.03
-  m_fontSizeBase: 28.03
+  m_fontSize: 31.9
+  m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -854,9 +852,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 2
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 5
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -876,7 +874,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -976.19525, y: 0, z: 135.90475, w: 0}
+  m_margin: {x: -928.19965, y: 0, z: 183.9001, w: -420.81006}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

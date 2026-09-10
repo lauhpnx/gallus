@@ -5,11 +5,14 @@ public class GerenciadorVitoria : MonoBehaviour
 {
     [Header("UI de Vitória")]
     public GameObject painelVitoria;
-    public string nomeProximaFase = "fase2";
 
     [Header("Condição: Matar Inimigos")]
-    public int totalInimigosNaFase = 10; 
-    private int inimigosDerrotados;
+    public int totalInimigosNaFase = 10;
+
+    private int inimigosDerrotados = 0;
+
+    private bool faseGanha = false;
+
 
     void Start()
     {
@@ -18,17 +21,57 @@ public class GerenciadorVitoria : MonoBehaviour
             painelVitoria.SetActive(false);
         }
 
-        // Removida a linha que contava na cena, pois zerava com Spawner
+        Time.timeScale = 1f;
     }
+
 
     public void RegistrarMorteInimigo()
     {
+        if (faseGanha)
+        {
+            return;
+        }
+
         inimigosDerrotados++;
 
-        // Garante que só ganha se a meta for maior que 0 e atingida
-        if (totalInimigosNaFase > 0 && inimigosDerrotados >= totalInimigosNaFase)
+        Debug.Log("Inimigos derrotados: " + inimigosDerrotados);
+
+        if (totalInimigosNaFase > 0 &&
+            inimigosDerrotados >= totalInimigosNaFase)
         {
-            GanhouAFase();
+            faseGanha = true;
+
+            Debug.Log("TODOS OS INIMIGOS FORAM DERROTADOS!");
+
+            string cenaAtual = SceneManager.GetActiveScene().name;
+
+            if (cenaAtual == "fase1")
+            {
+                Time.timeScale = 1f;
+
+                SceneManager.LoadScene("fase2");
+            }
+
+            else if (cenaAtual == "fase2")
+            {
+                Time.timeScale = 1f;
+
+                SceneManager.LoadScene("Fase3");
+            }
+            else if (cenaAtual == "Fase3")
+            {
+                FadeVictory fade = FindFirstObjectByType<FadeVictory>();
+                if (fade != null)
+                {
+                    fade.IrParaVitoria();
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        "FadeVictory não foi encontrado na Fase3!"
+                    );
+                }
+            }
         }
     }
 
@@ -45,12 +88,13 @@ public class GerenciadorVitoria : MonoBehaviour
     public void CarregarProximaFase()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(nomeProximaFase);
-    }
 
+        SceneManager.LoadScene("fase2");
+    }
     public void CarregarProximaFase3()
     {
         Time.timeScale = 1f;
+
         SceneManager.LoadScene("Fase3");
     }
 }

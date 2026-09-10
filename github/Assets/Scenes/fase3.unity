@@ -656,16 +656,20 @@ MonoBehaviour:
   Amplitude: 1.5
   limiteTeto: 6
   limiteChao: -6
-  maxHealth: 50
+  maxHealth: 76
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
+  PontoDeTiro2: {fileID: 0}
   tempoTiroFuria: 2
+  TempoTiroFuria2: 0
   galoMinionPrefab: {fileID: 8324450545477222452, guid: e51769747a9724b49b257cdb1feb2093, type: 3}
   left: {fileID: 431187396}
   right: {fileID: 756444680}
+  center: {fileID: 0}
   tempoSpawn: 3
   emFuria: 0
+  efeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
 --- !u!95 &268188809
 Animator:
   serializedVersion: 7
@@ -3459,10 +3463,10 @@ MonoBehaviour:
   velocidadeMovimento: 8
   usarPosicaoXManual: 1
   posicaoX_Manual: -7
-  ylimitmin: -4.5
-  ylimitemax: 4.5
-  xlimitmin: -8.2
-  xlimitmax: 8.2
+  ylimitmin: -3
+  ylimitemax: 3
+  xlimitmin: -6.48
+  xlimitmax: 0.2
   pontoDeDisparo: {fileID: 81650148}
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}
   intervaloTiro: 0.2

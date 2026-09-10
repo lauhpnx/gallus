@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using System.Collections;
 
 public class BossHealth : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class BossHealth : MonoBehaviour
 
     [Header("Estado do Boss")]
     public bool emFuria = false;
+    public GameObject efeitoMortePrefab;
+    public float tempoDeEspera = 2.0f;
+
 
     void Start()
     {
@@ -62,7 +66,7 @@ public class BossHealth : MonoBehaviour
 
     void Update()
     {
-    
+
         float velocidadeAtual = emFuria ? VelocidadeOndulação * 1.5f : VelocidadeOndulação;
         float novaY = yinicial + Mathf.Sin(Time.time * velocidadeAtual) * Amplitude;
         novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
@@ -72,7 +76,7 @@ public class BossHealth : MonoBehaviour
         if (emFuria)
         {
             AtirarPenasPerseguidoras();
-           
+
         }
     }
 
@@ -89,13 +93,13 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-       
+
         if (healthBarImage != null)
         {
             healthBarImage.fillAmount = currentHealth / maxHealth;
         }
 
-        
+
         if (!emFuria && currentHealth <= (maxHealth / 2f))
         {
             AtivarFuria();
@@ -123,14 +127,14 @@ public class BossHealth : MonoBehaviour
             PrimeiraPenaAtirada = true;
             Instantiate(penaPrefab, pontoDeTiro.position, Quaternion.identity);
         }
-            if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
-            {
-                Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
-                SegundaPenaAtirada = true;
-                cronometroTiro = 0f;
-                PrimeiraPenaAtirada = false;
-                SegundaPenaAtirada = false;
-            }
+        if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
+        {
+            Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
+            SegundaPenaAtirada = true;
+            cronometroTiro = 0f;
+            PrimeiraPenaAtirada = false;
+            SegundaPenaAtirada = false;
+        }
     }
 
     void SpawnarGalosMinions()
@@ -151,20 +155,45 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("O Galo foi derrotado!");
 
-       
+
         GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
         if (gerenciador != null)
         {
             gerenciador.GanhouAFase();
         }
 
-        
+
         if (healthBarImage != null && healthBarImage.transform.parent != null)
         {
             Destroy(healthBarImage.transform.parent.gameObject);
         }
+        if (efeitoMortePrefab != null)
+        {
+            Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
+        }
+        StartCoroutine(EsperarTrocarDeCena());
 
         Destroy(gameObject);
+    }
+
+    private IEnumerator EsperarTrocarDeCena()
+    {
+        yield return new WaitForSeconds(tempoDeEspera); // Espera o tempo definido antes de trocar de cena
         SceneManager.LoadScene("Vitoria");
+    }
+    private void DesativarBoss()
+    {
+        if (GetComponent<Renderer>() != null) GetComponent<Renderer>().enabled = false;
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+
+
+
+            }
+            if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
+            if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+        }
     }
 }

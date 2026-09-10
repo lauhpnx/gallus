@@ -178,8 +178,8 @@ public class BossHealth : MonoBehaviour
 
     private IEnumerator EsperarTrocarDeCena()
     {
-        yield return new WaitForSeconds(tempoDeEspera); // Espera o tempo definido antes de trocar de cena
-        SceneManager.LoadScene("Vitoria");
+        yield return new WaitForSeconds(tempoDeEspera); 
+        SceneManager.LoadScene("vitoria");
     }
     private void DesativarBoss()
     {

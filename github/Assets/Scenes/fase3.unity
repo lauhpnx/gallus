@@ -656,7 +656,7 @@ MonoBehaviour:
   Amplitude: 1.5
   limiteTeto: 6
   limiteChao: -6
-  maxHealth: 76
+  maxHealth: 50
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
@@ -670,6 +670,7 @@ MonoBehaviour:
   tempoSpawn: 3
   emFuria: 0
   efeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
+  tempoDeEspera: 1
 --- !u!95 &268188809
 Animator:
   serializedVersion: 7
@@ -3465,7 +3466,7 @@ MonoBehaviour:
   posicaoX_Manual: -7
   ylimitmin: -3
   ylimitemax: 3
-  xlimitmin: -6.48
+  xlimitmin: -7
   xlimitmax: 0.2
   pontoDeDisparo: {fileID: 81650148}
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}

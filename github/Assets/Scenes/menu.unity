@@ -149,7 +149,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2ba31aff11002564da2ebfc19602b80b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.365
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1017,8 +1017,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programa\xE7\xE3o :"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1852,8 +1852,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Audio e Trilha Sonora :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1989,8 +1989,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Dire\xE7\xE3o e Desing :"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2322,7 +2322,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d8cc3c0444cbd39438902529a51c3068, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.89
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2647,8 +2647,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Agradecimentos Especiais :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3194,8 +3194,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Roteiro e Narrativa :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3965,8 +3965,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Arte e Desing Visual :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1225216865}
   nomeProximaFase: Fase3
-  totalInimigosNaFase: 30
+  totalInimigosNaFase: 35
 --- !u!4 &627518463
 Transform:
   m_ObjectHideFlags: 0

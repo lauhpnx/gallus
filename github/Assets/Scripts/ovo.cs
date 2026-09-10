@@ -5,6 +5,7 @@ public class ovo : MonoBehaviour
     public float velocidade = 10f;
     public float tempoDeVida = 3f;
     public int dano = 1;
+    public BossHealth bossHealth;
 
     private Rigidbody2D rb;
 

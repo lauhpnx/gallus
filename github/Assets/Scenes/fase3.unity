@@ -657,7 +657,7 @@ MonoBehaviour:
   Amplitude: 1.5
   limiteTeto: 6
   limiteChao: -6
-  maxHealth: 50
+  maxHealth: 76
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
@@ -3395,6 +3395,7 @@ GameObject:
   - component: {fileID: 2105654443}
   - component: {fileID: 2105654444}
   - component: {fileID: 2105654446}
+  - component: {fileID: 2105654447}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3497,7 +3498,7 @@ MonoBehaviour:
   ylimitmin: -4.5
   ylimitemax: 4.5
   xlimitmin: -8.2
-  xlimitmax: 8.2
+  xlimitmax: 0.2
   pontoDeDisparo: {fileID: 81650148}
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}
   intervaloTiro: 0.2
@@ -3563,6 +3564,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2105654447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105654440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33a210224c43d143904ae9085a963f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkinPlayer
+  spriteNormal: {fileID: 0}
+  spriteSkin: {fileID: 0}
+  sprite3: {fileID: 0}
+  galinhaController: {fileID: 0}
+  skinEquipada: 0
 --- !u!1 &2144435002
 GameObject:
   m_ObjectHideFlags: 0

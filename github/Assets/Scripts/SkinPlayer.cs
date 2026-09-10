@@ -30,7 +30,7 @@ public class SkinPlayer : MonoBehaviour
     {
         switch (skinEquipada)
         {
-            case 2: if (sprite3 != null) sr.sprite = sprite3; break;
+            case 2: if (sprite3 != null) sr.sprite = sprite3;break;
             case 1: if (spriteSkin != null) sr.sprite = spriteSkin;
                 galinhaController.DefinirTipoDeTiro(2);
                 break;

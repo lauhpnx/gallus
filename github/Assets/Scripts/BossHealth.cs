@@ -19,7 +19,7 @@ public class BossHealth : MonoBehaviour
     private AudioSource morteDaBizerra;
 
     [Header("Configurações de Vida")]
-    public float maxHealth = 50f;
+    public float maxHealth = 60f;
     private float currentHealth;
 
     [Header("UI do Chefe (Barra de Vida)")]
@@ -131,7 +131,6 @@ public class BossHealth : MonoBehaviour
                 PrimeiraPenaAtirada = false;
                 SegundaPenaAtirada = false;
             }
-        
     }
 
     void SpawnarGalosMinions()

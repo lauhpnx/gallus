@@ -993,6 +993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoneyManager
   dinheiro: 0
   textoDinheiro: {fileID: 1381157353}
+  Moeda: {fileID: 0}
 --- !u!4 &401868550
 Transform:
   m_ObjectHideFlags: 0
@@ -2264,8 +2265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2206141a6d83a294bbf11cd467416119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::abrirLoja
-  Loja: {fileID: 1515766711}
-  painelCreditos: {fileID: 0}
+  painelLoja: {fileID: 0}
 --- !u!4 &1181613687
 Transform:
   m_ObjectHideFlags: 0
@@ -2293,6 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4091445ee718614985496f48fac61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
+  preco: 95
   idSkin: 1
 --- !u!1 &1200322594
 GameObject:
@@ -3249,7 +3250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 46.893997}
+  m_AnchoredPosition: {x: 0, y: 46.893982}
   m_SizeDelta: {x: 151.98, y: -27.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515766713
@@ -4052,8 +4053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2206141a6d83a294bbf11cd467416119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::abrirLoja
-  Loja: {fileID: 1515766711}
-  painelCreditos: {fileID: 0}
+  painelLoja: {fileID: 0}
 --- !u!114 &1989758699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,16 +4457,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
   life: 10
   _lifemax: 10
-  _speed: 5
   healthBarImage: {fileID: 2093812688}
   velocidadeMovimento: 8
+  usarPosicaoXManual: 1
+  posicaoX_Manual: -7
   ylimitmin: -4.5
   ylimitemax: 4
-  ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
+  xlimitmin: -8.2
+  xlimitmax: 8.2
   pontoDeDisparo: {fileID: 1919345063}
+  ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
+  anguloSegundoOvo: 20
   ovosRestantes: 50
   textoHUD: {fileID: 810829896}
+  ovosportiro: 2
 --- !u!212 &2050663103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4623,6 +4628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkinPlayer
   spriteNormal: {fileID: -6350633564872225674, guid: 4590515bdbe929e46a9eaa1303a449eb, type: 3}
   spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
+  sprite3: {fileID: 0}
+  galinhaController: {fileID: 0}
+  skinEquipada: 0
 --- !u!1 &2093812685
 GameObject:
   m_ObjectHideFlags: 0

@@ -224,8 +224,8 @@ MonoBehaviour:
     SOSSEGO EM SUA VIDA.\nOBRIGADO POR JOGAR, FOI UMA HONRA TER VOC\xCA COMO DEFENSOR
     DA NOSSA QUERIDA JOSEFA."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
+  m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

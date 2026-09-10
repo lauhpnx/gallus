@@ -2132,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4091445ee718614985496f48fac61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
-  preco: 125
+  preco: 50
   idSkin: 1
 --- !u!1 &1200322594
 GameObject:
@@ -2338,7 +2338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1149256358}
   nomeProximaFase: fase2
-  totalInimigosNaFase: 1
+  totalInimigosNaFase: 25
 --- !u!4 &1233568248
 Transform:
   m_ObjectHideFlags: 0
@@ -4120,7 +4120,7 @@ MonoBehaviour:
   ovoPrefab: {fileID: 1294717467854912593, guid: 8cc143dc95515ab4e9234bca100e5c85, type: 3}
   intervaloTiro: 0.4
   anguloSegundoOvo: 20
-  ovosRestantes: 65
+  ovosRestantes: 35
   textoHUD: {fileID: 810829896}
   ovosportiro: 1
 --- !u!212 &2050663103

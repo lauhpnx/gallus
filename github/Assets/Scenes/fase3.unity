@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd23cdd2c95e924782157bf849cceb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeVictory
-  fadeImage: {fileID: 0}
+  fadeImage: {fileID: 620624837}
   velocidadeFade: 0.8
   vitoria: "vit\xF3ria"
 --- !u!1 &674146655

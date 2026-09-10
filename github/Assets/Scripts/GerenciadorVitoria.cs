@@ -82,7 +82,7 @@ public class GerenciadorVitoria : MonoBehaviour
             painelVitoria.SetActive(true);
         }
 
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
 
     public void CarregarProximaFase()

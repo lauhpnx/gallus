@@ -352,7 +352,6 @@ GameObject:
   - component: {fileID: 268188808}
   - component: {fileID: 268188809}
   - component: {fileID: 268188810}
-  - component: {fileID: 268188811}
   m_Layer: 0
   m_Name: inimigo
   m_TagString: Untagged
@@ -432,6 +431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1893680721}
+  - {fileID: 530380947}
   - {fileID: 756444680}
   - {fileID: 431187396}
   m_Father: {fileID: 0}
@@ -662,9 +662,9 @@ MonoBehaviour:
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
-  PontoDeTiro2: {fileID: 0}
+  PontoDeTiro2: {fileID: 530380946}
   tempoTiroFuria: 2
-  TempoTiroFuria2: 0
+  TempoTiroFuria2: 4
   galoMinionPrefab: {fileID: 8324450545477222452, guid: e51769747a9724b49b257cdb1feb2093, type: 3}
   left: {fileID: 431187396}
   right: {fileID: 756444680}
@@ -710,20 +710,6 @@ MonoBehaviour:
   fadeImage: {fileID: 620624837}
   velocidadeFade: 0.8
   vitoria: vitoria
---- !u!114 &268188811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268188803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974734b5896331a46931c251143da124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
-  painelVitoria: {fileID: 0}
-  totalInimigosNaFase: 10
 --- !u!1 &431187395
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +735,7 @@ Transform:
   m_GameObject: {fileID: 431187395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 3.38, z: 0}
+  m_LocalPosition: {x: -2.31, y: 3.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1069,6 +1055,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462494629}
   m_CullTransparentMesh: 1
+--- !u!1 &530380946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530380947}
+  m_Layer: 0
+  m_Name: Ponto De DIsparo (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530380947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530380946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.44, y: -3.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 268188806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620624835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,7 +1432,7 @@ Transform:
   m_GameObject: {fileID: 756444679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.05, y: -3.41, z: 0}
+  m_LocalPosition: {x: -3.05, y: -3.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3258,7 +3275,7 @@ Transform:
   m_GameObject: {fileID: 1893680720}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.44, y: 0, z: 0}
+  m_LocalPosition: {x: -1.44, y: 4.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

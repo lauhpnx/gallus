@@ -131,7 +131,9 @@ public class BossHealth : MonoBehaviour
         }
         if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
         {
+            Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
             SegundaPenaAtirada = true;
+
             cronometroTiro = 0f;
             PrimeiraPenaAtirada = false;
             SegundaPenaAtirada = false;

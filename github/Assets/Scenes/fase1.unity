@@ -208,7 +208,7 @@ RectTransform:
   m_GameObject: {fileID: 100423179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8593857, y: 0.8593857, z: 0.8593857}
+  m_LocalScale: {x: 0.6466964, y: 0.6466964, z: 0.6466964}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383859114}
@@ -1306,14 +1306,14 @@ RectTransform:
   m_GameObject: {fileID: 810829894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3500801, y: 1.4026808, z: 1.4026808}
+  m_LocalScale: {x: 1.0398182, y: 1.0803307, z: 1.0803307}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383859114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 177, y: -53}
+  m_AnchoredPosition: {x: 137, y: -53}
   m_SizeDelta: {x: 149.95, y: 36.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810829896
@@ -2026,7 +2026,7 @@ RectTransform:
   m_GameObject: {fileID: 1164515507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4530392, y: 2.4530392, z: 2.4530392}
+  m_LocalScale: {x: 1.5071741, y: 1.5071741, z: 1.5071741}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383859114}
@@ -2295,7 +2295,7 @@ RectTransform:
   m_GameObject: {fileID: 1204474437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9619892, y: 0.9619892, z: 0.9619892}
+  m_LocalScale: {x: 0.7053505, y: 0.7053505, z: 0.7053505}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1888401870}
@@ -2304,7 +2304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -256, y: -187.6}
+  m_AnchoredPosition: {x: -282, y: -187.42}
   m_SizeDelta: {x: 198.3, y: 40.113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1233568246
@@ -2337,7 +2337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1149256358}
-  nomeProximaFase: fase2
   totalInimigosNaFase: 25
 --- !u!4 &1233568248
 Transform:
@@ -3023,7 +3022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515766712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3956,14 +3955,14 @@ RectTransform:
   m_GameObject: {fileID: 1989758696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.46145108, y: 0.46145108, z: 0.46145108}
+  m_LocalScale: {x: 0.38395497, y: 0.38395497, z: 0.38395497}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383859114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -69.24103, y: -53}
+  m_AnchoredPosition: {x: -60, y: -50}
   m_SizeDelta: {x: 289.99, y: 245.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989758698

@@ -663,13 +663,13 @@ MonoBehaviour:
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
   PontoDeTiro2: {fileID: 530380946}
-  tempoTiroFuria: 2
-  TempoTiroFuria2: 4
+  tempoTiroFuria: 1
+  TempoTiroFuria2: 3
   galoMinionPrefab: {fileID: 8324450545477222452, guid: e51769747a9724b49b257cdb1feb2093, type: 3}
   left: {fileID: 431187396}
   right: {fileID: 756444680}
   center: {fileID: 0}
-  tempoSpawn: 3
+  tempoSpawn: 1
   emFuria: 0
   efeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
   tempoDeEspera: 1

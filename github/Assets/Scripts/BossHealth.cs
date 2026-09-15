@@ -5,6 +5,12 @@ using System.Collections;
 
 public class BossHealth : MonoBehaviour
 {
+    [Header("ataque 2 chuva de ovos podres")]
+    public GameObject ovoPodrePrefab;
+    public GameObject avisoDeperigo;
+    public float TempoDeAviso = 1f;
+    public float tempoentreataques = 4f;
+    private float cronometroAtaque = 0f;
     [Header("Configurações da Camada")]
     public float xFixo = 5f;
 
@@ -78,6 +84,7 @@ public class BossHealth : MonoBehaviour
         if (emFuria)
         {
             AtirarPenasPerseguidoras();
+            OvoPodreChuva();
 
         }
     }
@@ -206,5 +213,18 @@ public class BossHealth : MonoBehaviour
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
         }
+    }
+    IEnumerator OvoPodreChuva()
+    {
+       float Xaleatorio = Random.Range(left.position.x, right.position.x);
+        Vector3 posiçãoAtaque = new Vector3(Xaleatorio, transform.position.y, 0f);
+
+        GameObject Aviso = Instantiate(avisoDeperigo, posiçãoAtaque, Quaternion.identity);
+
+        yield return new WaitForSeconds(TempoDeAviso);
+         
+        Destroy(Aviso);
+        Instantiate(ovoPodrePrefab, posiçãoAtaque, Quaternion.identity);
+
     }
 }

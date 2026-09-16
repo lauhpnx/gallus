@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c3aaae767e7db6a49843ebadabd4bada
+guid: 037d987b053271c40aa670a2064eb4a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4689370388810531149
-    second: Captura de tela 2026-09-01 133856_0
+      213: 3849812268927984388
+    second: back (5) 1_0
+  - first:
+      213: -5643237402446549702
+    second: back (5) 1_1
+  - first:
+      213: -8790727556126577312
+    second: back (5) 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +145,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura de tela 2026-09-01 133856_0
+      name: back (5) 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1919
-        height: 1079
+        x: 136
+        y: 535
+        width: 394
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +160,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3be76ba0a720ceeb0800000000000000
-      internalID: -4689370388810531149
+      spriteID: 403a4658cd74d6530800000000000000
+      internalID: 3849812268927984388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back (5) 1_1
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 535
+        width: 393
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3da9fb4b713fa1b0800000000000000
+      internalID: -5643237402446549702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back (5) 1_2
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 293
+        width: 509
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d66dbecdf010680800000000000000
+      internalID: -8790727556126577312
       vertices: []
       indices: 
       edges: []
@@ -174,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Captura de tela 2026-09-01 133856_0: -4689370388810531149
+      back (5) 1_0: 3849812268927984388
+      back (5) 1_1: -5643237402446549702
+      back (5) 1_2: -8790727556126577312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -171,15 +171,24 @@ public class BossHealth : MonoBehaviour
         {
             Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
         }
-        StartCoroutine(EsperarTrocarDeCena());
 
-        Destroy(gameObject);
+        DesativarBoss();
+        StartCoroutine(EsperarTrocarDeCena());
     }
 
     private IEnumerator EsperarTrocarDeCena()
     {
-        yield return new WaitForSeconds(tempoDeEspera); 
-        SceneManager.LoadScene("vitoria");
+        yield return new WaitForSeconds(tempoDeEspera);
+
+        FadeVictory fade = FindFirstObjectByType<FadeVictory>();
+        if (fade != null)
+        {
+            fade.IrParaVitoria();
+        }
+        else
+        {
+            Debug.LogWarning("FadeVictory não foi encontrado na cena!");
+        }
     }
     private void DesativarBoss()
     {

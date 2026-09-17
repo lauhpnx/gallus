@@ -7,7 +7,7 @@ public class FadeVictory : MonoBehaviour
 {
     public Image fadeImage;
     public float velocidadeFade = 0.8f;
-    public string vitoria = "vitória";
+    public string vitoria = "vitoria";
 
     public void IrParaVitoria()
     {
@@ -15,6 +15,7 @@ public class FadeVictory : MonoBehaviour
     }
     IEnumerator FazerFade()
     {
+        Debug.Log("Iniciou o Fade...");
         Color cor = fadeImage.color;
 
         while (cor.a < 1f)
@@ -31,8 +32,10 @@ public class FadeVictory : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("Fade concluído. Restaurando Time.timeScale...");
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(vitoria);
+        Debug.Log("Tentando carregar a cena: " + vitoria);
+        SceneManager.LoadScene("vitoria");
     }
 }

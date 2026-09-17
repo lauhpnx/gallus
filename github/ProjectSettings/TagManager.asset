@@ -61,5 +61,8 @@ TagManager:
   - name: panel text
     uniqueID: 1897816821
     locked: 0
+  - name: texto
+    uniqueID: 1684982495
+    locked: 0
   m_RenderingLayers:
   - Default

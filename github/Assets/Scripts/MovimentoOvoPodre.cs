@@ -4,6 +4,7 @@ public class MovimentoOvoPodre : MonoBehaviour
 {
     public float velocidade;
     public GalinhaController galinhaController;
+    public int damage = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,19 +15,23 @@ public class MovimentoOvoPodre : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * velocidade * Time.deltaTime);
-
-        if (transform.position.y < -10f)
-        {
-            Destroy(gameObject);
-        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Se o milho colidir com o Galo, ele se destrói
+        
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            galinhaController.TakeDamage(-1);
+            GalinhaController galinha = collision.GetComponent<GalinhaController>();
+            if (galinha != null)
+            {
+                galinha.TakeDamage(damage);
+            }
+
         }
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

@@ -6,12 +6,7 @@ using System.Collections;
 public class BossHealth : MonoBehaviour
 {
     [Header("ataque 3 chuva de ovos podres")]
-    public GameObject ovoPodrePrefab;
-    public GameObject avisoDeperigo;
-    public float TempoDeAviso = 1f;
-    public float tempoEntreChuvas = 4f;
-    public float CronometroChuvaDeOvos = 0f;
-    public Transform EfeitoAviso;
+    public SpawnOvoPodre Spawn;
 
     [Header("Configurações da Camada")]
     public float xFixo = 5f;
@@ -74,22 +69,19 @@ public class BossHealth : MonoBehaviour
 
     void Update()
     {
-
         float velocidadeAtual = emFuria ? VelocidadeOndulação * 1.5f : VelocidadeOndulação;
         float novaY = yinicial + Mathf.Sin(Time.time * velocidadeAtual) * Amplitude;
         novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
         transform.position = new Vector3(xFixo, novaY, 0f);
         SpawnarGalosMinions();
 
+      
         if (emFuria)
         {
             AtirarPenasPerseguidoras();
-            CronometroChuvaDeOvos += Time.deltaTime;
-
-            if (CronometroChuvaDeOvos >= tempoEntreChuvas)
+            if (Spawn != null)
             {
-                StartCoroutine(OvoPodreChuva());
-                CronometroChuvaDeOvos = 0f;
+                Spawn.iniciarchuvaFuria();
             }
         }
     }
@@ -128,7 +120,7 @@ public class BossHealth : MonoBehaviour
     void AtivarFuria()
     {
         emFuria = true;
-        Debug.Log("🔥 O GALO ENTROU EM FÚRIA! Começando a invocar e atirar penas!");
+        Debug.Log("furia on");
     }
 
     void AtirarPenasPerseguidoras()
@@ -218,19 +210,6 @@ public class BossHealth : MonoBehaviour
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
         }
-    }
-    IEnumerator OvoPodreChuva()
-    {
-        float Xaleatorio = Random.Range(left.position.x, right.position.x);
-        Vector3 posiçãoAtaque = new Vector3(Xaleatorio, EfeitoAviso.position.y, 0f);
-
-        GameObject Aviso = Instantiate(avisoDeperigo, posiçãoAtaque, Quaternion.identity);
-
-        yield return new WaitForSeconds(TempoDeAviso);
-
-        Destroy(Aviso);
-        Instantiate(ovoPodrePrefab, posiçãoAtaque, Quaternion.identity);
-
     }
 }
 

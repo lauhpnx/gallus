@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 110050200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 5.42, z: 0}
+  m_LocalPosition: {x: -2.64, y: 4.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,6 +200,8 @@ MonoBehaviour:
   right: {fileID: 114727867}
   TempoChovendo: 5
   TempoEntreChuva: 5
+  avisoPrefab: {fileID: 3628520365208621007, guid: b88263cd189e88f40bd1908e0ae0b600, type: 3}
+  tempoDeAviso: 1
 --- !u!1 &114727866
 GameObject:
   m_ObjectHideFlags: 0

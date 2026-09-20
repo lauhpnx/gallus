@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 public class SpawnOvoPodre : MonoBehaviour
@@ -10,12 +9,18 @@ public class SpawnOvoPodre : MonoBehaviour
 
     public Transform left;
     public Transform right;
+
     [Header("Configurações de Spawn")]
     public float TempoChovendo;
     public float TempoEntreChuva;
 
+    [Header("Aviso de Perigo")]
+    public GameObject avisoPrefab;
+    public float tempoDeAviso = 0.4f;
+
     private bool chovendoAgora = false;
     private bool cicloiniciado = false;
+
     public void iniciarchuvaFuria()
     {
         if (!cicloiniciado)
@@ -24,6 +29,7 @@ public class SpawnOvoPodre : MonoBehaviour
             cicloiniciado = true;
         }
     }
+
     IEnumerator RotinaDeChuva()
     {
         while (true)
@@ -34,14 +40,15 @@ public class SpawnOvoPodre : MonoBehaviour
             yield return new WaitForSeconds(TempoEntreChuva);
         }
     }
+
     public void Update()
     {
-      if (chovendoAgora)
+        if (chovendoAgora)
         {
             GerarOvosContinuos();
         }
-
     }
+
     private void GerarOvosContinuos()
     {
         if (left != null && right != null && prefab != null)
@@ -49,26 +56,31 @@ public class SpawnOvoPodre : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timer >= SpawnFrequency)
             {
+                _timer = 0f;
+
                 float newX = Random.Range(left.position.x, right.position.x);
                 Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
-                GameObject milho = Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
-                _timer = 0f;
+
+                StartCoroutine(AvisarEDepoisSpawnar(posicaoDeSpawn));
             }
         }
     }
-    public void SpawnOvos()
+
+    private IEnumerator AvisarEDepoisSpawnar(Vector3 posicao)
     {
-        
-        _timer += Time.deltaTime;
-
-        if (_timer >= SpawnFrequency)
+        GameObject aviso = null;
+        if (avisoPrefab != null)
         {
-
-            float newX = Random.Range(left.position.x, right.position.x);
-            Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
-            GameObject milho = Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
-
-            _timer = 0f;
+            aviso = Instantiate(avisoPrefab, posicao, Quaternion.identity);
         }
+
+        yield return new WaitForSeconds(tempoDeAviso);
+
+        if (aviso != null)
+        {
+            Destroy(aviso);
+        }
+
+        Instantiate(prefab, posicao, Quaternion.identity);
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3724217620425522366}
   m_Layer: 0
   m_Name: PrefabOvoPodre
-  m_TagString: Untagged
+  m_TagString: OvoPodre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

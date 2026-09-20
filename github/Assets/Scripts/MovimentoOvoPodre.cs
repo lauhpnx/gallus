@@ -18,7 +18,7 @@ public class MovimentoOvoPodre : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
@@ -27,7 +27,10 @@ public class MovimentoOvoPodre : MonoBehaviour
             {
                 galinha.TakeDamage(damage);
             }
-
+        }
+        if (collision.CompareTag("Ovo"))
+        {
+            Destroy(gameObject);
         }
     }
     private void OnBecameInvisible()

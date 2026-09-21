@@ -28,7 +28,6 @@ public class PenaPerseguidora : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Colidiu com o Player");
             GalinhaController galinha = collision.GetComponent<GalinhaController>();
             if (galinha != null)
             {

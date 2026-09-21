@@ -9,6 +9,7 @@ TagManager:
   - planta
   - Inimigo
   - Milho
+  - OvoPodre
   layers:
   - Default
   - TransparentFX

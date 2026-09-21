@@ -52,7 +52,11 @@ public class ovo : MonoBehaviour
             {
                 galinha.AdicionarOvos(2);
             }
+            morrer();
+        }
 
+        if (collision.CompareTag("OvoPodre"))
+        {
             morrer();
         }
     }

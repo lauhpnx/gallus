@@ -6,22 +6,18 @@ public class MovimentoMilho : MonoBehaviour
 
     void Update()
     {
-        // Vector3.down faz o objeto mover-se para baixo no eixo Y a cada frame
         transform.Translate(Vector3.down * velocidade * Time.deltaTime, Space.World);
-
-        // Se o milho passar da parte de baixo da tela, ele destrói-se para não pesar o jogo
-        if (transform.position.y < -10f)
-        {
-            Destroy(gameObject);
-        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Se o milho colidir com o Galo, ele se destrói
         if (collision.CompareTag("Ovo"))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

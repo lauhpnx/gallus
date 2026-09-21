@@ -5,6 +5,9 @@ using System.Collections;
 
 public class BossHealth : MonoBehaviour
 {
+    [Header("ataque 3 chuva de ovos podres")]
+    public SpawnOvoPodre Spawn;
+
     [Header("Configurações da Camada")]
     public float xFixo = 5f;
 
@@ -66,17 +69,20 @@ public class BossHealth : MonoBehaviour
 
     void Update()
     {
-
         float velocidadeAtual = emFuria ? VelocidadeOndulação * 1.5f : VelocidadeOndulação;
         float novaY = yinicial + Mathf.Sin(Time.time * velocidadeAtual) * Amplitude;
         novaY = Mathf.Clamp(novaY, limiteChao, limiteTeto);
         transform.position = new Vector3(xFixo, novaY, 0f);
         SpawnarGalosMinions();
 
+      
         if (emFuria)
         {
             AtirarPenasPerseguidoras();
-
+            if (Spawn != null)
+            {
+                Spawn.iniciarchuvaFuria();
+            }
         }
     }
 
@@ -114,7 +120,7 @@ public class BossHealth : MonoBehaviour
     void AtivarFuria()
     {
         emFuria = true;
-        Debug.Log("🔥 O GALO ENTROU EM FÚRIA! Começando a invocar e atirar penas!");
+        Debug.Log("furia on");
     }
 
     void AtirarPenasPerseguidoras()
@@ -206,3 +212,5 @@ public class BossHealth : MonoBehaviour
         }
     }
 }
+
+

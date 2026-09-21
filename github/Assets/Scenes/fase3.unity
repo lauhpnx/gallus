@@ -150,6 +150,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2105654442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &110050200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110050202}
+  - component: {fileID: 110050203}
+  m_Layer: 0
+  m_Name: Spawn Chuva de ovos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110050202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110050200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.64, y: 4.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110050203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110050200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67fe6f7b0c1b4a499958cda1caf5f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnOvoPodre
+  prefab: {fileID: 1608841699575437657, guid: 787936cb6fd216a44bfc8dbb7a477603, type: 3}
+  SpawnFrequency: 0.2
+  left: {fileID: 1388882395}
+  right: {fileID: 114727867}
+  TempoChovendo: 5
+  TempoEntreChuva: 5
+  avisoPrefab: {fileID: 3628520365208621007, guid: b88263cd189e88f40bd1908e0ae0b600, type: 3}
+  tempoDeAviso: 1
+--- !u!1 &114727866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114727867}
+  m_Layer: 0
+  m_Name: left (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114727867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114727866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.82, y: 6.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 268188806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122128365
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +515,10 @@ Transform:
   - {fileID: 1893680721}
   - {fileID: 1218357856}
   - {fileID: 756444680}
+  - {fileID: 1388882395}
   - {fileID: 431187396}
+  - {fileID: 114727867}
+  - {fileID: 1853295024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &268188807
@@ -652,12 +738,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a623800b0352f7742b0cb9a5ee0720fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
+  Spawn: {fileID: 110050203}
   xFixo: 5
   "VelocidadeOndula\xE7\xE3o": 3
   Amplitude: 1.5
   limiteTeto: 6
   limiteChao: -6
-  maxHealth: 50
+  maxHealth: 70
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
@@ -668,7 +755,7 @@ MonoBehaviour:
   left: {fileID: 431187396}
   right: {fileID: 756444680}
   center: {fileID: 0}
-  tempoSpawn: 3
+  tempoSpawn: 2
   emFuria: 0
   efeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
   tempoDeEspera: 1
@@ -2012,7 +2099,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1081164635
+  m_SortingLayerID: 1684982495
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1009313686
@@ -2356,6 +2443,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360686151}
   m_CullTransparentMesh: 1
+--- !u!1 &1388882394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388882395}
+  m_Layer: 0
+  m_Name: right (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1388882395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388882394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.84, y: 6.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 268188806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1404394698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,6 +3352,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fundo
   velocidade: 5
+--- !u!1 &1853295023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853295024}
+  m_Layer: 0
+  m_Name: Aviso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853295024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853295023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.27, y: -3.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 268188806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1893680720
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,8 +3782,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.20709085, y: 0}
-  m_Radius: 2.769917
+  m_Offset: {x: 0.12526417, y: 0}
+  m_Radius: 2.6880903
 --- !u!95 &2105654446
 Animator:
   serializedVersion: 7
@@ -3743,3 +3892,4 @@ SceneRoots:
   - {fileID: 1526075395}
   - {fileID: 1404394700}
   - {fileID: 268188806}
+  - {fileID: 110050202}

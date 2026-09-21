@@ -27,4 +27,18 @@ public class Spawn : MonoBehaviour
             _timer = 0f;
         }
     }
+     public void SpawnOvos()
+    { 
+         _timer += Time.deltaTime;
+
+        if (_timer >= SpawnFrequency)
+        {
+           
+            float newX = Random.Range(left.position.x, right.position.x);
+           Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
+              GameObject milho = Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
+
+           _timer = 0f;
+        }
+}
 }

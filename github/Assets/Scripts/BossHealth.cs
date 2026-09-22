@@ -211,6 +211,11 @@ public class BossHealth : MonoBehaviour
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
         }
     }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(xFixo, limiteChao, 0f), new Vector3(xFixo, limiteTeto, 0f));
+    }
 }
 
 

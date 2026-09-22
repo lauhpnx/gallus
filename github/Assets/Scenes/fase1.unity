@@ -2192,7 +2192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 38, y: 30.881012}
+  m_AnchoredPosition: {x: 38, y: 30.880981}
   m_SizeDelta: {x: 28.56, y: 30.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164515509
@@ -3203,7 +3203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.23638916, y: 3.746399}
+  m_AnchoredPosition: {x: -0.23632812, y: 3.746399}
   m_SizeDelta: {x: 151.98, y: -27.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515766713
@@ -4272,7 +4272,7 @@ MonoBehaviour:
   velocidadeMovimento: 8
   usarPosicaoXManual: 1
   posicaoX_Manual: -7
-  ylimitmin: -4.5
+  ylimitmin: -4
   ylimitemax: 4
   xlimitmin: -8.2
   xlimitmax: 8.2
@@ -4435,7 +4435,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.68, y: 5.16}
+    oldSize: {x: 2.3741934, y: 3.3290322}
     newSize: {x: 2.05, y: 2.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

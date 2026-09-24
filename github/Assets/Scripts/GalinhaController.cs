@@ -122,10 +122,14 @@ public class GalinhaController : MonoBehaviour
     {
         cronometroTiro += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
+        if (Input.GetMouseButton(0) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
         {
             Atirar();
         }
+        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
+                {
+            Atirar();  
+                }
     }
 
     // Dispara 1, 2 ou 3 ovos dependendo de "ovosportiro"

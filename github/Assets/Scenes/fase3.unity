@@ -3895,6 +3895,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
   ovoScript: {fileID: 0}
+  fadeImage: {fileID: 620624837}
+  velocidadeFade: 0.8
+  tempoDeEspera: 2
+  GameOver: GameOver
   life: 14
   _lifemax: 14
   healthBarImage: {fileID: 462494632}

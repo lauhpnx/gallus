@@ -2,12 +2,18 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class GalinhaController : MonoBehaviour
 {
     // Referência única da galinha, pra outros scripts (como o "ovo") acessarem sem precisar procurar na cena
     public static GalinhaController Instance;
     public ovo ovoScript;
+    public Image fadeImage;
+    public float velocidadeFade = 0.8f;
+    public float tempoDeEspera = 2.0f;
+    public string GameOver = "GameOver";
     [Header("Configurações de Vida")]
     public int life = 10;
     public int _lifemax = 10;
@@ -127,9 +133,9 @@ public class GalinhaController : MonoBehaviour
             Atirar();
         }
         if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
-                {
-            Atirar();  
-                }
+        {
+            Atirar();
+        }
     }
 
     // Dispara 1, 2 ou 3 ovos dependendo de "ovosportiro"
@@ -217,16 +223,59 @@ public class GalinhaController : MonoBehaviour
     }
     public void DefinirTipoDeTiro(int tipo)
     {
-     ovosportiro = tipo;
+        ovosportiro = tipo;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Milho"))
         {
-            
+
             Destroy(collision.gameObject);
             AdicionarOvos(2);
+        }
+    }
+    public void IrParaVitoria()
+    {
+        StartCoroutine(FazerFade());
+    }
+    IEnumerator FazerFade()
+    {
+        Debug.Log("Iniciou o Fade...");
+        Color cor = fadeImage.color;
+
+        while (cor.a < 1f)
+        {
+            cor.a += velocidadeFade * Time.unscaledDeltaTime;
+
+            if (cor.a > 1f)
+            {
+                cor.a = 1f;
+            }
+
+            fadeImage.color = cor;
+
+            yield return null;
+        }
+
+        Debug.Log("Fade concluído. Restaurando Time.timeScale...");
+        Time.timeScale = 1f;
+
+        Debug.Log("Tentando carregar a cena: " + GameOver);
+        SceneManager.LoadScene(GameOver);
+    }
+    private IEnumerator EsperarTrocarDeCena()
+    {
+        yield return new WaitForSeconds(tempoDeEspera);
+
+        FadeVictory fade = FindFirstObjectByType<FadeVictory>();
+        if (fade != null)
+        {
+            fade.IrParaVitoria();
+        }
+        else
+        {
+            Debug.LogWarning("FadeVictory não foi encontrado na cena!");
         }
     }
 }

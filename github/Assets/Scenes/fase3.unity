@@ -202,6 +202,7 @@ MonoBehaviour:
   TempoEntreChuva: 5
   avisoPrefab: {fileID: 3628520365208621007, guid: b88263cd189e88f40bd1908e0ae0b600, type: 3}
   TextoWarningPrefab: {fileID: 719706686}
+  animacaoWarning: {fileID: 719706689}
   Velocidade: 1
   tempoDeAviso: 1
 --- !u!1 &114727866
@@ -1445,7 +1446,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2231369983
+    rgba: 4278190335
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

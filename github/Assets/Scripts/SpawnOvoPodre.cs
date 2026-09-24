@@ -18,6 +18,7 @@ public class SpawnOvoPodre : MonoBehaviour
     [Header("Aviso de Perigo")]
     public GameObject avisoPrefab;
     public TextMeshProUGUI TextoWarningPrefab;
+    public Animator animacaoWarning;
     public float Velocidade = 1f;
     public float tempoDeAviso = 1f;
 
@@ -32,6 +33,10 @@ public class SpawnOvoPodre : MonoBehaviour
             Color corInicial = TextoWarningPrefab.color;
             corInicial.a = 0f;
             TextoWarningPrefab.color = corInicial;
+        }
+        if(animacaoWarning != null)
+        {
+            animacaoWarning.enabled = false;
         }
     }
     public void iniciarchuvaFuria()
@@ -101,7 +106,7 @@ public class SpawnOvoPodre : MonoBehaviour
     {
         if (TextoWarningPrefab == null) yield break;
         {
-            TextoWarningPrefab.text = "WARNING";
+            TextoWarningPrefab.text = "PERIGO! OVOS PODRES ESTÃO\r\nCAINDO DO CÉU, CUIDADO!";
             Color cor = TextoWarningPrefab.color;
             cor.a = 0f;
             TextoWarningPrefab.color = cor;
@@ -114,6 +119,10 @@ public class SpawnOvoPodre : MonoBehaviour
                 TextoWarningPrefab.color = cor;
                 yield return null;
             }
+        }
+        if (animacaoWarning != null)
+        {
+            animacaoWarning.enabled = true;
         }
     }
 }

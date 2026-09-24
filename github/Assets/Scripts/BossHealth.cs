@@ -210,6 +210,19 @@ public class BossHealth : MonoBehaviour
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
         }
+        if (galoMinionPrefab != null)
+        {
+            galoMinionPrefab.SetActive(false);
+         
+            if (penaPrefab != null)
+            {
+                penaPrefab.SetActive(false);
+            }
+            if (Spawn != null)
+            {
+                Spawn.enabled = false;
+            }
+        } 
     }
     void OnDrawGizmosSelected()
     {

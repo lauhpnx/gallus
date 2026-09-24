@@ -28,7 +28,7 @@ public class SpawnOvoPodre : MonoBehaviour
     {
         if (TextoWarningPrefab != null)
         {
-            TextoWarningPrefab.text = "WARNING";
+            TextoWarningPrefab.text = "PERIGO! OVOS PODRES ESTÃO\r\nCAINDO DO CÉU, CUIDADO!";
             Color corInicial = TextoWarningPrefab.color;
             corInicial.a = 0f;
             TextoWarningPrefab.color = corInicial;

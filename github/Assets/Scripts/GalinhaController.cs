@@ -7,7 +7,7 @@ using System.Collections;
 
 public class GalinhaController : MonoBehaviour
 {
-    // Referência única da galinha, pra outros scripts (como o "ovo") acessarem sem precisar procurar na cena
+    public GameObject EfeitoMortePrefab;
     public static GalinhaController Instance;
     public ovo ovoScript;
     public Image fadeImage;
@@ -206,21 +206,30 @@ public class GalinhaController : MonoBehaviour
 
     void Morrer()
     {
-        gameObject.SetActive(false);
-        SceneManager.LoadScene("GameOver");
-    }
 
-    void AtualizarHealthBar()
-    {
-        if (healthBarImage == null) return;
-
-        if (_lifemax <= 0)
         {
-            _lifemax = 10;
-        }
+            if (EfeitoMortePrefab != null)
+            {
+                Instantiate(EfeitoMortePrefab, transform.position, Quaternion.identity);
+            }
+            DesativarPlayer();
+            // gameObject.SetActive(false);
+            StartCoroutine(EsperarTrocarDeCena());
 
-        healthBarImage.fillAmount = (float)life / _lifemax;
+        }
     }
+        void AtualizarHealthBar()
+        {
+            if (healthBarImage == null) return;
+
+            if (_lifemax <= 0)
+            {
+                _lifemax = 10;
+            }
+
+            healthBarImage.fillAmount = (float)life / _lifemax;
+        }
+    
     public void DefinirTipoDeTiro(int tipo)
     {
         ovosportiro = tipo;
@@ -264,18 +273,24 @@ public class GalinhaController : MonoBehaviour
         Debug.Log("Tentando carregar a cena: " + GameOver);
         SceneManager.LoadScene(GameOver);
     }
+    private void DesativarPlayer()
+    {
+        if (GetComponent<Renderer>() != null) GetComponent<Renderer>().enabled = false;
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+
+
+
+            }
+            if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
+            if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+        }
+    }
     private IEnumerator EsperarTrocarDeCena()
     {
         yield return new WaitForSeconds(tempoDeEspera);
-
-        FadeVictory fade = FindFirstObjectByType<FadeVictory>();
-        if (fade != null)
-        {
-            fade.IrParaVitoria();
-        }
-        else
-        {
-            Debug.LogWarning("FadeVictory não foi encontrado na cena!");
-        }
+        IrParaVitoria();
     }
 }

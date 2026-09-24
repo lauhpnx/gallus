@@ -489,12 +489,12 @@ SpriteRenderer:
   m_SortingLayerID: -1081164635
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
+  m_Sprite: {fileID: -855298285791758126, guid: 2b290fb47e3afe24ab5514f596ec6771, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 3.99, y: 4.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -509,8 +509,8 @@ Transform:
   m_GameObject: {fileID: 292046023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.83, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.85, y: 0.26, z: 0}
+  m_LocalScale: {x: 0.61109, y: 0.61109, z: 0.61109}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1130353465}
@@ -529,6 +529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
   ovoScript: {fileID: 0}
+  fadeImage: {fileID: 0}
+  velocidadeFade: 0.8
+  tempoDeEspera: 2
+  GameOver: GameOver
   life: 10
   _lifemax: 10
   healthBarImage: {fileID: 1587046588}
@@ -580,17 +584,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.474463, y: 0.8263471}
+  m_Offset: {x: -0.01, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 27.428572, y: 15.428572}
-    newSize: {x: 19.2, y: 10.8}
+    oldSize: {x: 3.99, y: 4.25}
+    newSize: {x: 3.99, y: 4.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.122159, y: 2.4069076}
+  m_Size: {x: 3.99, y: 4.25}
   m_EdgeRadius: 0
 --- !u!95 &292046028
 Animator:
@@ -2244,7 +2248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 247, y: -54}
+  m_AnchoredPosition: {x: 278, y: -58}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547373227
@@ -3323,15 +3327,15 @@ RectTransform:
   m_GameObject: {fileID: 2103256967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.34000206, y: 0.34000206, z: 0.34000206}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1547373226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: -11}
-  m_SizeDelta: {x: 250, y: 350}
+  m_AnchoredPosition: {x: -138, y: -11}
+  m_SizeDelta: {x: 162, y: 178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103256969
 MonoBehaviour:
@@ -3353,7 +3357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6670960253cbf7542817e4c79ecb2578, type: 3}
+  m_Sprite: {fileID: -1540426309290004842, guid: 5d3023b072b5b6a4bad3188cecd5a6bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

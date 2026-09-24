@@ -7,7 +7,7 @@ public class GalinhaController : MonoBehaviour
 {
     // Referência única da galinha, pra outros scripts (como o "ovo") acessarem sem precisar procurar na cena
     public static GalinhaController Instance;
-
+    public ovo ovoScript;
     [Header("Configurações de Vida")]
     public int life = 10;
     public int _lifemax = 10;
@@ -122,10 +122,14 @@ public class GalinhaController : MonoBehaviour
     {
         cronometroTiro += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
+        if (Input.GetMouseButton(0) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
         {
             Atirar();
         }
+        if (Input.GetKeyDown(KeyCode.Space) && cronometroTiro >= intervaloTiro && ovosRestantes >= ovosportiro)
+                {
+            Atirar();  
+                }
     }
 
     // Dispara 1, 2 ou 3 ovos dependendo de "ovosportiro"
@@ -215,5 +219,14 @@ public class GalinhaController : MonoBehaviour
     {
      ovosportiro = tipo;
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Milho"))
+        {
+            
+            Destroy(collision.gameObject);
+            AdicionarOvos(2);
+        }
     }
 }

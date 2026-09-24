@@ -34,8 +34,6 @@ public class GerenciadorVitoria : MonoBehaviour
 
         inimigosDerrotados++;
 
-        Debug.Log("Inimigos derrotados: " + inimigosDerrotados);
-
         if (totalInimigosNaFase > 0 &&
             inimigosDerrotados >= totalInimigosNaFase)
         {

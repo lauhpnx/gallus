@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class SpawnOvoPodre : MonoBehaviour
@@ -16,11 +17,23 @@ public class SpawnOvoPodre : MonoBehaviour
 
     [Header("Aviso de Perigo")]
     public GameObject avisoPrefab;
-    public float tempoDeAviso = 0.4f;
+    public TextMeshProUGUI TextoWarningPrefab;
+    public float Velocidade = 1f;
+    public float tempoDeAviso = 1f;
 
     private bool chovendoAgora = false;
     private bool cicloiniciado = false;
 
+    void Start()
+    {
+        if (TextoWarningPrefab != null)
+        {
+            TextoWarningPrefab.text = "PERIGO! OVOS PODRES ESTÃO\r\nCAINDO DO CÉU, CUIDADO!";
+            Color corInicial = TextoWarningPrefab.color;
+            corInicial.a = 0f;
+            TextoWarningPrefab.color = corInicial;
+        }
+    }
     public void iniciarchuvaFuria()
     {
         if (!cicloiniciado)
@@ -32,6 +45,7 @@ public class SpawnOvoPodre : MonoBehaviour
 
     IEnumerator RotinaDeChuva()
     {
+        yield return StartCoroutine(MostrarAvisoDeChuva());
         while (true)
         {
             chovendoAgora = true;
@@ -82,5 +96,24 @@ public class SpawnOvoPodre : MonoBehaviour
         }
 
         Instantiate(prefab, posicao, Quaternion.identity);
+    }
+    IEnumerator MostrarAvisoDeChuva()
+    {
+        if (TextoWarningPrefab == null) yield break;
+        {
+            TextoWarningPrefab.text = "WARNING";
+            Color cor = TextoWarningPrefab.color;
+            cor.a = 0f;
+            TextoWarningPrefab.color = cor;
+
+            while (cor.a < 1f)
+            {
+                cor.a += Velocidade * Time.unscaledDeltaTime;
+                if (cor.a > 1f) cor.a = 1f;
+
+                TextoWarningPrefab.color = cor;
+                yield return null;
+            }
+        }
     }
 }

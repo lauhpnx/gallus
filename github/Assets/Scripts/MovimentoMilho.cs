@@ -15,6 +15,10 @@ public class MovimentoMilho : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
+        if(collision.CompareTag("Player"))
+        {
+           Destroy(gameObject);
+        }
     }
     private void OnBecameInvisible()
     {

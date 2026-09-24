@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: -1081164635
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7371509505491802261, guid: d8d1c3902b582274d8b0c0aa80e29e7b, type: 3}
+  m_Sprite: {fileID: 1420654696651327875, guid: a5615801910dfd44db26a2817461558a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -256,7 +256,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88, y: 1.13}
+    oldSize: {x: 3.04, y: 3.34}
     newSize: {x: 0.88, y: 1.13}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -309,4 +309,5 @@ MonoBehaviour:
   velocidade: 10
   tempoDeVida: 3
   dano: 10
+  bossHealth: {fileID: 0}
   explosaoPrefab: {fileID: 6173220678656044316, guid: 6a963c0f6452c6c4d987ea0767650f9e, type: 3}

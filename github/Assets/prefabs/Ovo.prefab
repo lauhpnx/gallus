@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: -1081164635
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5920285a4247dc04897bcc953a46c5e1, type: 3}
+  m_Sprite: {fileID: -9205341645114561732, guid: afae2319bdfdcdb4d95d9969496bc684, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,6 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Destroy
   velocidade: 15
   tempoDeVida: 3
+  dano: 1
+  bossHealth: {fileID: 0}
   explosaoPrefab: {fileID: 6173220678656044316, guid: 6a963c0f6452c6c4d987ea0767650f9e, type: 3}
 --- !u!114 &8743852648323719213
 MonoBehaviour:
@@ -285,7 +287,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
+    oldSize: {x: 2.09, y: 2.29}
     newSize: {x: 19.2, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

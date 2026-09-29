@@ -9,7 +9,7 @@ public class GalinhaController : MonoBehaviour
 {
     public GameObject EfeitoMortePrefab;
     public static GalinhaController Instance;
-    public ovo ovoScript;
+    public BossHealth bossHealth;
     public Image fadeImage;
     public float velocidadeFade = 0.8f;
     public float tempoDeEspera = 2.0f;
@@ -206,16 +206,17 @@ public class GalinhaController : MonoBehaviour
 
     void Morrer()
     {
-
+        if (life <= 0)
         {
+            if (pontoDeDisparo != null) pontoDeDisparo.gameObject.SetActive(false);
             if (EfeitoMortePrefab != null)
             {
                 Instantiate(EfeitoMortePrefab, transform.position, Quaternion.identity);
+               
             }
+           
             DesativarPlayer();
-            // gameObject.SetActive(false);
             StartCoroutine(EsperarTrocarDeCena());
-
         }
     }
         void AtualizarHealthBar()
@@ -283,9 +284,14 @@ public class GalinhaController : MonoBehaviour
 
 
 
+
             }
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+            if (pontoDeDisparo != null)
+            {
+                pontoDeDisparo.gameObject.SetActive(false);
+            }
         }
     }
     private IEnumerator EsperarTrocarDeCena()

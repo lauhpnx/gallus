@@ -528,8 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb91dcc56b585264c829dd858df3dc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
-  ovoScript: {fileID: 0}
-  fadeImage: {fileID: 0}
+  EfeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
+  bossHealth: {fileID: 0}
+  fadeImage: {fileID: 1022361524}
   velocidadeFade: 0.8
   tempoDeEspera: 2
   GameOver: GameOver
@@ -606,7 +607,7 @@ Animator:
   m_GameObject: {fileID: 292046023}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b992fe9dab8f5584a84a2598f4cba373, type: 2}
+  m_Controller: {fileID: 9100000, guid: 76f3ad1a25ee3544d916b4852acbdbab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1482,6 +1483,8 @@ GameObject:
   m_Component:
   - component: {fileID: 871877159}
   - component: {fileID: 871877158}
+  - component: {fileID: 871877160}
+  - component: {fileID: 871877161}
   m_Layer: 0
   m_Name: dinheiro
   m_TagString: Untagged
@@ -1562,6 +1565,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 395878531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &871877160
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871877157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 816405ac4270be6488df84482170ee65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &871877161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871877157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fec3f9b404bf204ea36bf5c0c079d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateObj
+  velocidade: 50
 --- !u!1 &1020785446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,6 +1761,97 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1022361521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022361522}
+  - component: {fileID: 1022361525}
+  - component: {fileID: 1022361524}
+  - component: {fileID: 1022361523}
+  m_Layer: 5
+  m_Name: fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1022361522
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022361521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -972}
+  m_LocalScale: {x: 10.86372, y: 10.86372, z: 10.86372}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1590029527}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 31.2, y: 0}
+  m_SizeDelta: {x: 184.54, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1022361523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022361521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd23cdd2c95e924782157bf849cceb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeVictory
+  fadeImage: {fileID: 1022361524}
+  velocidadeFade: 0.8
+  vitoria: "vit\xF3ria"
+--- !u!114 &1022361524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022361521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1022361525
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022361521}
+  m_CullTransparentMesh: 1
 --- !u!1 &1025844750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,6 +2756,7 @@ RectTransform:
   - {fileID: 1587046586}
   - {fileID: 1823374671}
   - {fileID: 1225216866}
+  - {fileID: 1022361522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3311,6 +3441,7 @@ GameObject:
   - component: {fileID: 2103256968}
   - component: {fileID: 2103256970}
   - component: {fileID: 2103256969}
+  - component: {fileID: 2103256971}
   m_Layer: 5
   m_Name: ovo da contagem
   m_TagString: Untagged
@@ -3327,7 +3458,7 @@ RectTransform:
   m_GameObject: {fileID: 2103256967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.34000206, y: 0.34000206, z: 0.34000206}
+  m_LocalScale: {x: 0.5619369, y: 0.5619369, z: 0.5619369}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1547373226}
@@ -3375,6 +3506,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103256967}
   m_CullTransparentMesh: 1
+--- !u!114 &2103256971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103256967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fec3f9b404bf204ea36bf5c0c079d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateObj
+  velocidade: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

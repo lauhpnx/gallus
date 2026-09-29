@@ -4266,7 +4266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb91dcc56b585264c829dd858df3dc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
-  ovoScript: {fileID: 0}
+  EfeitoMortePrefab: {fileID: 0}
+  bossHealth: {fileID: 0}
+  fadeImage: {fileID: 0}
+  velocidadeFade: 0.8
+  tempoDeEspera: 2
+  GameOver: GameOver
   life: 15
   _lifemax: 15
   healthBarImage: {fileID: 2093812688}
@@ -4367,7 +4372,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050663101}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cbe2c4e440de44449a72322677aae70b, type: 2}
   m_CullingMode: 0

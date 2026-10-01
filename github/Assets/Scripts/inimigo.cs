@@ -12,6 +12,7 @@ public class inimigo : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-speed, 0);
+        GetComponent<SpriteRenderer>().flipX = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

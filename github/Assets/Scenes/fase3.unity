@@ -760,7 +760,7 @@ MonoBehaviour:
   center: {fileID: 0}
   tempoSpawn: 2
   emFuria: 0
-  efeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
+  efeitoMortePrefab: {fileID: 1835402399776285181, guid: 0bfbafadae048ea4b8b84f36c01c293e, type: 3}
   tempoDeEspera: 1
 --- !u!95 &268188809
 Animator:
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GalinhaController
   EfeitoMortePrefab: {fileID: 1835402399776285181, guid: 2a77f0d239f043c4cb14a87b501747af, type: 3}
-  ovoScript: {fileID: 0}
+  bossHealth: {fileID: 0}
   fadeImage: {fileID: 620624837}
   velocidadeFade: 0.8
   tempoDeEspera: 2

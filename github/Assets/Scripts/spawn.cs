@@ -2,43 +2,54 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject prefab; // O prefab do milho
+    public GameObject prefab;
     public float SpawnFrequency;
     private float _timer;
 
     public Transform left;
     public Transform right;
 
+    [Header("Ensinar o Milho (primeira vez)")]
+    public int muturacaoMinima = 10; 
+    public GameObject avisoMilhoPrefab;
+    public float tempoDeAviso = 1.5f;
+    private bool primeiroMilhoJaEnsinado = false;
+
     void Update()
     {
-        _timer += Time.deltaTime;
+        if (!primeiroMilhoJaEnsinado)
+        {
+            if (GalinhaController.Instance != null &&
+                GalinhaController.Instance.ovosRestantes <= muturacaoMinima)
+            {
+                SpawnarMilhoComAviso();
+                primeiroMilhoJaEnsinado = true;
+                _timer = 0f;
+            }
+            return; 
+        }
 
+        _timer += Time.deltaTime;
         if (_timer >= SpawnFrequency)
         {
-            // 1. Sorteia o X aleatório entre os limites da esquerda e direita
             float newX = Random.Range(left.position.x, right.position.x);
-
-            // 2. Define a posição de nascimento: X sorteado, mas o Y e Z fixos do Spawner (lá de cima)
             Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
-
-            // 3. Instancia o milho diretamente na posição correta
-            GameObject milho = Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
-
+            Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
             _timer = 0f;
         }
     }
-     public void SpawnOvos()
-    { 
-         _timer += Time.deltaTime;
 
-        if (_timer >= SpawnFrequency)
+    void SpawnarMilhoComAviso()
+    {
+        float newX = Random.Range(left.position.x, right.position.x);
+        Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
+
+        Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
+
+        if (avisoMilhoPrefab != null)
         {
-           
-            float newX = Random.Range(left.position.x, right.position.x);
-           Vector3 posicaoDeSpawn = new Vector3(newX, transform.position.y, transform.position.z);
-              GameObject milho = Instantiate(prefab, posicaoDeSpawn, Quaternion.identity);
-
-           _timer = 0f;
+            GameObject aviso = Instantiate(avisoMilhoPrefab, posicaoDeSpawn + Vector3.up * 1f, Quaternion.identity);
+           // Destroy(aviso, tempoDeAviso); 
         }
-}
+    }
 }

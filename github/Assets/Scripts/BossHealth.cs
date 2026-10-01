@@ -196,33 +196,26 @@ public class BossHealth : MonoBehaviour
             Debug.LogWarning("FadeVictory não foi encontrado na cena!");
         }
     }
-    private void DesativarBoss()
+    public void DesativarBoss()
     {
         if (GetComponent<Renderer>() != null) GetComponent<Renderer>().enabled = false;
+
+        foreach (Transform child in transform)
         {
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-
-
-
-            }
-            if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
-            if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+            child.gameObject.SetActive(false);
         }
-        if (galoMinionPrefab != null)
-        {
-            galoMinionPrefab.SetActive(false);
-         
-            if (penaPrefab != null)
-            {
-                penaPrefab.SetActive(false);
-            }
-            if (Spawn != null)
-            {
-                Spawn.enabled = false;
-            }
-        } 
+
+        if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
+        if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+
+
+
+        if (Spawn != null) Spawn.enabled = false;
+        if (pontoDeTiro != null) pontoDeTiro.gameObject.SetActive(false);
+        if (PontoDeTiro2 != null) PontoDeTiro2.SetActive(false);
+        if (left != null) left.gameObject.SetActive(false);
+        if (right != null) right.gameObject.SetActive(false);
+        if (center != null) center.gameObject.SetActive(false);
     }
     void OnDrawGizmosSelected()
     {

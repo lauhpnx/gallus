@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: af1c7fddf5febac42a7ea62222ab5a90
+guid: 4996f8a604b14d14e9a997e1483ae03e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1479756675516937684
-    second: galo-final-pro-meu-p.i-pixilart_0
+      213: 56405453324043922
+    second: pixil-frame-0 (5)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: galo-final-pro-meu-p.i-pixilart_0
+      name: pixil-frame-0 (5)_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 17
-        width: 40
-        height: 48
+        x: 424
+        y: 305
+        width: 648
+        height: 784
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2accc9c429d67be0800000000000000
-      internalID: -1479756675516937684
+      spriteID: 29646c0067468c000800000000000000
+      internalID: 56405453324043922
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      galo-final-pro-meu-p.i-pixilart_0: -1479756675516937684
+      pixil-frame-0 (5)_0: 56405453324043922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

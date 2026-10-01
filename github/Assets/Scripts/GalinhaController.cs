@@ -281,7 +281,7 @@ public class GalinhaController : MonoBehaviour
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
-                Atirar();
+                
 
 
 
@@ -289,6 +289,8 @@ public class GalinhaController : MonoBehaviour
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
             
+            ovosRestantes = 0;
+            velocidadeMovimento = 0f;
         }
     }
     private IEnumerator EsperarTrocarDeCena()

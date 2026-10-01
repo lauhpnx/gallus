@@ -281,17 +281,14 @@ public class GalinhaController : MonoBehaviour
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
-
+                Atirar();
 
 
 
             }
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
             if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
-            if (pontoDeDisparo != null)
-            {
-                pontoDeDisparo.gameObject.SetActive(false);
-            }
+            
         }
     }
     private IEnumerator EsperarTrocarDeCena()

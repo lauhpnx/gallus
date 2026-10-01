@@ -203,20 +203,19 @@ public class BossHealth : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
-            if (Spawn != null) Spawn.enabled = false;
-            if (pontoDeTiro != null) pontoDeTiro.gameObject.SetActive(false);
-            if (PontoDeTiro2 != null) PontoDeTiro2.SetActive(false);
-            if (left != null) left.gameObject.SetActive(false);
-            if (right != null) right.gameObject.SetActive(false);
-            if (center != null) center.gameObject.SetActive(false);
         }
 
         if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
         if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
 
 
+        if (Spawn != null) Spawn.enabled = false;
+        if (pontoDeTiro != null) pontoDeTiro.gameObject.SetActive(false);
+        if (PontoDeTiro2 != null) PontoDeTiro2.SetActive(false);
+        if (left != null) left.gameObject.SetActive(false);
+        if (right != null) right.gameObject.SetActive(false);
+        if (center != null) center.gameObject.SetActive(false);
 
-        
     }
     void OnDrawGizmosSelected()
     {

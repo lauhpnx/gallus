@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1225216865}
-  totalInimigosNaFase: 35
+  totalInimigosNaFase: 30
 --- !u!4 &627518463
 Transform:
   m_ObjectHideFlags: 0
@@ -2797,6 +2797,9 @@ MonoBehaviour:
   SpawnFrequency: 4
   left: {fileID: 1025844751}
   right: {fileID: 1254130958}
+  muturacaoMinima: 30
+  avisoMilhoPrefab: {fileID: 3628520365208621007, guid: b88263cd189e88f40bd1908e0ae0b600, type: 3}
+  tempoDeAviso: 1.5
 --- !u!4 &1640871577
 Transform:
   m_ObjectHideFlags: 0

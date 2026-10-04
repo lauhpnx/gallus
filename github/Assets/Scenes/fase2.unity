@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 627518462}
         m_TargetAssemblyTypeName: GerenciadorVitoria, Assembly-CSharp
-        m_MethodName: CarregarProximaFase3
+        m_MethodName: proximafase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1086,6 +1086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1225216865}
   totalInimigosNaFase: 30
+  gInim: {fileID: 1164886698}
+  proximaFase: fase3
 --- !u!4 &627518463
 Transform:
   m_ObjectHideFlags: 0
@@ -1945,6 +1947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
   prefab: {fileID: 8324450545477222452, guid: e51769747a9724b49b257cdb1feb2093, type: 3}
   SpawnFrequency: 1
+  isSpawning: 0
+  gInim: {fileID: 627518462}
   left: {fileID: 2023155828}
   right: {fileID: 413312396}
 --- !u!4 &1164886699
@@ -2073,7 +2077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1225216866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2755,8 +2759,8 @@ RectTransform:
   - {fileID: 1331844002}
   - {fileID: 1587046586}
   - {fileID: 1823374671}
-  - {fileID: 1225216866}
   - {fileID: 1022361522}
+  - {fileID: 1225216866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

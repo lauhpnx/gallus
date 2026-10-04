@@ -2056,7 +2056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1149256359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2612,6 +2612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1149256358}
   totalInimigosNaFase: 25
+  gInim: {fileID: 1370077361}
+  proximaFase: fase2
 --- !u!4 &1233568248
 Transform:
   m_ObjectHideFlags: 0
@@ -2949,6 +2951,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
   prefab: {fileID: 3333042347070831399, guid: 510ba7ee1f6e3ca46bdc5f708632168a, type: 3}
   SpawnFrequency: 1
+  isSpawning: 0
+  gInim: {fileID: 1233568247}
   left: {fileID: 351549918}
   right: {fileID: 46232938}
 --- !u!1 &1381157352
@@ -3599,7 +3603,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1233568247}
         m_TargetAssemblyTypeName: GerenciadorVitoria, Assembly-CSharp
-        m_MethodName: CarregarProximaFase
+        m_MethodName: proximafase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4579,7 +4583,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.94, y: 2.06}
+    oldSize: {x: 2.35, y: 2.37}
     newSize: {x: 2.05, y: 2.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

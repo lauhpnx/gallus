@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class GeradorInimigos : MonoBehaviour
 {
+    public static GeradorInimigos Instance;
     public GameObject prefab;
     public float SpawnFrequency = 2f;
     private float _timer;
+    public bool isSpawning =  false;
+    public GerenciadorVitoria gInim;
 
     public Transform left;
     public Transform right;
@@ -13,7 +16,7 @@ public class GeradorInimigos : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
-        if (_timer >= SpawnFrequency)
+        if (_timer >= SpawnFrequency && !isSpawning)
         {
             GameObject enemy = Instantiate(prefab);
 

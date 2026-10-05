@@ -4541,8 +4541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkinPlayer
   spriteNormal: {fileID: -5099292496197868168, guid: 6af2bd0d9fa00f043ab9b66fd6dc8939, type: 3}
-  spriteSkin: {fileID: 21300000, guid: 84d0c430983c13c47be11be08f358678, type: 3}
-  sprite3: {fileID: 4164744761163438241, guid: 8e4c4ea4e16090c41ace9845626f6270, type: 3}
+  spriteSkin: {fileID: 5789296209000513733, guid: ea149350ec34ba748bfd219970716858, type: 3}
+  sprite3: {fileID: -3674121347307573771, guid: 67c9f14541957d648b5db103a219d0a1, type: 3}
   galinhaController: {fileID: 0}
   skinEquipada: 0
 --- !u!61 &2050663108

@@ -55,6 +55,8 @@ public class BossHealth : MonoBehaviour
     public GameObject efeitoMortePrefab;
     public float tempoDeEspera = 2.0f;
 
+    public bool isSpawning = true;
+    public SpawnOvoPodre spawnOvoPodre;
 
     void Start()
     {
@@ -66,6 +68,7 @@ public class BossHealth : MonoBehaviour
         }
 
         yinicial = transform.position.y;
+        isSpawning = true;
     }
 
     void Update()
@@ -129,12 +132,12 @@ public class BossHealth : MonoBehaviour
         if (penaPrefab == null || pontoDeTiro == null) return;
 
         cronometroTiro += Time.deltaTime;
-        if (!PrimeiraPenaAtirada && cronometroTiro >= tempoTiroFuria)
+        if (!PrimeiraPenaAtirada && cronometroTiro >= tempoTiroFuria && isSpawning)
         {
             PrimeiraPenaAtirada = true;
             Instantiate(penaPrefab, pontoDeTiro.position, Quaternion.identity);
         }
-        if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2)
+        if (!SegundaPenaAtirada && cronometroTiro >= TempoTiroFuria2 && isSpawning)
         {
             Instantiate(penaPrefab, PontoDeTiro2.transform.position, Quaternion.identity);
             SegundaPenaAtirada = true;
@@ -149,7 +152,7 @@ public class BossHealth : MonoBehaviour
         if (galoMinionPrefab == null || left == null || right == null) return;
 
         cronometroSpawn += Time.deltaTime;
-        if (cronometroSpawn >= tempoSpawn)
+        if (cronometroSpawn >= tempoSpawn && isSpawning)
         {
             float newY = Random.Range(left.position.y, right.position.y);
             Vector3 spawnPosition = new Vector3(left.position.x, newY, left.position.z);
@@ -178,7 +181,8 @@ public class BossHealth : MonoBehaviour
         {
             Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
         }
-
+        isSpawning = false;
+        spawnOvoPodre.ispawning = false;
         DesativarBoss();
         StartCoroutine(EsperarTrocarDeCena());
     }

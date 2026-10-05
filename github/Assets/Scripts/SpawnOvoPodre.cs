@@ -24,6 +24,8 @@ public class SpawnOvoPodre : MonoBehaviour
 
     private bool chovendoAgora = false;
     private bool cicloiniciado = false;
+    public bool ispawning = true;
+   
 
     void Start()
     {
@@ -38,6 +40,7 @@ public class SpawnOvoPodre : MonoBehaviour
         {
             animacaoWarning.enabled = false;
         }
+        ispawning = true;
     }
     public void iniciarchuvaFuria()
     {
@@ -73,7 +76,7 @@ public class SpawnOvoPodre : MonoBehaviour
         if (left != null && right != null && prefab != null)
         {
             _timer += Time.deltaTime;
-            if (_timer >= SpawnFrequency)
+            if (_timer >= SpawnFrequency && ispawning)
             {
                 _timer = 0f;
 

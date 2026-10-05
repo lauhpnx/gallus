@@ -8,6 +8,7 @@ public class GeradorInimigos : MonoBehaviour
     private float _timer;
     public bool isSpawning =  false;
     public GerenciadorVitoria gInim;
+    public BossHealth bossHealth;
 
     public Transform left;
     public Transform right;

@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using JetBrains.Annotations;
 
 
 public class GalinhaController : MonoBehaviour
@@ -53,6 +54,7 @@ public class GalinhaController : MonoBehaviour
     public int ovosRestantes = 120;
     public TextMeshProUGUI textoHUD;
     public int ovosportiro = 2;
+
 
     private SpriteRenderer sr;
 
@@ -214,7 +216,7 @@ public class GalinhaController : MonoBehaviour
                 Instantiate(EfeitoMortePrefab, transform.position, Quaternion.identity);
                
             }
-           
+            ovosRestantes = 0;
             DesativarPlayer();
             StartCoroutine(EsperarTrocarDeCena());
         }

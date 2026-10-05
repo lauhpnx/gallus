@@ -205,6 +205,7 @@ MonoBehaviour:
   animacaoWarning: {fileID: 719706689}
   Velocidade: 1
   tempoDeAviso: 1
+  ispawning: 1
 --- !u!1 &114727866
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +512,7 @@ Transform:
   m_GameObject: {fileID: 268188803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 6.02, y: 0.03, z: 90}
+  m_LocalPosition: {x: 5.91, y: -0.01, z: 90}
   m_LocalScale: {x: 0.8124315, y: 0.552104, z: 0.55909264}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -537,12 +538,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   Spawn: {fileID: 110050203}
-  xFixo: 4
-  "VelocidadeOndula\xE7\xE3o": 3
-  Amplitude: 1.5
+  xFixo: 5
+  "VelocidadeOndula\xE7\xE3o": 4
+  Amplitude: 2
   limiteTeto: 6
   limiteChao: -6
-  maxHealth: 70
+  maxHealth: 76
   healthBarImage: {fileID: 982956718}
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
@@ -557,6 +558,8 @@ MonoBehaviour:
   emFuria: 0
   efeitoMortePrefab: {fileID: 1835402399776285181, guid: 0bfbafadae048ea4b8b84f36c01c293e, type: 3}
   tempoDeEspera: 1
+  isSpawning: 0
+  spawnOvoPodre: {fileID: 110050203}
 --- !u!95 &268188809
 Animator:
   serializedVersion: 7
@@ -3747,9 +3750,9 @@ MonoBehaviour:
   velocidadeMovimento: 8
   usarPosicaoXManual: 1
   posicaoX_Manual: -7.58
-  ylimitmin: -3
-  ylimitemax: 3
-  xlimitmin: -7
+  ylimitmin: -4
+  ylimitemax: 4
+  xlimitmin: -7.58
   xlimitmax: 0.2
   pontoDeDisparo: {fileID: 81650148}
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}

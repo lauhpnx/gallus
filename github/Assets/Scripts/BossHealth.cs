@@ -57,6 +57,7 @@ public class BossHealth : MonoBehaviour
 
     public bool isSpawning = true;
     public SpawnOvoPodre spawnOvoPodre;
+  
 
     void Start()
     {

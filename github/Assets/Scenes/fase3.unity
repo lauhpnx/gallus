@@ -203,7 +203,7 @@ MonoBehaviour:
   avisoPrefab: {fileID: 3628520365208621007, guid: b88263cd189e88f40bd1908e0ae0b600, type: 3}
   TextoWarningPrefab: {fileID: 719706686}
   animacaoWarning: {fileID: 719706689}
-  Velocidade: 1
+  Velocidade: 6
   tempoDeAviso: 1
   ispawning: 1
 --- !u!1 &114727866
@@ -513,7 +513,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 5.91, y: -0.01, z: 90}
-  m_LocalScale: {x: 0.8124315, y: 0.552104, z: 0.55909264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1893680721}
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   Spawn: {fileID: 110050203}
-  xFixo: 5
+  xFixo: 6
   "VelocidadeOndula\xE7\xE3o": 4
   Amplitude: 2
   limiteTeto: 6
@@ -548,13 +548,13 @@ MonoBehaviour:
   penaPrefab: {fileID: 183623546375727549, guid: 27103a8abd51d4048b2ced9282d56963, type: 3}
   pontoDeTiro: {fileID: 1893680721}
   PontoDeTiro2: {fileID: 1218357855}
-  tempoTiroFuria: 1
+  tempoTiroFuria: 2
   TempoTiroFuria2: 3
   galoMinionPrefab: {fileID: 8324450545477222452, guid: e51769747a9724b49b257cdb1feb2093, type: 3}
   left: {fileID: 431187396}
   right: {fileID: 756444680}
   center: {fileID: 0}
-  tempoSpawn: 1
+  tempoSpawn: 1.5
   emFuria: 0
   efeitoMortePrefab: {fileID: 1835402399776285181, guid: 0bfbafadae048ea4b8b84f36c01c293e, type: 3}
   tempoDeEspera: 1
@@ -616,17 +616,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0412302, y: 0.013743281}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.48, y: 7.84}
+    oldSize: {x: 4.32, y: 5.2266665}
     newSize: {x: 8.5, y: 8.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.48, y: 7.84}
+  m_Size: {x: 4.6383953, y: 5.668556}
   m_EdgeRadius: 0
 --- !u!1 &431187395
 GameObject:
@@ -2475,7 +2475,7 @@ Transform:
   m_GameObject: {fileID: 1388882394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82, y: 8.94, z: 0}
+  m_LocalPosition: {x: 3.56, y: 8.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3753,7 +3753,7 @@ MonoBehaviour:
   ylimitmin: -4
   ylimitemax: 4
   xlimitmin: -7.58
-  xlimitmax: 0.2
+  xlimitmax: 2.57
   pontoDeDisparo: {fileID: 81650148}
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}
   intervaloTiro: 0.4

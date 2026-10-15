@@ -592,14 +592,14 @@ RectTransform:
   m_GameObject: {fileID: 1034931440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58238053, y: 0.62120587, z: 0.62120587}
+  m_LocalScale: {x: 0.83160263, y: 0.88704276, z: 0.88704276}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2004577390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: 98.1}
+  m_AnchoredPosition: {x: -299.4, y: 106.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1034931442
@@ -650,8 +650,8 @@ MonoBehaviour:
     \xE0 solid\xE3o sem o marido e sem seus ovos. Agradecemos por jogar e esperamos
     que voc\xEA tenha gostado!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
+  m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -390.7869, w: 0}
+  m_margin: {x: 0, y: 0, z: -319.9871, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

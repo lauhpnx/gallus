@@ -6,7 +6,7 @@ public class GeradorInimigos : MonoBehaviour
     public GameObject prefab;
     public float SpawnFrequency = 2f;
     private float _timer;
-    public bool isSpawning =  true;
+    public bool isSpawning =  false;
     public GerenciadorVitoria gInim;
     public BossHealth bossHealth;
 

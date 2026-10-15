@@ -5348,8 +5348,8 @@ Transform:
   m_GameObject: {fileID: 268188803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 6.0072, y: 0.21411, z: 90}
-  m_LocalScale: {x: 0.90340936, y: 1.0548338, z: 0.94697}
+  m_LocalPosition: {x: 6.0072, y: 0.0395, z: 90}
+  m_LocalScale: {x: 0.90340936, y: 0.9880628, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1893680721}
@@ -6120,8 +6120,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "PERIGO! OVOS PODRES EST\xC3O\nCAINDO DO C\xC9U, CUIDADO!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e26dec6659f752f45853edeb2c986c31, type: 2}
-  m_sharedMaterial: {fileID: -5616365208526757421, guid: e26dec6659f752f45853edeb2c986c31, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
+  m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6206,14 +6206,14 @@ RectTransform:
   m_GameObject: {fileID: 719706685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.88564, y: 0.88564, z: 0.88564}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1009313686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159, y: -163}
+  m_AnchoredPosition: {x: -203, y: -180}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &719706689
@@ -6576,14 +6576,14 @@ RectTransform:
   m_GameObject: {fileID: 980275506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7484452, y: 1.7921562, z: 1.7484452}
+  m_LocalScale: {x: 2.521083, y: 2.6487129, z: 2.521083}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1120560727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38, y: -3.0628052}
+  m_AnchoredPosition: {x: 75, y: -17}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980275508
@@ -6608,8 +6608,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: boss
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
+  m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6671,7 +6671,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 2.9624119, z: 56.617867, w: 31.740181}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

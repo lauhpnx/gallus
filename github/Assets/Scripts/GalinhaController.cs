@@ -54,7 +54,7 @@ public class GalinhaController : MonoBehaviour
     public int ovosRestantes = 120;
     public TextMeshProUGUI textoHUD;
     public int ovosportiro = 2;
-
+    public bool jamorri = false;
 
     private SpriteRenderer sr;
 
@@ -70,6 +70,7 @@ public class GalinhaController : MonoBehaviour
         AjustarPosicaoInicialX();
         AtualizarInterface();
         AtualizarHealthBar();
+        jamorri = false;
     }
 
     void Update()
@@ -78,7 +79,7 @@ public class GalinhaController : MonoBehaviour
         ControlarTiro();
     }
 
-    // Define a posição X inicial da galinha: fixa (valor manual) ou calculada com base na câmera
+   
     void AjustarPosicaoInicialX()
     {
         if (usarPosicaoXManual)
@@ -113,7 +114,7 @@ public class GalinhaController : MonoBehaviour
         transform.position = new Vector3(posicaoX_Final, transform.position.y, transform.position.z);
     }
 
-    // Move a galinha para cima/baixo com o input vertical, travando dentro dos limites de tela
+  
     void MoverGalinha()
     {
         float inputVertical = Input.GetAxis("Vertical");
@@ -125,7 +126,7 @@ public class GalinhaController : MonoBehaviour
         transform.position = new Vector3(xtravado, ytravado, transform.position.z);
     }
 
-    // Verifica se pode atirar (tempo do intervalo passou e tem munição suficiente)
+    
     void ControlarTiro()
     {
         cronometroTiro += Time.deltaTime;
@@ -140,7 +141,7 @@ public class GalinhaController : MonoBehaviour
         }
     }
 
-    // Dispara 1, 2 ou 3 ovos dependendo de "ovosportiro"
+   
     void Atirar()
     {
         if (pontoDeDisparo == null || ovoPrefab == null)
@@ -195,6 +196,8 @@ public class GalinhaController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (jamorri) return;
+
         life -= damage;
 
         if (life <= 0)
@@ -208,6 +211,7 @@ public class GalinhaController : MonoBehaviour
 
     void Morrer()
     {
+        jamorri = true;
         if (life <= 0)
         {
             if (pontoDeDisparo != null) pontoDeDisparo.gameObject.SetActive(false);

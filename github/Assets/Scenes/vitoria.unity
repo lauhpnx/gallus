@@ -190,14 +190,14 @@ RectTransform:
   m_GameObject: {fileID: 34564512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.79584295, y: 0.76742, z: 0.75794566}
+  m_LocalScale: {x: 1.0185637, y: 0.98218644, z: 0.9700607}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 93536355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -202.3, y: 152.4}
+  m_AnchoredPosition: {x: -199.7, y: 164.6}
   m_SizeDelta: {x: 150.3, y: 63.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34564514
@@ -224,8 +224,8 @@ MonoBehaviour:
     SOSSEGO EM SUA VIDA.\nOBRIGADO POR JOGAR, FOI UMA HONRA TER VOC\xCA COMO DEFENSOR
     DA NOSSA QUERIDA JOSEFA."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
+  m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -508.1139, w: -308.9331}
+  m_margin: {x: 0, y: 0, z: -392.00854, w: -308.9331}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -622,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.2, y: -172.5}
+  m_AnchoredPosition: {x: -0.2, y: -180.3}
   m_SizeDelta: {x: 1632, y: 438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432791883

@@ -247,7 +247,7 @@ public class GalinhaController : MonoBehaviour
         if (collision.CompareTag("Milho"))
         {
 
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             AdicionarOvos(2);
         }
     }

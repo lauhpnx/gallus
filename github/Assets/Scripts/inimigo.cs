@@ -7,7 +7,7 @@ public class inimigo : MonoBehaviour
     public int damage = 1;
     private AudioSource morteDaBizerra;
 
-    private bool foiDerrotado = false; 
+    private bool foiDerrotado = false;
 
     void Start()
     {
@@ -50,6 +50,7 @@ public class inimigo : MonoBehaviour
             }
 
             Destroy(gameObject);
+
         }
     }
     private void OnBecameInvisible()

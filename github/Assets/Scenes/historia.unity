@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 1020893979}
   - component: {fileID: 1020893978}
   - component: {fileID: 1020893981}
+  - component: {fileID: 1020893982}
   m_Layer: 5
   m_Name: go button
   m_TagString: Untagged
@@ -720,6 +721,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf3f8011141d5546b9f7eb2a98127cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::primeirafase
+--- !u!114 &1020893982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020893976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1471df36cc6890488914740ccc743cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
+  escalaHover: 1.1
+  velocidade: 10
 --- !u!1 &1045172668
 GameObject:
   m_ObjectHideFlags: 0

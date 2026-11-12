@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 804480135}
   - component: {fileID: 804480134}
   - component: {fileID: 804480133}
+  - component: {fileID: 804480136}
   m_Layer: 5
   m_Name: comprar
   m_TagString: Untagged
@@ -1423,6 +1424,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804480131}
   m_CullTransparentMesh: 1
+--- !u!114 &804480136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804480131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1471df36cc6890488914740ccc743cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
+  escalaHover: 1.1
+  velocidade: 10
 --- !u!1 &804757436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,6 +3407,7 @@ GameObject:
   - component: {fileID: 1593085399}
   - component: {fileID: 1593085398}
   - component: {fileID: 1593085397}
+  - component: {fileID: 1593085400}
   m_Layer: 5
   m_Name: sair
   m_TagString: Untagged
@@ -3512,6 +3528,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593085395}
   m_CullTransparentMesh: 1
+--- !u!114 &1593085400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593085395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1471df36cc6890488914740ccc743cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
+  escalaHover: 1.1
+  velocidade: 10
 --- !u!1 &1773423533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,6 +3554,7 @@ GameObject:
   - component: {fileID: 1773423537}
   - component: {fileID: 1773423536}
   - component: {fileID: 1773423535}
+  - component: {fileID: 1773423538}
   m_Layer: 5
   m_Name: BottaoFase2
   m_TagString: Untagged
@@ -3644,6 +3675,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773423533}
   m_CullTransparentMesh: 1
+--- !u!114 &1773423538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773423533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1471df36cc6890488914740ccc743cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
+  escalaHover: 1.1
+  velocidade: 10
 --- !u!1 &1805283955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,6 +4281,7 @@ GameObject:
   - component: {fileID: 1989758699}
   - component: {fileID: 1989758698}
   - component: {fileID: 1989758702}
+  - component: {fileID: 1989758703}
   m_Layer: 5
   m_Name: loja
   m_TagString: Untagged
@@ -4391,6 +4437,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1989758703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989758696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1471df36cc6890488914740ccc743cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
+  escalaHover: 1.1
+  velocidade: 10
 --- !u!1 &2050663101
 GameObject:
   m_ObjectHideFlags: 0

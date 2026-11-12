@@ -6,6 +6,7 @@ public class ovo : MonoBehaviour
     public float tempoDeVida = 3f;
     public int dano = 1;
     public BossHealth bossHealth;
+    public GameObject efeitoMortePrefab;
 
     private Rigidbody2D rb;
 
@@ -25,6 +26,10 @@ public class ovo : MonoBehaviour
 
     void morrer()
     {
+        if (CompareTag ("Galo"))
+        {
+           Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
+        }
         if (explosaoPrefab != null)
         {
             Instantiate(

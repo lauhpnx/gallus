@@ -7,7 +7,7 @@ public class inimigo : MonoBehaviour
     public int damage = 1;
     private AudioSource morteDaBizerra;
     public GameObject efeitoMortePrefab;
-
+    public GameObject efeitoMortePrefab2;
     private bool foiDerrotado = false; 
 
     void Start()
@@ -23,7 +23,7 @@ public class inimigo : MonoBehaviour
         if (collision.CompareTag("Ovo"))
         {
             foiDerrotado = true;
-
+                        Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
             
             GerenciadorVitoria gerenciador = FindFirstObjectByType<GerenciadorVitoria>();
             if (gerenciador != null)
@@ -47,8 +47,9 @@ public class inimigo : MonoBehaviour
             GalinhaController galinha = collision.GetComponent<GalinhaController>();
             if (galinha != null)
             {
+                Instantiate(efeitoMortePrefab2, transform.position, Quaternion.identity);
                 galinha.TakeDamage(damage);
-                Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
+
             }
 
             Destroy(gameObject);
@@ -63,6 +64,7 @@ public class inimigo : MonoBehaviour
             GalinhaController galinha = FindFirstObjectByType<GalinhaController>();
             if (galinha != null)
             {
+                Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
                 galinha.TakeDamage(damage);
             }
 

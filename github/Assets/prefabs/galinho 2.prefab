@@ -109,7 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::inimigo
   speed: 7
   damage: 1
-  efeitoMortePrefab: {fileID: 6144172873181894097, guid: 69364de3fdd50d642acf752eb3a239e7, type: 3}
+  efeitoMortePrefab: {fileID: 436147234735486412, guid: 712cc0728d39c18409fe62aef589b6ee, type: 3}
+  efeitoMortePrefab2: {fileID: 6144172873181894097, guid: 69364de3fdd50d642acf752eb3a239e7, type: 3}
 --- !u!58 &-2775554599065982723
 CircleCollider2D:
   m_ObjectHideFlags: 0

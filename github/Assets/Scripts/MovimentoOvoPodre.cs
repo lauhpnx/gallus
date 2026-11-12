@@ -5,6 +5,7 @@ public class MovimentoOvoPodre : MonoBehaviour
     public float velocidade;
     public GalinhaController galinhaController;
     public int damage = 1;
+    public GameObject efeitoMortePrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +26,7 @@ public class MovimentoOvoPodre : MonoBehaviour
             GalinhaController galinha = collision.GetComponent<GalinhaController>();
             if (galinha != null)
             {
+                Instantiate(efeitoMortePrefab, galinha.transform.position, Quaternion.identity);
                 galinha.TakeDamage(damage);
             }
         }

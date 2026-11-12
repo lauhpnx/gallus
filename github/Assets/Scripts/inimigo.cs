@@ -6,6 +6,7 @@ public class inimigo : MonoBehaviour
     public float speed = 5f;
     public int damage = 1;
     private AudioSource morteDaBizerra;
+    public GameObject efeitoMortePrefab;
 
     private bool foiDerrotado = false; 
 
@@ -47,6 +48,7 @@ public class inimigo : MonoBehaviour
             if (galinha != null)
             {
                 galinha.TakeDamage(damage);
+                Instantiate(efeitoMortePrefab, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

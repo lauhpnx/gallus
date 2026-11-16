@@ -15,31 +15,27 @@ public class EfeitoBotao : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Start()
     {
-        // Guarda o tamanho inicial do botão
+       
         escalaOriginal = transform.localScale;
         escalaAlvo = escalaOriginal;
     }
 
     void Update()
     {
-        // Faz a transição suave entre a escala atual e a escala desejada
-        // Usa unscaledDeltaTime para funcionar mesmo se o jogo estiver pausado (Time.timeScale = 0)
         transform.localScale = Vector3.Lerp(transform.localScale, escalaAlvo, Time.unscaledDeltaTime * velocidade);
     }
-
-    // Disparado quando o mouse entra na área do botão
     public void OnPointerEnter(PointerEventData eventData)
     {
         escalaAlvo = escalaOriginal * escalaHover;
     }
 
-    // Disparado quando o mouse sai da área do botão
+  
     public void OnPointerExit(PointerEventData eventData)
     {
         escalaAlvo = escalaOriginal;
     }
 
-    // Garante que o botão volte ao tamanho normal se for desativado no meio da animação
+    
     void OnDisable()
     {
         if (escalaOriginal != Vector3.zero)

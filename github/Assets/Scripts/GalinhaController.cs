@@ -15,6 +15,7 @@ public class GalinhaController : MonoBehaviour
     public float velocidadeFade = 0.8f;
     public float tempoDeEspera = 2.0f;
     public string GameOver = "GameOver";
+    public GameObject painelderrota;
     [Header("Configurações de Vida")]
     public int life = 10;
     public int _lifemax = 10;
@@ -71,6 +72,10 @@ public class GalinhaController : MonoBehaviour
         AtualizarInterface();
         AtualizarHealthBar();
         jamorri = false;
+        if (painelderrota != null)
+        {
+            painelderrota.SetActive(false);
+        }
     }
 
     void Update()
@@ -214,6 +219,7 @@ public class GalinhaController : MonoBehaviour
         jamorri = true;
         if (life <= 0)
         {
+           
             if (pontoDeDisparo != null) pontoDeDisparo.gameObject.SetActive(false);
             if (EfeitoMortePrefab != null)
             {
@@ -221,6 +227,10 @@ public class GalinhaController : MonoBehaviour
                
             }
             ovosRestantes = 0;
+            if (painelderrota != null)
+            {
+                painelderrota.SetActive(true);
+            }
             DesativarPlayer();
             StartCoroutine(EsperarTrocarDeCena());
         }
@@ -278,7 +288,7 @@ public class GalinhaController : MonoBehaviour
         Time.timeScale = 1f;
 
         Debug.Log("Tentando carregar a cena: " + GameOver);
-        SceneManager.LoadScene(GameOver);
+        //SceneManager.LoadScene(GameOver);
     }
     private void DesativarPlayer()
     {

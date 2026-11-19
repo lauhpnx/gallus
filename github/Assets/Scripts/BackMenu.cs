@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 public class BackMenu : MonoBehaviour
 {
 
+
     public void BackToMenu()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -2524,8 +2524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171.94809, y: 147.04793}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 108.31, y: 130.73}
+  m_SizeDelta: {x: 98.74, y: 80.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050613149
 MonoBehaviour:
@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -232.06404, y: 0, z: 0, w: 0}
+  m_margin: {x: -232.06404, y: 0, z: -1.0887661, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2638,6 +2638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16f9f9d8bf547943b9342cbe994daf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::temDh
+  moneyManager: {fileID: 0}
   dinhero: 0
   textoDinhero: {fileID: 1050613149}
 --- !u!1 &1075037304

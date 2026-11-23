@@ -1365,9 +1365,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 449287321
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 1684982495
+  m_SortingLayer: 6
+  m_SortingOrder: 2000
   m_Sprite: {fileID: 21300000, guid: f44fa0915de8c77438439f6fc4458466, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1651,6 +1651,37 @@ Canvas:
   m_SortingLayerID: 426208871
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &475532021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475532023}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &475532023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475532021}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19015, y: -0.01612, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558112659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1783,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1684982495
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 4033355307889638888, guid: 2f6470540fe48ee49b1a49dfb919e172, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1824,6 +1855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 5
   idSkin: 1
+  textoDinhero: {fileID: 1050613149}
+  tempoAviso: 1.5
 --- !u!1 &778538658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,15 +2549,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050613147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -307.78012}
-  m_LocalScale: {x: 0.9990699, y: 1.0769194, z: 1.0379947}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00033009422}
+  m_LocalScale: {x: 1.2475, y: 1.2474997, z: 1.2475}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1383859114}
+  m_Father: {fileID: 1515766712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171.94809, y: 147.04793}
+  m_AnchoredPosition: {x: 215.00002, y: 166.00002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050613149
@@ -2633,12 +2666,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050613147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f16f9f9d8bf547943b9342cbe994daf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::temDh
-  dinhero: 0
+  bC: {fileID: 0}
   textoDinhero: {fileID: 1050613149}
 --- !u!1 &1075037304
 GameObject:
@@ -3176,6 +3209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 50
   idSkin: 1
+  textoDinhero: {fileID: 1050613149}
+  tempoAviso: 1.5
 --- !u!1 &1200322594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,7 +4001,6 @@ RectTransform:
   - {fileID: 1515766712}
   - {fileID: 1149256359}
   - {fileID: 1667557995}
-  - {fileID: 1050613148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4187,7 +4221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1515766712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4204,6 +4238,7 @@ RectTransform:
   - {fileID: 276940807}
   - {fileID: 302517392}
   - {fileID: 1593085396}
+  - {fileID: 1050613148}
   m_Father: {fileID: 1383859114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5992,3 +6027,4 @@ SceneRoots:
   - {fileID: 1233568248}
   - {fileID: 1181613687}
   - {fileID: 742409503}
+  - {fileID: 475532023}

@@ -173,7 +173,7 @@ public class GalinhaController : MonoBehaviour
                 break;
         }
 
-        ovosRestantes = Mathf.Max(0, ovosRestantes - ovosportiro);
+        ovosRestantes = Mathf.Max(0, ovosRestantes -1);
         cronometroTiro = 0f;
         AtualizarInterface();
     }

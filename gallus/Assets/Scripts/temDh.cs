@@ -5,16 +5,17 @@ public class temDh : MonoBehaviour
 {
     public static temDh Instance;
     public MoneyManager moneyManager;
-    public int dinhero = 0;
+    //public int dinhero = 0;
     public TMP_Text textoDinhero;
     public void Start()
     {
         textoDinhero.gameObject.SetActive(false);
     }
-    public void Update()
+    public void Comprar()
     {
-        if (dinhero < 99)
+        if (moneyManager.dinheiro <= 99)
         {
+            Instantiate(moneyManager);
             textoDinhero.gameObject.SetActive(true);
         }
     }

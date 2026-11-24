@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Melhorar Josefa\npre\xE7o: 100."
+  m_text: "Melhorar Josefa\npre\xE7o: 80."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
@@ -1315,7 +1315,7 @@ Transform:
   m_GameObject: {fileID: 302517391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 39, z: -3658.5002}
+  m_LocalPosition: {x: 0, y: 39, z: 47}
   m_LocalScale: {x: 42.587097, y: 35.003094, z: 13.641172}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,9 +1365,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 449287321
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 1684982495
+  m_SortingLayer: 6
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: f44fa0915de8c77438439f6fc4458466, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1868,6 +1868,7 @@ GameObject:
   - component: {fileID: 804480134}
   - component: {fileID: 804480133}
   - component: {fileID: 804480136}
+  - component: {fileID: 804480137}
   m_Layer: 5
   m_Name: comprar
   m_TagString: Untagged
@@ -1951,6 +1952,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 804480137}
+        m_TargetAssemblyTypeName: temDh, Assembly-CSharp
+        m_MethodName: Comprar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &804480134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,6 +2016,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EfeitoBotao
   escalaHover: 1.1
   velocidade: 10
+--- !u!114 &804480137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804480131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16f9f9d8bf547943b9342cbe994daf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::temDh
+  moneyManager: {fileID: 401868549}
+  textoDinhero: {fileID: 1050613149}
 --- !u!1 &804757436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,7 +2527,6 @@ GameObject:
   - component: {fileID: 1050613148}
   - component: {fileID: 1050613150}
   - component: {fileID: 1050613149}
-  - component: {fileID: 1050613151}
   m_Layer: 5
   m_Name: verificardinheiro
   m_TagString: Untagged
@@ -2517,14 +2543,14 @@ RectTransform:
   m_GameObject: {fileID: 1050613147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -307.78012}
-  m_LocalScale: {x: 0.9990699, y: 1.0769194, z: 1.0379947}
+  m_LocalScale: {x: 0.9990699, y: 1.0769193, z: 1.0379947}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383859114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.31, y: 130.73}
+  m_AnchoredPosition: {x: 108.30999, y: 130.72995}
   m_SizeDelta: {x: 98.74, y: 80.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050613149
@@ -2626,21 +2652,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050613147}
   m_CullTransparentMesh: 1
---- !u!114 &1050613151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050613147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16f9f9d8bf547943b9342cbe994daf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::temDh
-  moneyManager: {fileID: 0}
-  dinhero: 0
-  textoDinhero: {fileID: 1050613149}
 --- !u!1 &1075037304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4091445ee718614985496f48fac61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
-  preco: 50
+  preco: 80
   idSkin: 1
 --- !u!1 &1200322594
 GameObject:
@@ -3737,7 +3748,7 @@ GameObject:
   - component: {fileID: 1381157354}
   - component: {fileID: 1381157353}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: valor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3965,9 +3976,9 @@ RectTransform:
   - {fileID: 1401904353}
   - {fileID: 1989758697}
   - {fileID: 1515766712}
+  - {fileID: 1050613148}
   - {fileID: 1149256359}
   - {fileID: 1667557995}
-  - {fileID: 1050613148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4188,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1515766712
 RectTransform:
   m_ObjectHideFlags: 0

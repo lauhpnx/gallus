@@ -64,7 +64,9 @@ public class MoneyManager : MonoBehaviour
     {
         if (textoDinheiro != null)
         {
+             PlayerPrefs.SetInt("dinheiro", dinheiro);
             textoDinheiro.text = "$ " + dinheiro;
+            PlayerPrefs.Save();
         }
     }
 }

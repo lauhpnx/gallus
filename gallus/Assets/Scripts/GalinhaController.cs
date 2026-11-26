@@ -72,7 +72,7 @@ public class GalinhaController : MonoBehaviour
         AtualizarInterface();
         AtualizarHealthBar();
         jamorri = false;
-        StartCoroutine(FazerFade());
+        
         if (painelderrota != null)
         {
             painelderrota.SetActive(false);

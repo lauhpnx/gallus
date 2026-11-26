@@ -2811,7 +2811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1149256359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3550,14 +3550,14 @@ RectTransform:
   m_GameObject: {fileID: 1339009673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4451443, y: 1.4451443, z: 1.4451443}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149256359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -98, y: 111}
+  m_AnchoredPosition: {x: -178, y: 100}
   m_SizeDelta: {x: 150.3, y: 63.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339009675
@@ -3580,11 +3580,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "PARAB\xC9NS! VOC\xCA\nVENCEU A FASE 1,\nCLIQUE ABAIXO PARA IR PARA A FASE
-    2."
+  m_text: "PARAB\xC9NS! VOC\xCA\nVENCEU A FASE 1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6519844a95342ea428456637ec8c167e, type: 2}
-  m_sharedMaterial: {fileID: 5820102063423341440, guid: 6519844a95342ea428456637ec8c167e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
+  m_sharedMaterial: {fileID: 7391321193220108050, guid: 72bbd7e65cfe5e1449d2b64e4878804c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3608,8 +3607,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
-  m_fontSizeBase: 27
+  m_fontSize: 67
+  m_fontSizeBase: 67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3646,7 +3645,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -10.784439, y: 0, z: -150.41762, w: 0}
+  m_margin: {x: -10.784439, y: 0, z: -309.40805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4175,7 +4174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515766712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4631,7 +4630,7 @@ RectTransform:
   m_GameObject: {fileID: 1773423533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3110228, y: 2.3399103, z: 2.3110228}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149256359}
@@ -4639,7 +4638,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 4, y: 104}
-  m_SizeDelta: {x: 145.78, y: 37.46}
+  m_SizeDelta: {x: 166.44, y: 54.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773423535
 MonoBehaviour:

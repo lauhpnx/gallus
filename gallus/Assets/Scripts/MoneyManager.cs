@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MoneyManager : MonoBehaviour
@@ -11,16 +12,27 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-       
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+          
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
             return;
         }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += AoCarregarCena;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= AoCarregarCena;
     }
 
     void Start()
@@ -28,23 +40,17 @@ public class MoneyManager : MonoBehaviour
         AtualizarTexto();
     }
 
-   
-    void Update()
+    void AoCarregarCena(Scene cena, LoadSceneMode modo)
     {
-        if (textoDinheiro == null)
-        {
-          
-            textoDinheiro = FindFirstObjectByType<TMP_Text>();
-            if (textoDinheiro != null)
-            {
-                AtualizarTexto();
-            }
-        }
+        GameObject obj = GameObject.Find("Textodinheiro");
+        textoDinheiro = (obj != null) ? obj.GetComponent<TMP_Text>() : null;
+        AtualizarTexto();
     }
 
     public void AdicionarDinheiro(int valor)
     {
         dinheiro += valor;
+  
         AtualizarTexto();
     }
 
@@ -53,6 +59,7 @@ public class MoneyManager : MonoBehaviour
         if (dinheiro >= valor)
         {
             dinheiro -= valor;
+        
             AtualizarTexto();
             return true;
         }
@@ -60,13 +67,13 @@ public class MoneyManager : MonoBehaviour
         return false;
     }
 
+    
+
     public void AtualizarTexto()
     {
         if (textoDinheiro != null)
         {
-             PlayerPrefs.SetInt("dinheiro", dinheiro);
             textoDinheiro.text = "$ " + dinheiro;
-            PlayerPrefs.Save();
         }
     }
 }

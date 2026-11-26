@@ -7,11 +7,13 @@ public class BotaoCompra : MonoBehaviour
     public int preco = 95;
     public int idSkin = 1;
     public TMP_Text textoDinhero;
+    public TMP_Text textoDinhero2;
     public float tempoAviso = 1.5f;
 
     void Start()
     {
         if (textoDinhero != null) textoDinhero.gameObject.SetActive(false);
+        if (textoDinhero2 != null) textoDinhero2.gameObject.SetActive(false);
     }
 
     public void Comprar()
@@ -21,6 +23,8 @@ public class BotaoCompra : MonoBehaviour
             SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
             if (galinha != null)
                 galinha.EquiparSkin(idSkin);
+            textoDinhero2.gameObject.SetActive(true);
+            
         }
         else
         {

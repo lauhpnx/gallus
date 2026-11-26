@@ -1043,7 +1043,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Use as SETAS ou W, A, S, D para andar e ESPA\xC7O ou o bot\xE3o esquerdo
-    do mouse para atirar."
+    do mouse para atirar.\nEsc para voltar ao menu."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
   m_sharedMaterial: {fileID: 2537902093673041125, guid: f204c0fb58435e14c81132219c3ba0b1, type: 2}
@@ -2262,6 +2262,7 @@ GameObject:
   - component: {fileID: 913787872}
   - component: {fileID: 913787871}
   - component: {fileID: 913787873}
+  - component: {fileID: 913787874}
   m_Layer: 0
   m_Name: IMG_Background
   m_TagString: Untagged
@@ -2355,6 +2356,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fundo
   velocidade: 5
+--- !u!114 &913787874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913787870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e324186efe213644db3313fddb30e5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Irpromenu
 --- !u!1 &1027964893
 GameObject:
   m_ObjectHideFlags: 0

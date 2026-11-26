@@ -2811,7 +2811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1149256359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3371,6 +3371,8 @@ MonoBehaviour:
   totalInimigosNaFase: 25
   gInim: {fileID: 1370077361}
   proximaFase: fase2
+  fadeImage: {fileID: 1401904356}
+  velocidadeFade: 0.8
 --- !u!4 &1233568248
 Transform:
   m_ObjectHideFlags: 0
@@ -3949,11 +3951,11 @@ RectTransform:
   - {fileID: 1204474438}
   - {fileID: 1164515508}
   - {fileID: 245624830}
-  - {fileID: 1401904353}
   - {fileID: 1989758697}
   - {fileID: 1515766712}
-  - {fileID: 1149256359}
   - {fileID: 1667557995}
+  - {fileID: 1401904353}
+  - {fileID: 1149256359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

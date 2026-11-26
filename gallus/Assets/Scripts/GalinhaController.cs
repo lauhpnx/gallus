@@ -72,6 +72,7 @@ public class GalinhaController : MonoBehaviour
         AtualizarInterface();
         AtualizarHealthBar();
         jamorri = false;
+        StartCoroutine(FazerFade());
         if (painelderrota != null)
         {
             painelderrota.SetActive(false);
@@ -227,10 +228,7 @@ public class GalinhaController : MonoBehaviour
                
             }
             ovosRestantes = 0;
-            if (painelderrota != null)
-            {
-                painelderrota.SetActive(true);
-            }
+           StartCoroutine(FazerFade());
             DesativarPlayer();
             StartCoroutine(EsperarTrocarDeCena());
         }
@@ -283,7 +281,10 @@ public class GalinhaController : MonoBehaviour
 
             yield return null;
         }
-
+        if (painelderrota != null)
+        {
+            painelderrota.SetActive(true);
+        }
         Debug.Log("Fade concluído. Restaurando Time.timeScale...");
         Time.timeScale = 1f;
 

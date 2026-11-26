@@ -1340,6 +1340,8 @@ MonoBehaviour:
   totalInimigosNaFase: 45
   gInim: {fileID: 1164886698}
   proximaFase: fase3
+  fadeImage: {fileID: 1022361524}
+  velocidadeFade: 0.8
 --- !u!4 &627518463
 Transform:
   m_ObjectHideFlags: 0

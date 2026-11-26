@@ -8,12 +8,7 @@ public class TempoRecorde : MonoBehaviour
         public static bool contando;
         public static TMPro.TextMeshProUGUI tempoText;
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -22,7 +17,7 @@ public class TempoRecorde : MonoBehaviour
         {
             TempoRecordeData.tempoAtual += Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.T)) //mostra a contagem
+        if (Input.GetKeyDown(KeyCode.T)) 
         {
             TempoRecordeData.contando = !TempoRecordeData.contando;
         }

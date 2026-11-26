@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb373235469256644b52f2682568903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::inimigo
-  speed: 7
+  speed: 9
   damage: 1
   efeitoMortePrefab: {fileID: 436147234735486412, guid: 712cc0728d39c18409fe62aef589b6ee, type: 3}
   efeitoMortePrefab2: {fileID: 6144172873181894097, guid: 69364de3fdd50d642acf752eb3a239e7, type: 3}

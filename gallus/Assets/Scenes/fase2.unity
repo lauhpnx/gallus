@@ -408,6 +408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 0
   idSkin: 2
+  textoDinhero: {fileID: 0}
+  tempoAviso: 1.5
 --- !u!114 &221639740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,7 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GerenciadorVitoria
   painelVitoria: {fileID: 1225216865}
-  totalInimigosNaFase: 30
+  totalInimigosNaFase: 45
   gInim: {fileID: 1164886698}
   proximaFase: fase3
 --- !u!4 &627518463
@@ -4365,6 +4367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 0
   idSkin: 2
+  textoDinhero: {fileID: 0}
+  tempoAviso: 1.5
 --- !u!1 &2023155827
 GameObject:
   m_ObjectHideFlags: 0

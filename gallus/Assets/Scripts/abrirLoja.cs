@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class abrirLoja : MonoBehaviour
+public class AbrirLoja : MonoBehaviour
 {
    
     public GameObject painelLoja;

@@ -14375,7 +14375,7 @@ MonoBehaviour:
   ovoPrefab: {fileID: 7419800103472880173, guid: ef769bf5c2e625348ba5d54313e54ffc, type: 3}
   intervaloTiro: 0.4
   anguloSegundoOvo: 20
-  ovosRestantes: 130
+  ovosRestantes: 100
   textoHUD: {fileID: 832177769}
   ovosportiro: 2
   jamorri: 0

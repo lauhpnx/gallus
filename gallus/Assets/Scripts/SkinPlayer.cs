@@ -36,7 +36,9 @@ public class SkinPlayer : MonoBehaviour
                 galinhaController.DefinirTipoDeTiro(2);
                 break;
             default: if (spriteNormal != null) sr.sprite = spriteNormal; break;
-                case 3: if (spritefestivo != null) sr.sprite = spritefestivo; break;
+                case 3: if (spritefestivo != null) sr.sprite = spritefestivo;
+                galinhaController.DefinirTipoDeTiro(3);
+                break;
         }
     }
 }

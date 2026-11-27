@@ -5,7 +5,9 @@ using UnityEngine;
 public class BotaoCompra : MonoBehaviour
 {
     public int preco = 95;
+    public int preco2 = 95;
     public int idSkin = 1;
+    public int idSkin2 = 2;
     public TMP_Text textoDinhero;
     public TMP_Text textoDinhero2;
     public float tempoAviso = 1.5f;
@@ -56,13 +58,13 @@ public class BotaoCompra : MonoBehaviour
         yield return new WaitForSeconds(tempoAviso);
         textoDinhero.gameObject.SetActive(false);
     }
-    public void Comprar2()
+    public void Comprarfestivo()
     {
         if (MoneyManager.Instance != null && MoneyManager.Instance.GastarDinheiro(preco))
         {
             SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
             if (galinha != null)
-                galinha.EquiparSkin(idSkin);
+                galinha.EquiparSkin(idSkin2);
             textoDinhero2.gameObject.SetActive(true);
 
         }

@@ -2479,12 +2479,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728311589}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.47, y: -3.84, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 307.65305, y: -204.51073, z: -4497.536}
+  m_LocalScale: {x: 2.2475903, y: 2.0851135, z: 54.08264}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1515766712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742409501
 GameObject:
@@ -2545,7 +2545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 5
+  preco2: 5
   idSkin: 1
+  idSkin2: 3
   textoDinhero: {fileID: 1050613149}
   textoDinhero2: {fileID: 353830367}
   tempoAviso: 1.5
@@ -2664,7 +2666,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1181613688}
+      - m_Target: {fileID: 742409505}
         m_TargetAssemblyTypeName: BotaoCompra, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
@@ -4034,7 +4036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotaoCompra
   preco: 80
+  preco2: 95
   idSkin: 1
+  idSkin2: 2
   textoDinhero: {fileID: 1050613149}
   textoDinhero2: {fileID: 353830367}
   tempoAviso: 1.5
@@ -5168,6 +5172,8 @@ RectTransform:
   - {fileID: 157129434}
   - {fileID: 823634608}
   - {fileID: 514495077}
+  - {fileID: 2105366687}
+  - {fileID: 728311591}
   m_Father: {fileID: 1383859114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5767,7 +5773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 742409505}
         m_TargetAssemblyTypeName: BotaoCompra, Assembly-CSharp
-        m_MethodName: Comprar2
+        m_MethodName: Comprarfestivo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7074,7 +7080,7 @@ MonoBehaviour:
   spriteNormal: {fileID: -5099292496197868168, guid: 6af2bd0d9fa00f043ab9b66fd6dc8939, type: 3}
   spriteSkin: {fileID: 5789296209000513733, guid: ea149350ec34ba748bfd219970716858, type: 3}
   sprite3: {fileID: -3674121347307573771, guid: 67c9f14541957d648b5db103a219d0a1, type: 3}
-  spritefestivo: {fileID: -8287650901645349780, guid: 35ae2e4c708263544a500625699fd75c, type: 3}
+  spritefestivo: {fileID: 5629600339287228216, guid: 98dcf982f34dc0f4ca81f59abe880067, type: 3}
   galinhaController: {fileID: 0}
   skinEquipada: 0
 --- !u!61 &2050663108
@@ -7437,12 +7443,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105366685}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.67, y: -3.84, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 431.27054, y: -204.51073, z: -4497.536}
+  m_LocalScale: {x: 2.2475903, y: 2.0851135, z: 54.08264}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1515766712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -7465,5 +7471,3 @@ SceneRoots:
   - {fileID: 1233568248}
   - {fileID: 1181613687}
   - {fileID: 742409503}
-  - {fileID: 728311591}
-  - {fileID: 2105366687}

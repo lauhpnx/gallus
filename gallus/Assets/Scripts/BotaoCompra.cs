@@ -7,7 +7,7 @@ public class BotaoCompra : MonoBehaviour
     public int preco = 95;
     public int preco2 = 95;
     public int idSkin = 1;
-    public int idSkin2 = 2;
+    public int idSkin2 = 4;
     public TMP_Text textoDinhero;
     public TMP_Text textoDinhero2;
     public float tempoAviso = 1.5f;

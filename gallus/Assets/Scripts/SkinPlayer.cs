@@ -40,5 +40,6 @@ public class SkinPlayer : MonoBehaviour
                 galinhaController.DefinirTipoDeTiro(3);
                 break;
         }
+        Debug.Log("Skin equipada: " + skinEquipada);
     }
 }

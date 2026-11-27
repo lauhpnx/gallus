@@ -150,7 +150,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 3750
-        width: 7500
+        width: 1875
         height: 3750
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -170,9 +170,9 @@ TextureImporter:
       name: assets natal_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 7500
+        x: 1875
+        y: 3750
+        width: 1875
         height: 3750
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -182,8 +182,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c01a19c297e0ff46a5679168f0f2be5
-      internalID: 521726693
+      spriteID: 7dc325cd15fbde642a8100a96207e230
+      internalID: 558956342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assets natal_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1875
+        height: 3750
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c256fbb571f564344bdde0ea93a4c7be
+      internalID: 125678822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assets natal_3
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 0
+        width: 1875
+        height: 3750
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8817ed8af8088d42a3fa1e67f5191ba
+      internalID: -1829454575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assets natal_4
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 0
+        width: 1875
+        height: 3750
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b764090589f42614791f4eb2c70f2224
+      internalID: -1055479936
       vertices: []
       indices: 
       edges: []
@@ -202,10 +268,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":7500.0,"y":3750.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":1875.0,"y":3750.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       assets natal_0: 1424056151
-      assets natal_1: 521726693
+      assets natal_1: 558956342
+      assets natal_2: 125678822
+      assets natal_3: -1829454575
+      assets natal_4: -1055479936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

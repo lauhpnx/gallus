@@ -7,9 +7,10 @@ public class SkinPlayer : MonoBehaviour
     public Sprite spriteNormal;
     public Sprite spriteSkin;
     public Sprite sprite3;
+    public Sprite spritefestivo;
     public GalinhaController galinhaController;
 
-    public int skinEquipada = 0; // sempre começa do zero ao carregar a cena
+    public int skinEquipada = 0; 
 
     private SpriteRenderer sr;
 
@@ -35,6 +36,7 @@ public class SkinPlayer : MonoBehaviour
                 galinhaController.DefinirTipoDeTiro(2);
                 break;
             default: if (spriteNormal != null) sr.sprite = spriteNormal; break;
+                case 3: if (spritefestivo != null) sr.sprite = spritefestivo; break;
         }
     }
 }

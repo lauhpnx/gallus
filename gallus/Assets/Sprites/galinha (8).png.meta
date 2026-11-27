@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f44fa0915de8c77438439f6fc4458466
+guid: 32733437bd9a1a849aa6e1c9d3fe5531
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4167673626678581047
-    second: galinha (6)_0
-  - first:
-      213: -3080649194044703000
-    second: galinha (6)_1
+      213: -4942609016601900800
+    second: galinha (8)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -142,11 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: galinha (6)_0
+      name: galinha (8)_0
       rect:
         serializedVersion: 2
         x: 617
-        y: 299
+        y: 258
         width: 475
         height: 475
       alignment: 0
@@ -157,30 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c82f06fae27926c0800000000000000
-      internalID: -4167673626678581047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: galinha (6)_1
-      rect:
-        serializedVersion: 2
-        x: 565
-        y: 97
-        width: 543
-        height: 165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ee3f5741e55f35d0800000000000000
-      internalID: -3080649194044703000
+      spriteID: 0090dc55943586bb0800000000000000
+      internalID: -4942609016601900800
       vertices: []
       indices: 
       edges: []
@@ -189,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      galinha (6)_0: -4167673626678581047
-      galinha (6)_1: -3080649194044703000
+      galinha (8)_0: -4942609016601900800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -56,4 +56,19 @@ public class BotaoCompra : MonoBehaviour
         yield return new WaitForSeconds(tempoAviso);
         textoDinhero.gameObject.SetActive(false);
     }
+    public void Comprar2()
+    {
+        if (MoneyManager.Instance != null && MoneyManager.Instance.GastarDinheiro(preco))
+        {
+            SkinPlayer galinha = FindFirstObjectByType<SkinPlayer>();
+            if (galinha != null)
+                galinha.EquiparSkin(idSkin);
+            textoDinhero2.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            StartCoroutine(MostrarAviso());
+        }
+    }
 }

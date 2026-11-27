@@ -68,5 +68,8 @@ TagManager:
   - name: texto
     uniqueID: 1684982495
     locked: 0
+  - name: natal loja
+    uniqueID: 485044755
+    locked: 0
   m_RenderingLayers:
   - Default
